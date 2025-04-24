@@ -86,7 +86,7 @@ const loadCart = () => {
 const updateQuantity = (cartItemId, newQuantity) => {
   if (newQuantity < 1) return;
 
-  fetch(`http://127.0.0.1:8000/cart/${cartItemId}/`, {
+  fetch(`https://glamify-backend-tp2c.onrender.com/cart/${cartItemId}/`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -103,7 +103,7 @@ const updateQuantity = (cartItemId, newQuantity) => {
 };
 
 const removeFromCart = (cartItemId) => {
-  fetch(`http://127.0.0.1:8000/cart/${cartItemId}/`, {
+  fetch(`https://glamify-backend-tp2c.onrender.com/cart/${cartItemId}/`, {
     method: "DELETE",
   })
     .then((response) => {
