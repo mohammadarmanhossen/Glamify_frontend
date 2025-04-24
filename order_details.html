@@ -10,16 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router@3"></script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-
-
-
 <body class="bg-gray-100">
-
-
-    
     <nav class="bg-white p-5 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center ">
             <a href="home.html" class="text-black text-4xl font-bold">GLAMIFY</a>
@@ -44,7 +38,7 @@
 
         </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-600 space-y-2 p-5 transition-all duration-300">
+        <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-600 space-y-2 p-5 transition-all duration-300">
             <a href="home.html" class="block hover:text-gray-300">Home</a>
             <a href="about.html" class="block hover:text-gray-300">About</a>
             <a href="shop.html" class="block hover:text-gray-300">Shop</a>
@@ -52,55 +46,34 @@
 
             <ul class="text-center hidden sm:block" id="navbarElement">
                 <div class=" items-center gap-5">
-                    
+
                 </div>
-            <ul>
-                
-            
+                <ul>
         </div>
-
-
-  
     </nav>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-16">
+        <div class="w-full max-w-5xl px-4">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">🧾 Order Items</h2>
+            <div class="overflow-x-auto shadow-xl rounded-2xl bg-white">
+                <table class="min-w-full divide-y divide-gray-200 text-sm text-center">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="px-6 py-3 font-semibold">ID</th>
+                            <th class="px-6 py-3 font-semibold">Product Name</th>
+                            <th class="px-6 py-3 font-semibold">Quantity</th>
+                            <th class="px-6 py-3 font-semibold">Status</th>
+                            <th class="px-6 py-3 font-semibold">Is Paid</th>
+                            <th class="px-6 py-3 font-semibold">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-table-body" class="divide-y divide-gray-100 bg-white">
 
 
-
-
-
-
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-16">
-    <div class="w-full max-w-5xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">🧾 Order Items</h2>
-        <div class="overflow-x-auto shadow-xl rounded-2xl bg-white">
-            <table class="min-w-full divide-y divide-gray-200 text-sm text-center">
-                <thead class="bg-gray-800 text-white">
-                    <tr>
-                        <th class="px-6 py-3 font-semibold">ID</th>
-                        <th class="px-6 py-3 font-semibold">Product Name</th>
-                        <th class="px-6 py-3 font-semibold">Quantity</th>
-                        <th class="px-6 py-3 font-semibold">Status</th>
-                        <th class="px-6 py-3 font-semibold">Is Paid</th>
-                        <th class="px-6 py-3 font-semibold">Details</th>
-                    </tr>
-                </thead>
-                <tbody id="order-table-body" class="divide-y divide-gray-100 bg-white">
-                    <!-- JS দিয়ে data আসবে এখানে -->
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
 
     <footer class="bg-gray-800 text-white text-center p-5 mt-16">
         <div class="container mx-auto">
@@ -115,19 +88,12 @@
         </div>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-     <script src="./js/home.js"></script>
-     <script src="./js/product_details.js"></script>
-     <script src="./js/login.js"></script>
-     <script src="./js/navbar.js"></script>
-     <script src="./js/cart.js"></script>
+    <script src="./js/home.js"></script>
+    <script src="./js/product_details.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/cart.js"></script>
     <script src="./js/order_details.js"></script>
 
 </body>
