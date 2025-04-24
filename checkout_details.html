@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<HTML lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Details PDF</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+
+<body class="bg-gray-100 h-[500vh]">
+
+  <nav class="bg-white p-5 fixed top-0 left-0 w-full shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center ">
+      <a href="home.html" class="text-black text-4xl font-bold">GLAMIFY</a>
+      <button id="menu-btn" class="block md:hidden text-black focus:outline-none text-3xl hover:text">
+        ☰
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-xl">
+        <li><a href="home.html" class="hover:text-gray-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-gray-400">About</a></li>
+        <li><a href="shop.html" class="hover:text-gray-400">Shop</a></li>
+        <li><a href="contact.html" class="hover:text-gray-400">Contact</a></li>
+
+      </ul>
+
+
+      <ul class="text-center hidden sm:block" id="navbarElement">
+        <div class=" items-center gap-5">
+        </div>
+        <ul>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-600 space-y-2 p-5 transition-all duration-300">
+      <a href="home.html" class="block hover:text-gray-300">Home</a>
+      <a href="about.html" class="block hover:text-gray-300">About</a>
+      <a href="shop.html" class="block hover:text-gray-300">Shop</a>
+      <a href="contact.html" class="block hover:text-gray-300">Contact</a>
+
+      <ul class="text-center hidden sm:block" id="navbarElement">
+
+        <div class=" items-center gap-5">
+
+        </div>
+        <ul>
+    </div>
+  </nav>
+
+
+  <div class="pt-20">
+  <div class="pt-30 ">
+  <div class="flex justify-center pt-22">
+    <div id="pdf-content" class="w-full max-w-2xl bg-white rounded-xl shadow-xl p-10 border border-gray-300 text-gray-700">
+      
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-gray-800">GLAMIFY</h1>
+        <p class="text-sm text-gray-500">Invoice - Order Confirmation</p>
+      </div>
+  
+      <!-- Invoice Info -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="font-bold text-lg ">Invoice PDF:</p>
+     
+          </div>
+         <!-- Download Button -->
+      <div class="text-right mt-6">
+        <button onclick="generatePDF()" class="bg-gray-700 text-white px-3 py-3 rounded-lg transition-all duration-300">
+          Download Invoice PDF
+        </button>
+      </div>
+        </div>
+      </div>
+  
+      <!-- Customer Info -->
+      <div class="mb-8 border-b pb-4">
+        <h2 class="font-semibold">Customer Information</h2>
+        <div class="space-y-2">
+          <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+          <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+          <p><strong>Address:</strong> <span id="address">Loading...</span></p>
+          <p><strong>Zip Code:</strong> <span id="zip_code">Loading...</span></p>
+        </div>
+      </div>
+
+
+      <!-- Shopping Address -->
+
+      <div class="mb-8 border-b pb-4 pt-10">
+        <h2 class="font-semibold">Shopping Address</h2>
+        <div class="space-y-2">
+          <p><strong>Payment Method : </strong> <span id="name">SSLCOMMERZ</span></p>
+          <p><strong>Courier Service : </strong> <span id="email">	Pathao Courier</span></p>
+          <p><strong>Expected Delivery</strong> <span id="address">3-7 Business Days </span></p>
+
+        </div>
+      </div>
+      
+  
+      <!-- Order Summary -->
+      <div class="mb-8 pt-15">
+        <h2 class="font-semibold">Order Summary</h2>
+        <div class="grid grid-cols-2 gap-4 border border-gray-200 rounded-lg p-4">
+          <div class="font-semibold">Product Quantity:</div>
+          <div id="quantity" class="text-right">Loading...</div>
+  
+          <div class="font-semibold">Total Amount:</div>
+          <div id="total_amount" class="text-right">Loading...</div>
+        </div>
+      </div>
+  
+      <!-- Footer / Note -->
+      <div class="text-sm text-gray-500">
+        <p>Thank you for your order! If you have any questions, contact us at support@glamify.com</p>
+      </div>
+  
+     
+    </div>
+  </div>
+  
+  
+
+
+</body>
+
+
+<footer class="bg-gray-800 text-white text-center p-5 mt-16">
+  <div class="container mx-auto">
+    <p class="text-sm">&copy; 2025 Shopezen. All rights reserved.</p>
+    <div class="flex justify-center space-x-4 mt-3">
+      <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-400">Terms of Service</a>
+      <span>|</span>
+      <a href="#" class="hover:text-gray-400">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- JS libraries for PDF generation and AJAX requests -->
+
+
+<script>
+  function generatePDF() {
+    const element = document.getElementById('pdf-content');
+    const opt = {
+      margin: 0.5,
+      filename: 'order-details.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const checkoutId = params.get('checkout');
+    if (checkoutId) {
+      fetch(`http://127.0.0.1:8000/checkout/${checkoutId}/`)
+        .then(res => res.json())
+        .then(checkout => {
+          document.getElementById('name').textContent = checkout.name;
+          document.getElementById('email').textContent = checkout.email;
+          document.getElementById('address').textContent = checkout.address;
+          document.getElementById('zip_code').textContent = checkout.zip_code;
+          document.getElementById('quantity').textContent = checkout.quantity;
+          document.getElementById('total_amount').textContent = checkout.total_amount;
+        })
+        .catch(err => {
+          console.error('Failed to load checkout:', err);
+          alert('Error loading checkout details.');
+        });
+    } else {
+      alert('No checkout ID provided in URL.');
+    }
+  });
+</script>
+
+<script src="./js/home.js"></script>
+<script src="./js/product_details.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/navbar.js"></script>
+<script src="./js/cart.js"></script>
+<script src="./js/checkout.js"></script>
+<script src="./js/make_payment.js"></script>
+
+</html>
