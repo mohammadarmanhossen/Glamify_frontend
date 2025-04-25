@@ -46,6 +46,7 @@ fetch(`https://glamify-backend-tp2c.onrender.com/account/change_password/${user_
       icon: 'success',
       confirmButtonText: 'OK'
     })
+    window.location.href = "login.html"; 
 })
 
 .catch(error => console.error('Old password not match:', error));
