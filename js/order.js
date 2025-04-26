@@ -12,9 +12,6 @@ totalProductContainer.innerText = `Product : ${checkoutProduct}`;
 console.log(checkoutProduct);  
 console.log(checkoutTotal);  
 
-
-
-
 const checkoutporduct = (event) => {
     event.preventDefault();
 

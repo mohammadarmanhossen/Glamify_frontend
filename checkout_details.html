@@ -58,20 +58,20 @@
   <div class="flex justify-center pt-22">
     <div id="pdf-content" class="w-full max-w-2xl bg-white rounded-xl shadow-xl p-10 border border-gray-300 text-gray-700">
       
-      <!-- Header -->
+
       <div class="text-center mb-10">
         <h1 class="text-4xl font-extrabold text-gray-800">GLAMIFY</h1>
         <p class="text-sm text-gray-500">Invoice - Order Confirmation</p>
       </div>
   
-      <!-- Invoice Info -->
+
       <div class="mb-8">
         <div class="flex justify-between items-center">
           <div>
             <p class="font-bold text-lg ">Invoice PDF:</p>
      
           </div>
-         <!-- Download Button -->
+
       <div class="text-right mt-6">
         <button onclick="generatePDF()" class="bg-gray-700 text-white px-3 py-3 rounded-lg transition-all duration-300">
           Download Invoice PDF
@@ -79,8 +79,7 @@
       </div>
         </div>
       </div>
-  
-      <!-- Customer Info -->
+
       <div class="mb-8 border-b pb-4">
         <h2 class="font-semibold">Customer Information</h2>
         <div class="space-y-2">
@@ -92,7 +91,7 @@
       </div>
 
 
-      <!-- Shopping Address -->
+   
 
       <div class="mb-8 border-b pb-4 pt-10">
         <h2 class="font-semibold">Shopping Address</h2>
@@ -105,7 +104,7 @@
       </div>
       
   
-      <!-- Order Summary -->
+
       <div class="mb-8 pt-15">
         <h2 class="font-semibold">Order Summary</h2>
         <div class="grid grid-cols-2 gap-4 border border-gray-200 rounded-lg p-4">
@@ -117,17 +116,13 @@
         </div>
       </div>
   
-      <!-- Footer / Note -->
+
       <div class="text-sm text-gray-500">
         <p>Thank you for your order! If you have any questions, contact us at support@glamify.com</p>
       </div>
-  
      
     </div>
   </div>
-  
-  
-
 
 </body>
 
@@ -164,6 +159,8 @@
 </script>
 
 
+
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
@@ -188,6 +185,9 @@
     }
   });
 </script>
+
+
+
 
 <script src="./js/home.js"></script>
 <script src="./js/product_details.js"></script>

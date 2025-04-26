@@ -105,11 +105,6 @@ productDetails();
 
 
 
-
-
-
-
-
 const productReview = (event) => {
   event.preventDefault();
 
