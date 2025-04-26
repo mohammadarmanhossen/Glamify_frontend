@@ -186,48 +186,66 @@
 
 
 
-
-
-
-
-
 const handleLogin = (event) => {
   event.preventDefault();
 
   const username = getValue("username").value;
   const password = getValue("password").value;
 
-  const userdata = {
-    username: username,
-    password: password
-  };
+  if (username && password) {
+    const loginData = { username, password };
 
-  console.log(userdata);
-
-  fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(userdata)
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.token && data.user_id) {
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user_id", data.user_id);
-
-      Swal.fire({
-        title: 'Success!',
-        text: 'Your Account has been logged in successfully.',
-        icon: 'success',
-        confirmButtonText: 'OK'
-      }).then(() => {
-        window.location.href = "home.html";
-      });
-    } 
-  });
+    // Try Admin Login
+    fetch("https://glamify-backend-tp2c.onrender.com/admin/login/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loginData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.token) {
+        // Admin Login Success
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("admin_id", data.admin_id);
+        window.location.href = "admin_dashboard.html";
+      } else {
+        // If Admin Login fails, try User Login
+        fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(loginData),
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.token) {
+            // User Login Success
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user_id", data.user_id);
+            window.location.href = "home.html";
+          } else {
+            alert('Invalid credentials.');
+          }
+        })
+        .catch(() => alert('Error logging in.'));
+      }
+    })
+    .catch(() => alert('Error logging in.'));
+  } else {
+    alert('Please enter both username and password.');
+  }
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -235,39 +253,133 @@ const handleLogin = (event) => {
 const handleLogout = (event) => {
   event.preventDefault();
 
-  console.log("Logging out...");
   const token = localStorage.getItem("token");
-  console.log(token);
+  const isAdmin = localStorage.getItem("admin_id") ? true : false;
+  
+  // Determine API based on role (admin or user)
+  const logoutUrl = isAdmin 
+    ? "https://glamify-backend-tp2c.onrender.com/admin/logout/"
+    : "https://glamify-backend-tp2c.onrender.com/account/logout/";
 
-  fetch("https://glamify-backend-tp2c.onrender.com/account/logout/", {
+  fetch(logoutUrl, {
     method: "GET",
-    headers: {
-      Authorization: `Token ${token}`,
-      "Content-Type": "application/json",
-    },
+    headers: { Authorization: `Token ${token}` },
   })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Logout successful", data);
-      localStorage.removeItem("token");
-      localStorage.removeItem("user_id");
-
-      Swal.fire({
-        title: "Success!",
-        text: "Your account has been successfully logged out.",
-        icon: "success",
-        confirmButtonText: "OK",
-      }).then(() => {
-        window.location.href = "login.html";
-      });
-    });
+  .then(() => {
+    localStorage.removeItem("token");
+    localStorage.removeItem(isAdmin ? "admin_id" : "user_id");
+    window.location.href = "login.html";
+  })
+  .catch(() => alert('Error logging out.'));
 };
 
 
-const getValue = (id) => {
-  const value = document.getElementById(id);
-  return value;
-};
+
+const getValue = (id) => document.getElementById(id).value;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const handleLogin = (event) => {
+//   event.preventDefault();
+
+//   const username = getValue("username").value;
+//   const password = getValue("password").value;
+
+//   const userdata = {
+//     username: username,
+//     password: password
+//   };
+
+//   console.log(userdata);
+
+//   fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(userdata)
+//   })
+//   .then(res => res.json())
+//   .then(data => {
+//     if (data.token && data.user_id) {
+//       localStorage.setItem("token", data.token);
+//       localStorage.setItem("user_id", data.user_id);
+
+//       Swal.fire({
+//         title: 'Success!',
+//         text: 'Your Account has been logged in successfully.',
+//         icon: 'success',
+//         confirmButtonText: 'OK'
+//       }).then(() => {
+//         window.location.href = "home.html";
+//       });
+//     } 
+//   });
+// };
+
+
+
+
+// const handleLogout = (event) => {
+//   event.preventDefault();
+
+//   console.log("Logging out...");
+//   const token = localStorage.getItem("token");
+//   console.log(token);
+
+//   fetch("https://glamify-backend-tp2c.onrender.com/account/logout/", {
+//     method: "GET",
+//     headers: {
+//       Authorization: `Token ${token}`,
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log("Logout successful", data);
+//       localStorage.removeItem("token");
+//       localStorage.removeItem("user_id");
+
+//       Swal.fire({
+//         title: "Success!",
+//         text: "Your account has been successfully logged out.",
+//         icon: "success",
+//         confirmButtonText: "OK",
+//       }).then(() => {
+//         window.location.href = "login.html";
+//       });
+//     });
+// };
+
+
+// const getValue = (id) => {
+//   const value = document.getElementById(id);
+//   return value;
+// };
 
 
 
