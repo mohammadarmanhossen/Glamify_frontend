@@ -186,108 +186,169 @@
 
 
 
-const handleLogin = (event) => {
+
+const handleLogin = async (event) => {
   event.preventDefault();
 
   const username = getValue("username").value;
   const password = getValue("password").value;
 
-  if (username && password) {
-    const loginData = { username, password };
+  if (!username || !password) {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Please enter both username and password.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+    return;
+  }
 
-    // Try Admin Login
-    fetch("https://glamify-backend-tp2c.onrender.com/admin/login/", {
+  const loginData = { username, password };
+
+  try {
+    // Admin login first
+    const adminRes = await fetch("https://glamify-backend-tp2c.onrender.com/admin/login/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(loginData),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.token) {
-        // Admin Login Success
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("admin_id", data.admin_id);
-        window.location.href = "admin_dashboard.html";
+    });
+
+    const adminData = await adminRes.json();
+    console.log("Admin login response:", adminData);
+
+    if (adminData.token) {
+      localStorage.setItem("token", adminData.token);
+      localStorage.setItem("admin_id", adminData.admin_id);
+
+      Swal.fire({
+        title: 'Success!',
+        text: 'Admin logged in successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = "admin_dashbord.html";
+      });
+
+    } else {
+      // Try user login if admin fails
+      const userRes = await fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginData),
+      });
+
+      const userData = await userRes.json();
+      console.log("User login response:", userData);
+
+      if (userData.token && userData.user_id) {
+        localStorage.setItem("token", userData.token);
+        localStorage.setItem("user_id", userData.user_id);
+
+        Swal.fire({
+          title: 'Success!',
+          text: 'User logged in successfully.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          window.location.href = "home.html";
+        });
       } else {
-        // If Admin Login fails, try User Login
-        fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(loginData),
-        })
-        .then(res => res.json())
-        .then(data => {
-          if (data.token) {
-            // User Login Success
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user_id", data.user_id);
-            window.location.href = "home.html";
-          } else {
-            alert('Invalid credentials.');
-          }
-        })
-        .catch(() => alert('Error logging in.'));
+        Swal.fire({
+          title: 'Error!',
+          text: 'Invalid credentials.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
-    })
-    .catch(() => alert('Error logging in.'));
-  } else {
-    alert('Please enter both username and password.');
+    }
+  } catch (error) {
+    console.error("Login error:", error);
+    Swal.fire({
+      title: 'Error!',
+      text: 'Something went wrong. Please try again later.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const handleLogout = (event) => {
+const handleLogout = async (event) => {
   event.preventDefault();
-
   const token = localStorage.getItem("token");
-  const isAdmin = localStorage.getItem("admin_id") ? true : false;
-  
-  // Determine API based on role (admin or user)
-  const logoutUrl = isAdmin 
-    ? "https://glamify-backend-tp2c.onrender.com/admin/logout/"
-    : "https://glamify-backend-tp2c.onrender.com/account/logout/";
 
-  fetch(logoutUrl, {
-    method: "GET",
-    headers: { Authorization: `Token ${token}` },
-  })
-  .then(() => {
-    localStorage.removeItem("token");
-    localStorage.removeItem(isAdmin ? "admin_id" : "user_id");
-    window.location.href = "login.html";
-  })
-  .catch(() => alert('Error logging out.'));
+  try {
+    const res = await fetch("https://glamify-backend-tp2c.onrender.com/account/logout/", {
+      method: "GET",
+      headers: {
+        Authorization: `Token ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    console.log("User logout:", data);
+
+    localStorage.clear();
+
+    Swal.fire({
+      title: "Success!",
+      text: "You have been logged out.",
+      icon: "success",
+      confirmButtonText: "OK",
+    }).then(() => {
+      window.location.href = "login.html";
+    });
+
+  } catch (error) {
+    console.error("Logout error:", error);
+    Swal.fire({
+      title: "Error!",
+      text: "Logout failed. Try again.",
+      icon: "error",
+      confirmButtonText: "OK"
+    });
+  }
 };
 
+const adminLogout = async (event) => {
+  event.preventDefault();
+  const token = localStorage.getItem("token");
 
+  try {
+    const res = await fetch("https://glamify-backend-tp2c.onrender.com/admin/logout/", {
+      method: "GET",
+      headers: {
+        Authorization: `Token ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
-const getValue = (id) => document.getElementById(id).value;
+    const data = await res.json();
+    console.log("Admin logout:", data);
 
+    localStorage.clear();
 
+    Swal.fire({
+      title: "Success!",
+      text: "Admin has been logged out.",
+      icon: "success",
+      confirmButtonText: "OK",
+    }).then(() => {
+      window.location.href = "login.html";
+    });
 
+  } catch (error) {
+    console.error("Admin Logout Error:", error);
+    Swal.fire({
+      title: "Error!",
+      text: "Logout failed. Try again.",
+      icon: "error",
+      confirmButtonText: "OK"
+    });
+  }
+};
 
-
-
-
-
-
-
-
-
+const getValue = (id) => document.getElementById(id);
 
 
 
