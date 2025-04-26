@@ -33,7 +33,7 @@ const handleLogin = (event) => {
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(() => {
-          window.location.href = "http://127.0.0.1:5500/admin_dashbord.html"; 
+          window.location.href = "admin_dashbord.html"; 
         });
       } 
 
