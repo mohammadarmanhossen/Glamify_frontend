@@ -64,7 +64,8 @@
 
 
 
-
+const user_id = localStorage.getItem("user_id") || null; // Get user ID from local storage
+const token = localStorage.getItem("token") || null; // Get token from local storage
 
 const navbar = () => {
   const navbar = document.getElementById("navbarElement");
