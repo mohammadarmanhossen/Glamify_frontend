@@ -191,41 +191,129 @@
 
 
 
+// const handleLogin = (event) => {
+//   event.preventDefault();
+
+//   const username = getValue("username").value;
+//   const password = getValue("password").value;
+
+//   const userdata = {
+//     username: username,
+//     password: password
+//   };
+
+//   console.log(userdata);
+
+//   fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(userdata)
+//   })
+//   .then(res => res.json())
+//   .then(data => {
+//     if (data.token && data.user_id) {
+//       localStorage.setItem("token", data.token);
+//       localStorage.setItem("user_id", data.user_id);
+
+//       Swal.fire({
+//         title: 'Success!',
+//         text: 'Your Account has been logged in successfully.',
+//         icon: 'success',
+//         confirmButtonText: 'OK'
+//       }).then(() => {
+//         window.location.href = "home.html";
+//       });
+//     } 
+//   });
+// };
+
+
+
+
+// const handleLogout = (event) => {
+//   event.preventDefault();
+
+//   console.log("Logging out...");
+//   const token = localStorage.getItem("token");
+//   console.log(token);
+
+//   fetch("https://glamify-backend-tp2c.onrender.com/account/logout/", {
+//     method: "GET",
+//     headers: {
+//       Authorization: `Token ${token}`,
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log("Logout successful", data);
+//       localStorage.removeItem("token");
+//       localStorage.removeItem("user_id");
+
+//       Swal.fire({
+//         title: "Success!",
+//         text: "Your account has been successfully logged out.",
+//         icon: "success",
+//         confirmButtonText: "OK",
+//       }).then(() => {
+//         window.location.href = "login.html";
+//       });
+//     });
+// };
+
+
+// const getValue = (id) => {
+//   const value = document.getElementById(id);
+//   return value;
+// };
+
+
+
+
 const handleLogin = (event) => {
   event.preventDefault();
 
   const username = getValue("username").value;
   const password = getValue("password").value;
+  const role = document.getElementById("role").value; // Get the role value (user/admin)
 
   const userdata = {
-    username: username,
-    password: password
+      username: username,
+      password: password
   };
 
-  console.log(userdata);
+  const url = role === "admin" 
+      ? "https://glamify-backend-tp2c.onrender.com/admin/login/" 
+      : "https://glamify-backend-tp2c.onrender.com/account/login/";  // Choose the URL based on role
 
-  fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(userdata)
+  fetch(url, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userdata)
   })
   .then(res => res.json())
   .then(data => {
-    if (data.token && data.user_id) {
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user_id", data.user_id);
+      if (data.token && data.user_id) {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user_id", data.user_id);
 
-      Swal.fire({
-        title: 'Success!',
-        text: 'Your Account has been logged in successfully.',
-        icon: 'success',
-        confirmButtonText: 'OK'
-      }).then(() => {
-        window.location.href = "home.html";
-      });
-    } 
+          Swal.fire({
+              title: 'Success!',
+              text: 'Your Account has been logged in successfully.',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          }).then(() => {
+              if (role === "admin") {
+                  window.location.href = "admin-dashboard.html";  // Redirect to admin dashboard
+              } else {
+                  window.location.href = "home.html";  // Redirect to user home page
+              }
+          });
+      } 
   });
 };
 
@@ -235,44 +323,41 @@ const handleLogin = (event) => {
 const handleLogout = (event) => {
   event.preventDefault();
 
-  console.log("Logging out...");
   const token = localStorage.getItem("token");
-  console.log(token);
+  const user_id = localStorage.getItem("user_id");
+  const role = user_id ? "user" : "admin"; // Check if it's a user or admin
 
-  fetch("https://glamify-backend-tp2c.onrender.com/account/logout/", {
-    method: "GET",
-    headers: {
-      Authorization: `Token ${token}`,
-      "Content-Type": "application/json",
-    },
+  const url = role === "admin" 
+      ? "https://glamify-backend-tp2c.onrender.com/admin/logout/" 
+      : "https://glamify-backend-tp2c.onrender.com/account/logout/";  // Choose the URL based on role
+
+  fetch(url, {
+      method: "GET",
+      headers: {
+          Authorization: `Token ${token}`,
+          "Content-Type": "application/json",
+      },
   })
-    .then((res) => res.json())
-    .then((data) => {
+  .then((res) => res.json())
+  .then((data) => {
       console.log("Logout successful", data);
       localStorage.removeItem("token");
       localStorage.removeItem("user_id");
 
       Swal.fire({
-        title: "Success!",
-        text: "Your account has been successfully logged out.",
-        icon: "success",
-        confirmButtonText: "OK",
+          title: "Success!",
+          text: "Your account has been successfully logged out.",
+          icon: "success",
+          confirmButtonText: "OK",
       }).then(() => {
-        window.location.href = "login.html";
+          window.location.href = "login.html";  // Redirect to login page
       });
-    });
+  });
 };
+
 
 
 const getValue = (id) => {
   const value = document.getElementById(id);
   return value;
 };
-
-
-
-
-
-
-
-
