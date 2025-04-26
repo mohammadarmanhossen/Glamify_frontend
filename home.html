@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-white ">
-
+<!-- 
     <nav class="bg-white p-5 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center ">
             <a href="home.html" class="text-black text-4xl font-bold">GLAMIFY</a>
@@ -41,7 +41,43 @@
                 <div class=" items-center gap-5"></div>
             </ul>
         </div>
+    </nav> -->
+
+
+
+    <nav class="bg-white p-5 fixed top-0 left-0 w-full shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="home.html" class="text-black text-4xl font-bold">GLAMIFY</a>
+    
+            <!-- Hamburger Menu Button -->
+            <button id="menu-btn" class="block md:hidden text-black focus:outline-none text-3xl">
+                ☰
+            </button>
+    
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6 text-gray-800 text-xl">
+                <li><a href="home.html" class="hover:text-gray-400">Home</a></li>
+                <li><a href="about.html" class="hover:text-gray-400">About</a></li>
+                <li><a href="shop.html" class="hover:text-gray-400">Shop</a></li>
+                <li><a href="contact.html" class="hover:text-gray-400">Contact</a></li>
+            </ul>
+    
+            <!-- Desktop User Actions -->
+            <div id="navbarElement" class="hidden sm:block"></div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white text-gray-600 space-y-2 p-5 transition-all duration-300">
+            <a href="home.html" class="block hover:text-gray-400">Home</a>
+            <a href="about.html" class="block hover:text-gray-400">About</a>
+            <a href="shop.html" class="block hover:text-gray-400">Shop</a>
+            <a href="contact.html" class="block hover:text-gray-400">Contact</a>
+    
+            <!-- Mobile User Actions -->
+            <div id="mobileNavbarElement" class="pt-4 border-t border-gray-200"></div>
+        </div>
     </nav>
+    
 
 
     <div class="hero-sectionh-[50vh] relative pt-5">
