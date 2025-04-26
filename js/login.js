@@ -65,7 +65,7 @@ const handleLogin = (event) => {
               icon: 'success',
               confirmButtonText: 'OK'
             }).then(() => {
-              window.location.href = "home.html";
+              window.location.href = "https://glamify-frontend-site.netlify.app/index.html";
             });
           } else {
   
