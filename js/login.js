@@ -33,7 +33,7 @@ const handleLogin = (event) => {
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(() => {
-          window.location.href = "admin_dashbord.html"; 
+          window.location.href = "https://glamify-frontend-site.netlify.app/admin_dashbord.html"; 
         });
       } 
 
