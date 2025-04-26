@@ -224,7 +224,7 @@ const handleLogin = (event) => {
         icon: 'success',
         confirmButtonText: 'OK'
       }).then(() => {
-        window.location.href = "home.html";
+        window.location.href = "index.html";
       });
     } 
   });
