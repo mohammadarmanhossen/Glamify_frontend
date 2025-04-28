@@ -17,38 +17,54 @@ const productDetails = () => {
       console.log(product);
 
       const productHTML = `
-      
-    <div class="grid grid-cols-2 md:grid-cols-2 items-center w-full h-full bg-white border-4 border-white rounded-2xl shadow-lg p-6 gap-6">
+
+
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full bg-white border-4 border-white rounded-2xl shadow-lg p-6 gap-8">
 
     <!-- Product Image -->
-    <div class="product-img flex justify-center">
+     <div class="product-img flex justify-center">
         <img class="w-full md:w-96 h-auto object-cover"
             src="${product.image_url}" alt="${product.name}">
     </div>
 
     <!-- Product Details -->
-    <div class="max-w-lg mx-auto w-full h-full p-6 text-center md:text-left">
-        <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2">${product.name}</h2>
-        <p class="text-gray-600 text-sm md:text-base mb-4">${product.description}</p>
-        <p class="text-green-500 text-lg md:text-xl font-bold mb-4">৳${product.price}</p>
-        <p class="text-gray-600 font-medium">Stock: ${product.stock}</p>
+    <div class="w-full h-full p-4 md:p-6 text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">${product.name}</h2>
 
-        <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center md:justify-start sm:space-x-4 mt-6 space-y-3 sm:space-y-0">
+        <p class="text-gray-600 text-base md:text-lg mb-4">
+            ${product.description}
+        </p>
+
+        <p class="text-green-600 text-xl md:text-2xl font-bold mb-4">
+            ৳${product.price}
+        </p>
+
+        <p class="text-gray-500 font-medium mb-6">
+            Stock: ${product.stock}
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <button id="add-to-cart"
-                class="w-full sm:w-auto bg-gray-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-300 transform hover:bg-blue-700 hover:scale-105">
+                class="bg-gray-800 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-gray-900 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Add to Cart
             </button>
             <button id="go-to-cart"
-                class="w-full sm:w-auto bg-green-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-300 transform hover:bg-green-600 hover:scale-105">
+                class="bg-green-600 text-black px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-green-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Go to Cart
             </button>
         </div>
 
-        
     </div>
 
 </div>
+
+
+
+
+
 
   
               `;
@@ -147,3 +163,47 @@ const productReview = (event) => {
 
 const form = document.getElementById("reviewForm");
 form.addEventListener("submit", productReview);
+
+
+
+
+
+
+
+
+// cart responsive degins
+
+
+
+
+      
+// <div class="grid grid-cols-2 md:grid-cols-2 items-center w-full h-full bg-white border-4 border-white rounded-2xl shadow-lg p-6 gap-6">
+
+// <div class="product-img flex justify-center">
+//     <img class="w-full md:w-96 h-auto object-cover"
+//         src="${product.image_url}" alt="${product.name}">
+// </div>
+
+
+// <div class="max-w-lg mx-auto w-full h-full p-6 text-center md:text-left">
+//     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2">${product.name}</h2>
+//     <p class="text-gray-600 text-sm md:text-base mb-4">${product.description}</p>
+//     <p class="text-green-500 text-lg md:text-xl font-bold mb-4">৳${product.price}</p>
+//     <p class="text-gray-600 font-medium">Stock: ${product.stock}</p>
+
+
+//     <div class="flex flex-col sm:flex-row justify-center md:justify-start sm:space-x-4 mt-6 space-y-3 sm:space-y-0">
+//         <button id="add-to-cart"
+//             class="w-full sm:w-auto bg-gray-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-300 transform hover:bg-blue-700 hover:scale-105">
+//             Add to Cart
+//         </button>
+//         <button id="go-to-cart"
+//             class="w-full sm:w-auto bg-green-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-300 transform hover:bg-green-600 hover:scale-105">
+//             Go to Cart
+//         </button>
+//     </div>
+
+    
+// </div>
+
+// </div>
