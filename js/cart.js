@@ -65,17 +65,15 @@ const loadCart = () => {
 </div>
 
 
-
-
                 `;
 
         cartContainer.innerHTML += productCard;
       });
 
-      totalAmountContainer.innerText = `Total Price : ৳${totalAmount}`;
+      totalAmountContainer.innerText = `Price : ৳${totalAmount}`;
       localStorage.setItem("checkoutTotal", totalAmount);
 
-      ProductContainer.innerHTML = `Total Product : ${totalProduct}`;
+      ProductContainer.innerHTML = `Product : ${totalProduct}`;
       localStorage.setItem("Total", totalProduct);
     })
     .catch((error) => {
