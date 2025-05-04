@@ -55,12 +55,6 @@ const displayProducts = (products) => {
         productCart.innerHTML = products.map(product => `
         
  
-
-
-
-       
-    
-
         <div class="max-w-sm bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden m-4">
         <img class="w-full h-56 object-cover" src="${product.image_url}" alt="${product.name}" loading="lazy">
         
@@ -70,15 +64,14 @@ const displayProducts = (products) => {
     
             <div class="flex justify-between items-center mb-3">
                 <span class="text-lg font-bold text-green-400">${product.brand_name}</span>
-                <span class="text-lg font-bold text-green-400">৳${product.price}</span>
+                <span class="text-lg font-bold text-green-400">${product.price}৳</span>
             </div>
     
-    
-            <a href="./product_details.html?id=${product.id}" class="block rounded-lg">
+              <a href="${user_id ? `./product_details.html?id=${product.id}` : './login.html'}" class="block rounded-lg">
                 <div class="flex justify-center items-center bg-amber-300 hover:bg-blue-700 rounded-lg p-2 transition duration-300">
-                     <span class="text-black font-semibold">View Details</span>
+                 <span class="text-black font-semibold">View Details</span>
                 </div>
-            </a>
+              </a>
 
         </div>
     </div>
@@ -142,8 +135,6 @@ products();
 brand();
 
 document.getElementById('search').addEventListener('input', handleSearch);
-
-
 
 
 

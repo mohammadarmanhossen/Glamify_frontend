@@ -290,6 +290,9 @@
   .sticky {
     position: sticky;
   }
+  .-inset-1 {
+    inset: calc(var(--spacing) * -1);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -605,23 +608,8 @@
   .h-96 {
     height: calc(var(--spacing) * 96);
   }
-  .h-\[00vh\] {
-    height: 00vh;
-  }
-  .h-\[100vh\] {
-    height: 100vh;
-  }
   .h-\[120vh\] {
     height: 120vh;
-  }
-  .h-\[150vh\] {
-    height: 150vh;
-  }
-  .h-\[200vh\] {
-    height: 200vh;
-  }
-  .h-\[500vh\] {
-    height: 500vh;
   }
   .h-auto {
     height: auto;
@@ -640,9 +628,6 @@
   }
   .min-h-screen {
     min-height: 100vh;
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -1453,6 +1438,9 @@
   .bg-\[\#0088cc\] {
     background-color: #0088cc;
   }
+  .bg-\[\#B91C1C\] {
+    background-color: #B91C1C;
+  }
   .bg-\[color\:var\(--my-color\)\] {
     background-color: var(--my-color);
   }
@@ -1479,6 +1467,9 @@
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
+  }
+  .bg-gray-100\/50 {
+    background-color: color-mix(in oklab, var(--color-gray-100) 50%, transparent);
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
@@ -1541,6 +1532,9 @@
     --tw-gradient-position: in oklab;
     background-image: radial-gradient(var(--tw-gradient-stops));
   }
+  .bg-\[radial-gradient\(\#ffffff33_1px\,\#0f172a_1px\)\] {
+    background-image: radial-gradient(#ffffff33 1px,#0f172a 1px);
+  }
   .bg-none {
     background-image: none;
   }
@@ -1570,6 +1564,9 @@
   .decoration-slice {
     -webkit-box-decoration-break: slice;
     box-decoration-break: slice;
+  }
+  .bg-\[size\:20px_20px\] {
+    background-size: 20px 20px;
   }
   .bg-auto {
     background-size: auto;
@@ -1735,9 +1732,6 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
@@ -2547,13 +2541,6 @@
       }
     }
   }
-  .hover\:bg-gray-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-200);
-      }
-    }
-  }
   .hover\:bg-gray-300 {
     &:hover {
       @media (hover: hover) {
@@ -2715,29 +2702,14 @@
       display: block;
     }
   }
-  .sm\:hidden {
-    @media (width >= 40rem) {
-      display: none;
-    }
-  }
   .sm\:inline {
     @media (width >= 40rem) {
       display: inline;
     }
   }
-  .sm\:w-64 {
-    @media (width >= 40rem) {
-      width: calc(var(--spacing) * 64);
-    }
-  }
   .sm\:w-auto {
     @media (width >= 40rem) {
       width: auto;
-    }
-  }
-  .sm\:flex-1 {
-    @media (width >= 40rem) {
-      flex: 1;
     }
   }
   .sm\:grid-cols-1 {
@@ -2753,11 +2725,6 @@
   .sm\:grid-cols-3 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .sm\:flex-col {
-    @media (width >= 40rem) {
-      flex-direction: column;
     }
   }
   .sm\:flex-row {
@@ -2781,11 +2748,6 @@
         margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
         margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
       }
-    }
-  }
-  .sm\:px-4 {
-    @media (width >= 40rem) {
-      padding-inline: calc(var(--spacing) * 4);
     }
   }
   .sm\:px-6 {
@@ -2945,11 +2907,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  .lg\:grid-cols-3 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
   .lg\:grid-cols-4 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2978,6 +2935,24 @@
   .lg\:px-40 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 40);
+    }
+  }
+  .hover\:dark\:\!bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        @media (prefers-color-scheme: dark) {
+          background-color: var(--color-gray-100) !important;
+        }
+      }
+    }
+  }
+  .hover\:dark\:bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        @media (prefers-color-scheme: dark) {
+          background-color: var(--color-gray-100);
+        }
+      }
     }
   }
 }
