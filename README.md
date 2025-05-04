@@ -3,10 +3,10 @@
 
 Glamify is a feature-rich e-commerce web application built with Django REST Framework, offering a smooth and secure online shopping experience. From user authentication to product management, order tracking, and secure payments — Glamify is designed to handle every aspect of a modern online store.
 
-- **Frontend Live Site:** [Netlify](https://glamify-frontend-site.netlify.app/)
-- **Backend Live Site:** [Render](https://glamify-backend-tp2c.onrender.com/)
-- **Frontend GitHub:** [Glamify-Frontend](https://github.com/mohammadarmanhossen/Glamify_frontend)
-- **Backend GitHub:** [Glamify-Backend](https://github.com/mohammadarmanhossen/Glamify_backend)
+- **Glamify Frontend Live Site:** [glamify-frontend-site.netlify.app](https://glamify-frontend-site.netlify.app/)
+- **Glamify Backend Live Site:** [glamify-backend-tp2c.onrender.com](https://glamify-backend-tp2c.onrender.com/)
+- **Glamify Frontend GitHub:** [github.com/mohammadarmanhossen/Glamify_frontend](https://github.com/mohammadarmanhossen/Glamify_frontend)
+- **Glamify Backend GitHub:** [github.com/mohammadarmanhossen/Glamify_backend](https://github.com/mohammadarmanhossen/Glamify_backend)
 
 ### User Access Information
 - **Admin Role:**
