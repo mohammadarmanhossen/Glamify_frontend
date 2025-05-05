@@ -63,12 +63,12 @@ const displayProducts = (products) => {
             <p class="text-gray-500 text-sm mb-3 line-clamp-2">${product.description}</p>
     
             <div class="flex justify-between items-center mb-3">
-                <span class="text-lg font-bold text-green-400">${product.brand_name}</span>
-                <span class="text-lg font-bold text-green-400">${product.price}৳</span>
+                <span class="text-lg font-bold text-black">${product.brand_name}</span>
+                <span class="text-lg font-bold text-black">${product.price}৳</span>
             </div>
     
               <a href="${user_id ? `./product_details.html?id=${product.id}` : './login.html'}" class="block rounded-lg">
-                <div class="flex justify-center items-center bg-amber-300 hover:bg-blue-700 rounded-lg p-2 transition duration-300">
+                <div class="flex justify-center items-center bg-gray-300 hover:bg-gray-700 rounded-lg p-2 transition duration-300">
                  <span class="text-black font-semibold">View Details</span>
                 </div>
               </a>

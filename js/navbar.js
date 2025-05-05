@@ -1,5 +1,5 @@
 
-
+const user_id = localStorage.getItem("user_id")
 const navbar = () => {
   const navbar = document.getElementById("navbarElement");
   if (user_id) {
