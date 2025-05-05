@@ -23,7 +23,7 @@ const userProfile = () => {
                       <h5>🧾 Last Name: ${currentUser.last_name}</h5>
                       <p>📧 ${currentUser.email}</p>
                   </div>
-                  <a href="./change_password.html" class="mt-4 inline-block bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition">
+                  <a href="./change_password.html" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
                       ✏️ Edit Profile
                   </a>
               </div>
