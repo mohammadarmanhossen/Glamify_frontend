@@ -36,6 +36,8 @@ const navbar = () => {
   }
 };
 
+
+
 const mobilenavbar = () => {
   const mobilenav = document.getElementById("mobileNavbarElement");
   if (user_id) {
@@ -83,6 +85,10 @@ document.addEventListener('click', function (e) {
       dropdown.classList.toggle('hidden');
   }
 });
+
+
+
+  
 
 // Mobile menu toggle
 const menuBtn = document.getElementById('menu-btn');

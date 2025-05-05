@@ -37,7 +37,7 @@ const productDetails = () => {
             ${product.description}
         </p>
 
-        <p class="text-green-600 text-xl md:text-2xl font-bold mb-4">
+        <p class="text-gray-600 text-xl md:text-2xl font-bold mb-4">
             ৳${product.price}
         </p>
 
@@ -52,7 +52,7 @@ const productDetails = () => {
                 Add to Cart
             </button>
             <button id="go-to-cart"
-                class="bg-green-600 text-black px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-green-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-gray-400 text-black px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-gray-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Go to Cart
             </button>
         </div>
