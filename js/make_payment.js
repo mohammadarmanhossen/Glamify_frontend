@@ -33,6 +33,7 @@ const orderAndPayment = async (event) => {
         status: "success",
         is_paid: false,
     };
+    console.log(orderitemData);
 
     try {
         const orderResponse = await fetch("https://glamify-backend-tp2c.onrender.com/orderitem/", {
@@ -78,3 +79,6 @@ const orderAndPayment = async (event) => {
         alert("Something went wrong: " + error.message);
     }
 };
+
+
+

@@ -118,3 +118,6 @@ const removeFromCart = (cartItemId) => {
 };
 
 loadCart();
+
+
+
