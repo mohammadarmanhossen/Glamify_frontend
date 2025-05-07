@@ -17,8 +17,8 @@
  
     <nav class="bg-white p-5 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-black text-4xl font-bold">GLAMIFY</a>
-            <button id="menu-btn" class="block md:hidden text-black focus:outline-none text-3xl">
+            <a href="index.html" class="text-black text-xl md:text-4xl font-bold">GLAMIFY</a>
+            <button id="menu-btn" class="block md:hidden text-black focus:outline-none text-2xl md:text-3xl">
                 ☰
             </button>
             <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-xl">
@@ -60,13 +60,13 @@
             <div class="sidebar p-4 rounded-md shadow-md h-auto col-span-1 w-full sm:w-auto mx-auto sm:mx-0">
 
 
-                <h1 class="text-2xl font-bold p-1 rounded-md">Filter by category</h1>
+                <h1 class="text-xl md:text-2xl font-bold p-1 rounded-md">Filter by category</h1>
                 <ul id="brand-list" class="mt-4 flex flex-col space-y-2 text-start">
                     <button class="bg-gray-600 rounded p-2" onclick="filterProducts('all')">All</button>
                 </ul>
     
                 <div class="mt-8">
-                    <label for="sort" class="block text-2xl font-bold mb-2">Sort by price</label>
+                    <label for="sort" class="block text-xl md:text-2xl font-bold mb-2">Sort by price</label>
                     <select id="sort" name="sort" onchange="sortProducts(this.value)"
                         class="w-full border border-gray-300 rounded-md p-2">
                         <option value="">Sort By</option>

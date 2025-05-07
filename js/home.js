@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="max-w-sm bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden m-4">
                     <img class="w-full h-56 object-cover" src="${product.image_url}" alt="${product.name}" loading="lazy">
                     <div class="px-6 py-4">
-                        <h5 class="text-2xl font-semibold text-gray-800 mb-1">${product.name}</h5>
+                        <h5 class=" text-xl md:text-2xl font-semibold text-gray-800 mb-1">${product.name}</h5>
                         <p class="text-gray-500 text-sm mb-3 line-clamp-2">${product.description}</p>
                         <div class="flex justify-between items-center mb-3">
-                            <span class="text-lg font-bold text-gray-400">${product.brand_name}</span>
+                            <span class=" text-xl md:text-lg md:font-bold text-gray-400">${product.brand_name}</span>
                             <span class="text-lg font-bold text-gray-400">${product.price}৳</span>
                         </div>
                         <a href="${user_id ? `./product_details.html?id=${product.id}` : './login.html'}" class="block rounded-lg">

@@ -109,24 +109,31 @@ const userProfile = () => {
       );
 
       div.innerHTML = `
-<div class="full-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-6 w-full">
-  <div class="bg-white rounded-2xl shadow-xl w-full md:w-3/4 lg:w-2/3 xl:w-1/2 p-8">
-    <div class="flex flex-col md:flex-row items-center md:items-start">
-        <img src="/image/arman.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-white shadow-md">
-      <div class="md:ml-6 mt-4 md:mt-0 text-center md:text-left p-10">  
+<div class="min-h-screen bg-gradient-to-r flex items-center justify-center p-6">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl p-8">
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+      
+      <!-- Profile Image -->
+      <img src="/image/arman.jpg" alt="Profile Picture" class="w-36 h-36 rounded-full border-4 border-white shadow-md object-cover">
 
-        <p class="text-xl font-bold text-gray-800 pt-5">Username: ${currentUser.username}</p>
-        <p class="text-xl font-bold text-gray-800 pt-5">First Name: ${currentUser.first_name}</p>
-        <p class="text-xl font-bold text-gray-800 pt-5">Last Name: ${currentUser.last_name}</p>
-        <p class="text-xl font-bold text-gray-800 pt-5">Email: ${currentUser.email}</p>
+      <!-- Profile Info -->
+      <div class="text-center md:text-left flex-1">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">User Profile</h2>
+        
+        <p class="text-lg font-medium text-gray-700">👤 Username: <span class="font-semibold text-gray-900">${currentUser.username}</span></p>
+        <p class="text-lg font-medium text-gray-700">🧑 First Name: <span class="font-semibold text-gray-900">${currentUser.first_name}</span></p>
+        <p class="text-lg font-medium text-gray-700">👨‍🦱 Last Name: <span class="font-semibold text-gray-900">${currentUser.last_name}</span></p>
+        <p class="text-lg font-medium text-gray-700">📧 Email: <span class="font-semibold text-gray-900">${currentUser.email}</span></p>
 
-        <div class="mt-6 pt-5">
-          <a href="./change_password.html" class="bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition text-lg">✏️ Edit Profile</a>
+        <!-- Button -->
+        <div class="mt-6">
+          <a href="./change_password.html" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">✏️ Edit Profile</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
         `;
 
