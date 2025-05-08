@@ -27,6 +27,8 @@ const adminProduct = () => {
                 <td class="p-2">
                     <button class="bg-red-500 p-1 border-1 rounded-md delete-button" data-id="${product.id}">Delete</button>
                 </td>
+           
+               
             `;
 
             productBody.appendChild(row);
@@ -66,3 +68,50 @@ function deleteProduct(productId) {
 }
 
 adminProduct();
+
+
+
+
+
+
+document.getElementById('product-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const productData = {
+        name: document.getElementById('name').value,
+        description: document.getElementById('description').value,
+        price: parseFloat(document.getElementById('price').value),
+        stock: parseInt(document.getElementById('stock').value),
+        image_url: document.getElementById('image_url').value,
+        brand: document.getElementById('brand').value
+    };
+    console.log(productData);
+
+    fetch('https://glamify-backend-tp2c.onrender.com/product/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData)
+    })
+    .then(response => {
+        if (response.ok) {
+            Swal.fire({
+                title: "Success!",
+                text: "Added product successfully ",
+                icon: "success",
+                confirmButtonText: "OK",
+              })
+            adminProduct(); 
+            e.target.reset();
+        } else {
+            alert('Failed to add product');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding product');
+    });
+});
+
+
