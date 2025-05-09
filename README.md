@@ -3,8 +3,8 @@
 
 Glamify is a feature-rich e-commerce web application built with Django REST Framework, offering a smooth and secure online shopping experience. From user authentication to product management, order tracking, and secure payments — Glamify is designed to handle every aspect of a modern online store.
 
-- **Glamify Frontend Live Site:** [glamify-frontend-site.netlify.app](https://glamify-frontend-site.netlify.app/)
-- **Glamify Backend Live Site:** [glamify-backend-tp2c.onrender.com](https://glamify-backend-tp2c.onrender.com/)
+- **Glamify Frontend Live Site:** [Glamify Frontend](https://glamify-frontend-site.netlify.app/)
+- **Glamify Backend Live Site:** [Glamfiy Backend](https://glamify-backend-tp2c.onrender.com/)
 - **Glamify Frontend GitHub:** [github.com/mohammadarmanhossen/Glamify_frontend](https://github.com/mohammadarmanhossen/Glamify_frontend)
 - **Glamify Backend GitHub:** [github.com/mohammadarmanhossen/Glamify_backend](https://github.com/mohammadarmanhossen/Glamify_backend)
 
@@ -25,6 +25,8 @@ Password: Arman404@
 ## Key Features
 - **User Authentication** via Gmail OAuth
 - **CRUD Operations** for add to cart management
+- **Product add to cart**cart product quantity positive negative delete
+- **User profile password change.And order derails PDF download 
 - **SSLCommerz Payment Integration** for secure payments
 - **Porduct Review System** for customer feedback
 - **Scalable PostgreSQL Database** with Django Rest Framework API
@@ -41,7 +43,7 @@ Password: Arman404@
 ---
 
 
-- **Frontend Live Site:** [Netlify](https://glamify-frontend-site.netlify.app/)
-- **Backend Live Site:** [Render](https://glamify-backend-tp2c.onrender.com/)
+- **Frontend Live Site:** [Glamify Frontend](https://glamify-frontend-site.netlify.app/)
+- **Backend Live Site:** [Glamify Backend](https://glamify-backend-tp2c.onrender.com/)
 
 
