@@ -33,11 +33,6 @@ const loadOrderItems = () => {
                          <a href="product_details.html" class="bg-green-500 p-1 border-1 rounded-md text-white">Review</a>
                       </td>
                 
-
-                  
-
-                     
-
                 `;
                 tableBody.appendChild(row);
             });

@@ -192,7 +192,7 @@ const productDetails = () => {
 
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full bg-white border-4 border-white rounded-2xl shadow-lg p-6 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full bg-gray-900 border border-white rounded-2xl shadow-lg p-6 gap-8">
 
     <!-- Product Image -->
      <div class="product-img flex justify-center">
@@ -202,43 +202,38 @@ const productDetails = () => {
 
     <!-- Product Details -->
     <div class="w-full h-full p-4 md:p-6 text-center md:text-left">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">${product.name}</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-300 mb-4">${product.name}</h2>
 
-        <p class="text-gray-600 text-base md:text-lg mb-4">
+        <p class="text-gray-300 text-base md:text-lg mb-4">
             ${product.description}
         </p>
 
-        <p class="text-green-600 text-xl md:text-2xl font-bold mb-4">
+        <p class="text-gray-300 text-xl md:text-2xl font-bold mb-4">
             ৳${product.price}
         </p>
 
-        <p class="text-gray-500 font-medium mb-6">
+        <p class="text-gray-300 font-medium mb-6">
             Stock: ${product.stock}
         </p>
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <button id="add-to-cart"
-                class="bg-gray-800 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-gray-900 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-amber-900 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Add to Cart
             </button>
             <button id="go-to-cart"
-                class="bg-green-600 text-black px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-green-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-amber-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Go to Cart
             </button>
         </div>
 
     </div>
 
-</div>
+  </div>
 
 
-
-
-
-
-  
-              `;
+         `;
 
       productDetailsContainer.innerHTML = productHTML;
 
