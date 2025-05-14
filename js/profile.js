@@ -17,15 +17,13 @@ const userProfile = () => {
         "justify-center",
         "items-center",
         "min-h-screen",
-        "bg-gradient-to-r",
         "from-blue-100",
-        "to-purple-100",
         "p-4"
       );
 
       div.innerHTML = `
-<div class="min-h-screen bg-gradient-to-r flex items-center justify-center p-6">
-  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl p-8">
+<div class="min-h-screen flex items-center justify-center p-6">
+  <div class="bg-gray-900 rounded-2xl shadow-2xl w-full max-w-3xl p-8">
     <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
       
       <!-- Profile Image -->
@@ -33,16 +31,16 @@ const userProfile = () => {
 
       <!-- Profile Info -->
       <div class="text-center md:text-left flex-1">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">User Profile</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">User Profile</h2>
         
-        <p class="text-lg font-medium text-gray-700">👤 Username: <span class="font-semibold text-gray-900">${currentUser.username}</span></p>
-        <p class="text-lg font-medium text-gray-700">🧑 First Name: <span class="font-semibold text-gray-900">${currentUser.first_name}</span></p>
-        <p class="text-lg font-medium text-gray-700">👨‍🦱 Last Name: <span class="font-semibold text-gray-900">${currentUser.last_name}</span></p>
-        <p class="text-lg font-medium text-gray-700">📧 Email: <span class="font-semibold text-gray-900">${currentUser.email}</span></p>
+        <p class="text-lg font-medium text-gray-300">👤 Username: <span class="font-semibold text-gray-300">${currentUser.username}</span></p>
+        <p class="text-lg font-medium text-gray-300">🧑 First Name: <span class="font-semibold text-gray-300">${currentUser.first_name}</span></p>
+        <p class="text-lg font-medium text-gray-300">👨‍🦱 Last Name: <span class="font-semibold text-gray-300">${currentUser.last_name}</span></p>
+        <p class="text-lg font-medium text-gray-300">📧 Email: <span class="font-semibold text-gray-300">${currentUser.email}</span></p>
 
         <!-- Button -->
         <div class="mt-6">
-          <a href="./change_password.html" class="inline-block bg-gray-600 text-white px-6 py-3 rounded-lg  transition">✏️ Edit Profile</a>
+          <a href="./change_password.html" class="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg  transition">✏️ Edit Profile</a>
         </div>
       </div>
     </div>

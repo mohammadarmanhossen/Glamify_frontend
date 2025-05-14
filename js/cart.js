@@ -20,8 +20,8 @@ const loadCart = () => {
         const productCard = `
 
 
-    <div class="bg-gray shadow-lg rounded-lg overflow-hidden p-4 flex flex-col md:flex-row items-center w-full gap-6">
-    <!-- Product Image -->
+    <div class="bg-gray shadow-lg rounded-lg overflow-hidden p-4 flex flex-col md:flex-row items-center w-full gap-6 bg-gray-900">
+   
     <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0">
         <img class="w-full h-full object-cover rounded-md" src="${
           item.product_image
@@ -31,7 +31,7 @@ const loadCart = () => {
     <!-- Product Details -->
     <div class="flex flex-col md:flex-row flex-grow items-center justify-between w-full gap-5">
         <!-- Product Name -->
-        <h5 class="text-lg md:text-xl font-semibold text-gray-800 text-center md:text-left">${
+        <h5 class="text-lg md:text-xl font-semibold text-gray-300 text-center md:text-left">${
           item.product_name
         }</h5>
 
@@ -42,7 +42,7 @@ const loadCart = () => {
         })" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400 transition">
                 −
             </button>
-            <p class="text-gray-600 text-lg font-semibold">${item.quantity}</p>
+            <p class="text-gray-300 text-lg font-semibold">${item.quantity}</p>
             <button onclick="updateQuantity(${item.id}, ${
           item.quantity + 1
         })" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400 transition">
@@ -51,7 +51,7 @@ const loadCart = () => {
         </div>
 
         <!-- Total Price -->
-        <p class="text-black text-lg font-bold px-4">${item.quantity} x ৳${
+        <p class="text-white text-lg font-bold px-4">${item.quantity} x ৳${
           item.product_price
         }</p>
 
