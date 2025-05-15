@@ -12,14 +12,6 @@ const userProfile = () => {
       parent.innerHTML = "";
 
       const div = document.createElement("div");
-      div.classList.add(
-        "flex",
-        "justify-center",
-        "items-center",
-        "min-h-screen",
-        "from-blue-100",
-        "p-4"
-      );
 
       div.innerHTML = `
 <div class="min-h-screen flex items-center justify-center p-6">
