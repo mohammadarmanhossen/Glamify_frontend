@@ -58,7 +58,7 @@ const loadCart = () => {
         <!-- Remove Button -->
         <button onclick="removeFromCart(${
           item.id
-        })" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+        })" class="bg-red-500 text-black font-bold px-4 py-2 rounded hover:bg-red-600 transition">
             Remove
         </button>
     </div>

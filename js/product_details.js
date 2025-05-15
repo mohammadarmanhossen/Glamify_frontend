@@ -219,11 +219,11 @@ const productDetails = () => {
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <button id="add-to-cart"
-                class="bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-amber-900 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-amber-700 text-black font-bold px-6 py-2 rounded-lg  shadow-md hover:bg-amber-900 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Add to Cart
             </button>
             <button id="go-to-cart"
-                class="bg-amber-700 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-amber-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-amber-700 text-black font-bold px-6 py-2 rounded-lg  shadow-md hover:bg-amber-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Go to Cart
             </button>
         </div>

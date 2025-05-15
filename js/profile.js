@@ -32,7 +32,7 @@ const userProfile = () => {
 
         <!-- Button -->
         <div class="mt-6">
-          <a href="./change_password.html" class="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg  transition">✏️ Edit Profile</a>
+          <a href="./change_password.html" class="inline-block bg-amber-700 text-black font-bold px-6 py-3 rounded-lg  transition">✏️ Edit Profile</a>
         </div>
       </div>
     </div>
