@@ -16,17 +16,18 @@
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
 
+
+    
     <nav class="bg-gray-900 p-4 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-amber-700 text-3xl font-bold">GLAMIFY</a>
 
-            <button id="menu-btn" class="block md:hidden text-black text-3xl focus:outline-none">
+            <button id="menu-btn" class="block md:hidden text-white text-3xl focus:outline-none">
                 ☰
             </button>
 
             <form id="logout" onsubmit="adminLogout(event)" class="hidden sm:block">
-                <button
-                    class="flex items-center gap-2 bg-amber-700 hover:bg-amber-800 text-black px-4 py-2 rounded-md shadow">
+                <button class="flex items-center gap-2 bg-amber-700 hover:bg-amber-800 font-bold text-black px-4 py-2 rounded-md shadow">
                     <img src="image/logout.svg" alt="Logout Icon" class="w-6 h-6">
                     <span>Logout</span>
                 </button>
@@ -34,12 +35,11 @@
         </div>
 
 
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-100 p-4 transition-all duration-300">
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 p-4 transition-all duration-300">
             <ul class="text-center space-y-3">
                 <li>
                     <form id="mobile-logout" onsubmit="adminLogout(event)">
-                        <button
-                            class="flex gap-2 bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded-md shadow w-full justify-center">
+                        <button class="flex gap-2 bg-amber-700 hover:bg-amber-800 text-black px-4 py-2 rounded-md shadow font-bold w-full justify-center">
                             <img src="image/logout.svg" alt="Logout Icon" class="w-6 h-6">
                             <span>Logout</span>
                         </button>

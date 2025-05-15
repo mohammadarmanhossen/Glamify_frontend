@@ -4,12 +4,12 @@ const navbar = () => {
   const navbar = document.getElementById("navbarElement");
   if (user_id) {
       navbar.innerHTML = `
-          <a href="/cart.html" class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+          <a href="/cart.html" class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2 rounded-md shadow">
               <img src="image/cart.svg" alt="Cart Icon" class="w-6 h-6">
               <span>Cart</span>
           </a>
           <div class="relative inline-block text-left">
-              <button class="dropdownButton flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+              <button class="dropdownButton flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2 rounded-md shadow">
                   <img src="image/account.svg" alt="Account Icon" class="w-6 h-6">
                   <span>Account</span>
               </button>
@@ -26,11 +26,11 @@ const navbar = () => {
       `;
   } else {
       navbar.innerHTML = `
-          <a href="login.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+          <a href="login.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2 rounded-md shadow">
               <img src="image/logout.svg" alt="Login Icon" class="w-6 h-6">
               <span>Login</span>
           </a>
-          <a href="register.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+          <a href="register.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2 rounded-md shadow">
               <img src="image/logout.svg" alt="Login Icon" class="w-6 h-6">
               <span>Register</span>
           </a>
@@ -44,12 +44,12 @@ const mobilenavbar = () => {
   const mobilenav = document.getElementById("mobileNavbarElement");
   if (user_id) {
       mobilenav.innerHTML = `
-          <a href="/cart.html" class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+          <a href="/cart.html" class="inline-flex items-center gap-2 bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2 rounded-md shadow">
               <img src="image/cart.svg" alt="Cart Icon" class="w-6 h-6">
               <span>Cart</span>
           </a>
           <div class="relative inline-block text-left">
-              <button class="dropdownButton flex items-center gap-2 bg-amber-700 hover:bg-amber-900 text-white px-4 py-2  rounded-md shadow">
+              <button class="dropdownButton flex items-center gap-2 bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2  rounded-md shadow">
                   <img src="image/account.svg" alt="Account Icon" class="w-6 h-6">
                   <span>Account</span>
               </button>
@@ -64,11 +64,11 @@ const mobilenavbar = () => {
       `;
   } else {
       mobilenav.innerHTML = `
-            <a href="login.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+            <a href="login.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-black font-bold px-4 py-2 rounded-md shadow">
               <img src="image/logout.svg" alt="Login Icon" class="w-6 h-6">
               <span>Login</span>
           </a>
-          <a href="register.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-white px-4 py-2 rounded-md shadow">
+          <a href="register.html" class="inline-flex items-center gap-2  bg-amber-700 hover:bg-amber-900 text-black px-4 font-bold py-2 rounded-md shadow">
               <img src="image/logout.svg" alt="Login Icon" class="w-6 h-6">
               <span>Register</span>
           </a>
