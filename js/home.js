@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         const products = Array.isArray(data) ? data : [];
         displayProducts(products);
       })
@@ -44,26 +45,35 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   };
 
+
   const displayProducts = (products) => {
+    console.log(products);
+
     const productCart = document.getElementById("product-cart");
     if (!productCart) return;
+
+      const getShortDescription = (text, wordLimit = 5) => {
+        const words = text.split(' ');
+        return words.slice(0, wordLimit).join(' ') + (words.length > wordLimit ? '...' : '');
+    };
+
+      const getShortName = (text, wordLimit = 2) => {
+        const words = text.split(' ');
+        return words.slice(0, wordLimit).join(' ') + (words.length > wordLimit ? '...' : '');
+    };
 
     if (!Array.isArray(products) || products.length === 0) {
       productCart.innerHTML =
         '<p class="text-center text-gray-500">No products available.</p>';
     } else {
-      productCart.innerHTML = products
-        .map(
-          (product) => `
-     
-
-
+      productCart.innerHTML = products.map((product) => `
+    
     <div class="max-w-sm bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden m-4">
 
           <img class="w-full h-56 object-cover" src="${product.image_url}" alt="${ product.name}" loading="lazy">
           <div class="px-6 py-4">
-         <h5 class="text-xl md:text-2xl font-semibold text-white mb-1">${product.name}</h5>
-          <p class="text-gray-400 text-sm mb-3 line-clamp-2">${ product.description }</p>
+         <p class="text-xl md:text-xl font-semibold text-white mb-1">${getShortName(product.name)}</p>
+          <p class="text-gray-400 text-sm mb-3 line-clamp-2">${getShortDescription(product.description)}</p>
          <p class="md:font-semibold text-gray-500 mb-4">Brand: ${ product.brand_name}</p>
       <div class="flex justify-between items-center mt-4">
   <p class="text-white font-semibold">${product.price}৳</p>
