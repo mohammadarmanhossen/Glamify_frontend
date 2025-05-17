@@ -51,11 +51,11 @@ const productDetails = () => {
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <button id="add-to-cart"
-                class="bg-gray-700 text-white font-bold px-6 py-2 rounded-lg  shadow-md hover:bg-gray-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-gray-300 hover:bg-gray-400 text-black font-bold px-6 py-2 rounded-lg  shadow-md hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Add to Cart
             </button>
             <button id="go-to-cart"
-                class="bg-gray-600 text-white font-bold px-6 py-2 rounded-lg  shadow-md hover:bg-gray-700 hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
+                class="bg-gray-300 hover:bg-gray-400 text-black font-bold px-6 py-2 rounded-lg  shadow-md hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
                 Go to Cart
             </button>
         </div>
