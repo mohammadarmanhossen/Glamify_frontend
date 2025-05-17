@@ -49,18 +49,19 @@
 
 
 
-    <div class="flex items-center justify-center min-h-screen bg-black mt-16 text-center">
-        <div class="p-6 rounded-lg shadow-md w-full max-w-sm space-y-4 bg-gray-900">
-            <h1 class="text-2xl font-bold text-white">Make Payment Page</h1>
+    <div class="flex items-center justify-center min-h-screen bg-white mt-16 text-center">
+        <div class="p-6 rounded-lg shadow-2xl w-full max-w-sm space-y-4 bg-white">
+            <h1 class="text-2xl font-bold text-gray-700">Make Payment Page</h1>
     
-            <h3 id="total-product" class="text-gray-300 text-xl font-semibold">Product: 0</h3>
-            <h3 id="total-amount" class="text-gray-300 text-xl font-semibold">Total: ৳0</h3>
+            <h6 id="total-amount" class="text-gray-700  font-semibold"></h6>
+            <h6 id="total-product" class="text-gray-700  font-semibold"></h6>
+          
     
             <input type="hidden" id="product" value="1">
             <input type="hidden" id="order" value="3">
 
             <button onclick="orderAndPayment(event)"
-            class="w-full  text-black font-bold bg-amber-700 px-4 py-2 rounded-lg hover:bg-amber-800 transition">
+            class="w-full  text-white font-bold bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-800 transition">
             Checkout & Pay
         </button>
         </div>

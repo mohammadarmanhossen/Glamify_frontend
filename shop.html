@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 
-<body class="bg-black">
+<body class="bg-white">
 
       <nav class="bg-black p-5 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center">
@@ -49,6 +49,7 @@
 
     <div class="main-container container mx-auto px-4 sm:px-6 lg:px-8 pt-30">
 
+        <h1 class="text-center text-4xl font-semibold pt-10 pb-10">Buying Product</h1>
 
         <div class="product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-10 gap-6">
 
@@ -57,16 +58,16 @@
 
             <div class="sidebar p-4 rounded-md shadow-md  col-span-1 w-full sm:w-auto mx-auto sm:mx-0">
 
-                <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-gray-300">Serch By Product</h1>
+                <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">Serch By Product</h1>
                 <input type="search" id="search" placeholder="Search for products..."
                     class="w-full border border-gray-300 rounded-md p-2 text-white">
-                <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-gray-300">Filter By Category</h1>
+                <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">Filter By Category</h1>
                 <ul id="brand-list" class="mt-4 flex flex-col space-y-2 text-start">
-                    <button class="bg-gray-300 rounded p-2" onclick="filterProducts('all')">All</button>
+                    <button class="bg-gray-700 rounded p-2" onclick="filterProducts('all')">All</button>
                 </ul>
 
                 <div class="mt-8">
-                    <label for="sort" class="block text-xl md:text-xl font-bold p-1 rounded-md text-gray-300">Sort by
+                    <label for="sort" class="block text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">Sort by
                         price</label>
                     <select id="sort" name="sort" onchange="sortProducts(this.value)"
                         class="w-full border border-gray-300 rounded-md p-2">

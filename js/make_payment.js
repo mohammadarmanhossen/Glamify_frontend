@@ -2,14 +2,14 @@
 
 const totalAmountContainer = document.getElementById('total-amount');
 const checkoutTotal = localStorage.getItem('checkoutTotal');
-totalAmountContainer.innerText = `Total:৳${checkoutTotal}`;
+totalAmountContainer.innerText = `Total Price : ${checkoutTotal}৳`;
 
 
 const totalProductContainer = document.getElementById('total-product');
 const checkoutProduct = localStorage.getItem('Total');
 
 
-totalProductContainer.innerText = `Product(${checkoutProduct})`;
+totalProductContainer.innerText = `Total Product : ${checkoutProduct}`;
 
 console.log(checkoutProduct);  
 console.log(checkoutTotal); 

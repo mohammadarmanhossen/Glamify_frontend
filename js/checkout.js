@@ -2,7 +2,7 @@
 const userId = localStorage.getItem("user_id");
 const totalAmountContainer = document.getElementById('total-amount');
 const checkoutTotal = localStorage.getItem('checkoutTotal');
-totalAmountContainer.innerText = `Total Price: ৳${checkoutTotal}`;
+totalAmountContainer.innerText = `Total Price: ${checkoutTotal}৳`;
 
 const totalProductContainer = document.getElementById('total-product');
 const checkoutProduct = localStorage.getItem('Total');

@@ -68,15 +68,15 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       productCart.innerHTML = products.map((product) => `
     
-    <div class="max-w-sm bg-gray-900 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden m-4">
+    <div class="max-w-sm bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden m-4">
 
           <img class="w-full h-56 object-cover" src="${product.image_url}" alt="${ product.name}" loading="lazy">
           <div class="px-6 py-4">
-         <p class="text-xl md:text-xl font-semibold text-white mb-1">${getShortName(product.name)}</p>
-          <p class="text-gray-400 text-sm mb-3 line-clamp-2">${getShortDescription(product.description)}</p>
+         <p class="text-xl md:text-xl font-semibold  mb-1">${getShortName(product.name)}</p>
+          <p class="text-gray-600 text-sm mb-3 line-clamp-2">${getShortDescription(product.description)}</p>
          <p class="md:font-semibold text-gray-500 mb-4">Brand: ${ product.brand_name}</p>
       <div class="flex justify-between items-center mt-4">
-  <p class="text-white font-semibold">${product.price}৳</p>
+  <p class=" font-semibold">${product.price}৳</p>
   <a href="${ user_id ? `./product_details.html?id=${product.id}` : './login.html' }" class="text-sm font-semibold text-amber-700 hover:underline transition">
     View Details
   </a>

@@ -17,7 +17,7 @@
 
 <body class="bg-gray-100">
 
-   <nav class="bg-black p-5 fixed top-0 left-0 w-full shadow-md z-50">
+   <nav class="bg-gray-900 p-5 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="text-amber-700 text-xl md:text-4xl font-bold ">GLAMIFY</a>
             <button id="menu-btn" class="block md:hidden text-white focus:outline-none text-2xl md:text-3xl">
@@ -46,16 +46,16 @@
 
         </div>
     </nav>
+<!-- 
 
 
-
-  <div class="flex flex-col items-center justify-center min-h-screen bg-black pt-32">
+  <div class="flex flex-col items-center justify-center min-h-screen bg-white pt-10">
   <div class="w-full max-w-6xl px-4">
-    <h2 class="text-3xl font-extrabold text-gray-300 text-center mb-10">🧾 Order Items</h2>
+    <h2 class="text-3xl font-extrabold text-gray-700 text-center mb-10">🧾 Order Items</h2>
 
-    <div class="overflow-x-auto shadow-2xl rounded-xl border border-gray-900">
+    <div class="overflow-x-auto shadow-2xl rounded-xl border border-white">
       <table class="min-w-full text-sm text-center table-auto divide-y divide-gray-700">
-        <thead class=" from-gray-800 to-gray-700 text-gray-200 uppercase text-xs tracking-wider">
+        <thead class=" from-gray-800 to-gray-700 text-gray-700 uppercase text-xs tracking-wider">
           <tr>
             <th class="px-6 py-4 font-semibold">ID</th>
             <th class="px-6 py-4 font-semibold">Order ID</th>
@@ -67,14 +67,49 @@
           </tr>
         </thead>
 
-        <tbody id="order-table-body" class="bg-gray-800 divide-y divide-gray-700 text-gray-300">
+        <tbody id="order-table-body" class="bg-white divide-y divide-gray-700 text-gray-700">
 
          
         </tbody>
       </table>
     </div>
   </div>
-</div>
+</div> -->
+
+
+
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-7xl">
+
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">  My Orders</h2>
+
+            <div class="overflow-x-auto bg-white shadow-xl rounded-xl">
+                <table class="min-w-full divide-y divide-gray-200 text-sm text-center">
+                    <thead
+                        class="bg-gradient-to-r from-gray-800 to-gray-700 text-gray-700 uppercase text-xs tracking-wider">
+                        <tr>
+                              <th scope="col" class="px-6 py-4">ID</th>
+                            <th scope="col" class="px-6 py-4">Order ID</th>
+                            <th class="px-6 py-4 font-semibold">Total Quantity</th>
+                            <th scope="col" class="px-6 py-4">Status</th>
+                            <th scope="col" class="px-6 py-4">Paid</th>
+                            <th scope="col" class="px-6 py-4">Details</th>
+                            <th scope="col" class="px-6 py-4">Review</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="order-table-body" class="bg-white divide-y divide-gray-700 text-gray-700">
+
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 
