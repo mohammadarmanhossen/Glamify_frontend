@@ -20,7 +20,7 @@ const loadCart = () => {
         const productCard = `
 
 
-    <div class="bg-gray shadow-lg rounded-lg overflow-hidden p-4 flex flex-col md:flex-row items-center w-full gap-6 bg-white">
+    <div class="bg-gray shadow-lg rounded-lg overflow-hidden p-4  flex flex-col md:flex-row items-center w-full gap-6 bg-white">
    
     <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0">
         <img class="w-full h-full object-cover rounded-md" src="${
