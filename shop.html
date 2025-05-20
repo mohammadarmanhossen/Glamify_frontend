@@ -16,7 +16,7 @@
 
 <body class="bg-white">
 
-      <nav class="bg-gray-900 p-5 fixed top-0 left-0 w-full shadow-md z-50">
+    <nav class="bg-gray-900 p-5 fixed top-0 left-0 w-full shadow-md z-50">
         <div class="container mx-auto px-10 flex justify-between items-center">
             <a href="index.html" class="text-white text-xl md:text-4xl font-bold ">Glamify</a>
             <button id="menu-btn" class="block md:hidden text-white focus:outline-none text-2xl md:text-3xl">
@@ -34,7 +34,8 @@
         </div>
 
 
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900  space-y-2 p-5 transition-all duration-300 text-center">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-900  space-y-2 p-5 transition-all duration-300 text-center">
             <a href="index.html" class="block text-white font-bold">Home</a>
             <a href="about.html" class="block text-white font-bold">About</a>
             <a href="shop.html" class="block text-white font-bold">Shop</a>
@@ -49,24 +50,25 @@
 
     <div class="main-container container mx-auto px-4 sm:px-6 lg:px-8 pt-30">
 
-        <h1 class="text-center text-4xl font-semibold pt-10 pb-10">Buying Product</h1>
+        <h1 class="text-center text-4xl font-semibold pt-10 pb-10">Shoping Product</h1>
+
+        <div class="flex gap-5 pt-10">
+            <input type="search" id="search" placeholder="Search for products..."
+                class="w-full border border-gray-300 rounded-md p-2 text-white">
+            <button class="bg-gray-600 px-10 rounded font-bold text-white">Serch</button>
+        </div>
 
         <div class="product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-10 gap-6">
 
+            <div class="sidebar px-4 rounded-md col-span-1 w-full sm:w-auto mx-auto sm:mx-0">
 
-
-
-            <div class="sidebar p-4 rounded-md col-span-1 w-full sm:w-auto mx-auto sm:mx-0">
-
-                <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">Serch By Product</h1>
-                <input type="search" id="search" placeholder="Search for products..."
-                    class="w-full border border-gray-300 rounded-md p-2 text-white">
-                <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">Filter By Category</h1>
+        
+                <h1 class="text-xl md:text-xl font-bold  rounded-md text-gray-700">Filter By Category</h1>
                 <ul id="brand-list" class="mt-4 flex flex-col space-y-2 text-start">
                     <button class="bg-gray-700 rounded p-2" onclick="filterProducts('all')">All</button>
                 </ul>
 
-                <div class="mt-8">
+                <div class="mt-4">
                     <label for="sort" class="block text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">Sort by
                         price</label>
                     <select id="sort" name="sort" onchange="sortProducts(this.value)"
