@@ -53,8 +53,10 @@ const orderAndPayment = async (event) => {
       user: user_id,
       total_amount: amount,
       orderitem_id: orderitem_id,
+      email: "test@email.com",  
+      name: "Test User"
     };
-    
+
     console.log(Data);
     const paymentResponse = await fetch(
       "https://glamify-backend-code.onrender.com/payment/create_payment/",
