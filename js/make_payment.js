@@ -36,7 +36,7 @@ const orderAndPayment = async (event) => {
     console.log(orderitemData);
 
     try {
-        const orderResponse = await fetch("https://glamify-backend-tp2c.onrender.com/orderitem/", {
+        const orderResponse = await fetch("https://glamify-backend-code.onrender.com/orderitem/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const orderAndPayment = async (event) => {
         console.log("✅ Order item created:", orderitem_id);
 
 
-        const paymentResponse = await fetch("https://glamify-backend-tp2c.onrender.com/payment/create_payment/", {
+        const paymentResponse = await fetch("https://glamify-backend-code.onrender.com/payment/create_payment/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

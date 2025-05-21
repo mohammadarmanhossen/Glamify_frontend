@@ -1,6 +1,6 @@
 
 const loadOrderItems = () => {
-    fetch('https://glamify-backend-tp2c.onrender.com/orderitem/')
+    fetch('https://glamify-backend-code.onrender.com/orderitem/')
         .then(response => response.json())
         .then(data => {
             console.log(data);

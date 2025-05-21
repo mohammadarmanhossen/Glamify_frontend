@@ -14,7 +14,7 @@ const productDetails = () => {
     return;
   }
 
-  fetch(`https://glamify-backend-tp2c.onrender.com/product/${productId}/`)
+  fetch(`https://glamify-backend-code.onrender.com/product/${productId}/`)
     .then((response) => response.json())
     .then((product) => {
       console.log(product);
@@ -87,7 +87,7 @@ const productDetails = () => {
 const addToCart = (productId) => {
   const quantity = 1;
 
-  fetch("https://glamify-backend-tp2c.onrender.com/cart/", {
+  fetch("https://glamify-backend-code.onrender.com/cart/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -136,7 +136,7 @@ const productReview = (event) => {
 
   console.log(reviewData);
 
-  fetch("https://glamify-backend-tp2c.onrender.com/review/", {
+  fetch("https://glamify-backend-code.onrender.com/review/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

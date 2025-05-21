@@ -1,5 +1,5 @@
 const adminContact = () => {
-  fetch("https://glamify-backend-tp2c.onrender.com/account/contact/", {
+  fetch("https://glamify-backend-code.onrender.com/account/contact/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const adminContact = () => {
           const contactId = event.target.getAttribute("data-id");
 
           fetch(
-            `https://glamify-backend-tp2c.onrender.com/account/contact/${contactId}/`,
+            `https://glamify-backend-code.onrender.com/account/contact/${contactId}/`,
             {
               method: "DELETE",
               headers: {

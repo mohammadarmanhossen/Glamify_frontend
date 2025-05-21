@@ -1,7 +1,7 @@
 
 
 const adminProduct = () => {
-    fetch('https://glamify-backend-tp2c.onrender.com/product/', {
+    fetch('https://glamify-backend-code.onrender.com/product/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const adminProduct = () => {
 };
 
 function deleteProduct(productId) {
-    fetch(`https://glamify-backend-tp2c.onrender.com/product/${productId}/`, {
+    fetch(`https://glamify-backend-code.onrender.com/product/${productId}/`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ document.getElementById('product-form').addEventListener('submit', function (e) 
     };
     console.log(productData);
 
-    fetch('https://glamify-backend-tp2c.onrender.com/product/', {
+    fetch('https://glamify-backend-code.onrender.com/product/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

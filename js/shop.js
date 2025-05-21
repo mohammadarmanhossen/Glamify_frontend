@@ -1,5 +1,5 @@
 
-const baseURL = 'https://glamify-backend-tp2c.onrender.com/product/';
+const baseURL = 'https://glamify-backend-code.onrender.com/product/';
 const user_id = localStorage.getItem("user_id");
 console.log("User_id:", user_id);
 
@@ -90,7 +90,7 @@ const brand = () => {
 
     brandList.innerHTML = '';
 
-    fetch('https://glamify-backend-tp2c.onrender.com/Brand/')
+    fetch('https://glamify-backend-code.onrender.com/Brand/')
         .then(response => response.json())
         .then(data => {
             const allButton = createBrandButton('All', 'all');

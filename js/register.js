@@ -22,7 +22,7 @@ const handleRegistration = (event) => {
         return;
     }
   
-    fetch("https://glamify-backend-tp2c.onrender.com/account/register/", {
+    fetch("https://glamify-backend-code.onrender.com/account/register/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(info),

@@ -13,7 +13,7 @@ const handleLogin = (event) => {
     };
   console.log(admindata);
 
-    fetch("https://glamify-backend-tp2c.onrender.com/account/admin/login/", {
+    fetch("https://glamify-backend-code.onrender.com/account/admin/login/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const handleLogin = (event) => {
         };
         console.log(userdata);
 
-        fetch("https://glamify-backend-tp2c.onrender.com/account/login/", {
+        fetch("https://glamify-backend-code.onrender.com/account/login/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -118,7 +118,7 @@ const handleLogout = (event) => {
   console.log("Logging out...");
   const token = localStorage.getItem("token");
   console.log(token);
-  fetch("https://glamify-backend-tp2c.onrender.com/account/logout/", {
+  fetch("https://glamify-backend-code.onrender.com/account/logout/", {
     method: "GET",
     headers: {
       Authorization: `Token ${token}`,
@@ -148,7 +148,7 @@ const adminLogout = (event) => {
   console.log("Logging out...");
   const token = localStorage.getItem("token");
   console.log(token);
-  fetch("https://glamify-backend-tp2c.onrender.com/account/admin/logout/", {
+  fetch("https://glamify-backend-code.onrender.com/account/admin/logout/", {
     method: "GET",
     headers: {
       Authorization: `Token ${token}`,

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const baseURL = "https://glamify-backend-tp2c.onrender.com/product/";
+  const baseURL = "https://glamify-backend-code.onrender.com/product/";
   const user_id = localStorage.getItem("user_id");
   console.log("User_id:", user_id);
 

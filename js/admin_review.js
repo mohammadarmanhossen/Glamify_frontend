@@ -1,5 +1,5 @@
 const adminReview = () => {
-    fetch('https://glamify-backend-tp2c.onrender.com/review/', {
+    fetch('https://glamify-backend-code.onrender.com/review/', {
         method: 'GET',  
         headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const adminReview = () => {
                 const reviewId = event.target.getAttribute('data-id');
 
  
-                fetch(`https://glamify-backend-tp2c.onrender.com/review/${reviewId}/`, {
+                fetch(`https://glamify-backend-code.onrender.com/review/${reviewId}/`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
