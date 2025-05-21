@@ -19,6 +19,7 @@ const orderAndPayment = async (event) => {
   const amount = localStorage.getItem("checkoutTotal");
   const quantity = parseInt(localStorage.getItem("Total"));
   const product_id = document.getElementById("product").value;
+  
 
   const orderitemData = {
     product_name: product_id,
@@ -53,8 +54,6 @@ const orderAndPayment = async (event) => {
       user: user_id,
       total_amount: amount,
       orderitem_id: orderitem_id,
-      email: "test@email.com",  
-      name: "Test User"
     };
 
     console.log(Data);
