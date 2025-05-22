@@ -25,7 +25,7 @@ const adminProduct = () => {
                 <td class="p-2"><img src="${product.image_url}" alt="${product.name}" class="w-16 h-16 object-cover"></td>
                 <td class="p-2">${product.brand_name}</td>
                 <td class="p-2">
-                    <button class="bg-red-500 p-1 border-1 rounded-md delete-button" data-id="${product.id}">Delete</button>
+                    <button class="bg-red-500 p-1 font-semibold rounded-md text-gray-800 delete-button" data-id="${product.id}">Delete</button>
                 </td>
            
                

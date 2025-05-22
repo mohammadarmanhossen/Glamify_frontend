@@ -27,7 +27,7 @@ const loadOrderItems = () => {
                     </td>
             
                      <td class="px-6 py-4">
-                         <a href="checkout_details.html?checkout=${item.id}" class="bg-red-500 p-1 border-1 rounded-md text-white">Details</a>
+                         <a href="checkout_details.html?checkout=${item.id}" class="bg-amber-200 p-1 border-1 font-semibold rounded-md text-gray-800">Details</a>
                       </td>
                      
                 `;

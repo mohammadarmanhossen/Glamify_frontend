@@ -24,7 +24,7 @@ const adminContact = () => {
         <td class="p-2 r">${contact.email}</td>
         <td class="p-2 ">${contact.message}</td>
         <td class="p-2 ">
-            <button class="bg-red-500 text-white px-3 py-1 rounded delete-button" data-id="${contact.id}">
+            <button class="bg-red-500 p-1 font-semibold rounded-md text-gray-800 delete-button" data-id="${contact.id}">
                 Delete
             </button>
         </td>
