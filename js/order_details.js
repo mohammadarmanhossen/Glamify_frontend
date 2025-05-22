@@ -52,7 +52,6 @@ const loadOrderItems = () => {
         .then(data => {
             console.log(data);
 
-            // Sort by id in descending order
             data.sort((a, b) => b.id - a.id);
 
             const tableBody = document.getElementById('order-table-body');

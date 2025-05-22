@@ -219,7 +219,7 @@
     const params = new URLSearchParams(window.location.search);
     const checkoutId = params.get('checkout');
     if (checkoutId) {
-      fetch(`https://glamify-backend-tp2c.onrender.com/checkout/${checkoutId}/`)
+      fetch(`https://glamify-backend-code.onrender.com/checkout/${checkoutId}/`)
         .then(res => res.json())
         .then(checkout => {
           document.getElementById('name').textContent = checkout.name;
