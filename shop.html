@@ -16,7 +16,7 @@
 
 <body class="bg-white">
 
-     <nav class="bg-gray-100 p-5 fixed top-0 left-0 w-full  z-50">
+    <nav class="bg-white p-5 fixed top-0 left-0 w-full  z-50">
         <div class="container mx-auto px-5 flex justify-between items-center">
             <a href="index.html" class="text-black text-xl md:text-4xl font-bold ">GLAMIFY</a>
             <button id="menu-btn" class="block md:hidden text-gray-700 focus:outline-none text-2xl md:text-3xl">
@@ -47,9 +47,23 @@
         </div>
     </nav>
 
-    
 
-    <div class="main-container container mx-auto px-4 sm:px-6 lg:px-8 pt-30">
+
+    <div class="relative w-full h-64 sm:h-96">
+
+        <img src="image/banner-top.jpg" alt="Banner" class="w-full h-full object-cover rounded-md">
+
+
+        <div class="absolute inset-0 px-50 bg-opacity-50 flex flex-col items-start justify-center text-left pt-10 ">
+            <h2 class="text-black md:text-6xl sm:text-4xl font-bold mb-2">Electronic Deals</h2>
+            <p class="text-black p-4 bg-white md:text-2xl sm:text-2xl font-bold mb-1">Exclusive Coupon</p>
+            <p class="text-green-600 text-xl sm:text-3xl font-extrabold">UP TO $100 OFF</p>
+        </div>
+    </div>
+
+
+
+    <div class="main-container container mx-auto px-4 sm:px-6 lg:px-8">
 
 
 
@@ -59,18 +73,18 @@
             <button class="bg-gray-600 px-10 rounded font-bold text-white">Serch</button>
         </div>
 
-        <div class="product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-10 gap-6">
+        <div class="product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-10 pb-10 gap-6">
 
-            <div class="sidebar px-4 rounded-md col-span-1 w-full sm:w-auto mx-auto sm:mx-0">
+            <div class="sidebar px-4 col-span-1 w-full sm:w-auto mx-auto border-1 border-gray-200  sm:mx-0">
 
-        
-                <h1 class="text-xl md:text-xl font-bold  rounded-md text-gray-700">FILTER BY BARND</h1>
-                <ul id="brand-list" class="mt-4 flex flex-col space-y-2 text-start">
+
+                <h1 class="p-1 pt-5 font-bold  rounded-md text-gray-700">FILTER BY BARND</h1>
+                <ul id="brand-list" class="flex flex-col space-y-2 text-start">
 
                 </ul>
 
                 <div class="mt-4">
-                    <label for="sort" class="block text-xl md:text-xl font-bold p-1 rounded-md text-gray-700">SORT BY PRICE</label>
+                    <label for="sort" class="block  font-bold p-1  text-gray-700">SORT BY PRICE</label>
                     <select id="sort" name="sort" onchange="sortProducts(this.value)"
                         class="w-full border border-gray-300 rounded-md p-2">
                         <option value="">Sort By</option>
@@ -97,9 +111,6 @@
 
 </body>
 
-<div class="pt-40">
-
-</div>
 
 
 <footer class="bg-gray-800 text-white px-6 py-10 pt-10">
@@ -163,12 +174,12 @@
             <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
             <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter to receive updates and insights on
                 products.</p>
-          <form class="flex flex-col space-y-3">
-                    <input type="email" placeholder="Your email address" required
-                        class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
-                    <button type="submit"
-                        class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
-                </form>
+            <form class="flex flex-col space-y-3">
+                <input type="email" placeholder="Your email address" required
+                    class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
+                <button type="submit"
+                    class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
+            </form>
         </div>
     </div>
 
@@ -184,4 +195,5 @@
 <script src="./js/home.js"></script>
 <script src="./js/product_details.js"></script>
 <script src="./js/login.js"></script>
+
 </html>
