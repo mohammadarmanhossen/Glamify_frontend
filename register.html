@@ -15,18 +15,17 @@
 </head>
 
 <body class="bg-gray-100">
-
-     <nav class="bg-gray-900 p-5 fixed top-0 left-0 w-full shadow-md z-50">
-        <div class="container mx-auto px-10  flex justify-between items-center">
-            <a href="index.html" class="text-white text-xl md:text-4xl font-bold ">Glamify</a>
-            <button id="menu-btn" class="block md:hidden text-white focus:outline-none text-2xl md:text-3xl">
+ <nav class="bg-gray-100 p-5 fixed top-0 left-0 w-full  z-50">
+        <div class="container mx-auto px-5 flex justify-between items-center">
+            <a href="index.html" class="text-black text-xl md:text-4xl font-bold ">PORT</a>
+            <button id="menu-btn" class="block md:hidden text-gray-700 focus:outline-none text-2xl md:text-3xl">
                 ☰
             </button>
-            <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-xl">
-                <li><a href="index.html" class="text-white hover:text-gray-400">Home</a></li>
-                <li><a href="about.html" class="text-white hover:text-gray-400">About</a></li>
-                <li><a href="shop.html" class="text-white hover:text-gray-400">Shop</a></li>
-                <li><a href="contact.html" class="text-white hover:text-gray-400">Contact</a></li>
+            <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-lg font-medium">
+                <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-green-600">About</a></li>
+                <li><a href="shop.html" class="hover:text-green-600">Shop</a></li>
+                <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
             </ul>
 
             <ul class="text-center hidden sm:block" id="navbarElement"></ul>
@@ -34,11 +33,12 @@
         </div>
 
 
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900  space-y-2 p-5 transition-all duration-300 text-center">
-            <a href="index.html" class="block text-white font-bold">Home</a>
-            <a href="about.html" class="block text-white font-bold">About</a>
-            <a href="shop.html" class="block text-white font-bold">Shop</a>
-            <a href="contact.html" class="block text-white font-bold">Contact</a>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-100  space-y-2 p-5 transition-all duration-300 text-center">
+            <a href="index.html" class="block text-gray-700 font-bold">Home</a>
+            <a href="about.html" class="block text-gray-700 font-bold">About</a>
+            <a href="shop.html" class="block text-gray-700 font-bold">Shop</a>
+            <a href="contact.html" class="block text-gray-700 font-bold">Contact</a>
 
             <div id="mobileNavbarElement"></div>
 
@@ -46,143 +46,77 @@
         </div>
     </nav>
 
-    <!-- <div class="flex items-center justify-center min-h-screen bg-black mt-16">
-   
-        <div class="flex items-center justify-center min-h-screen bg-black pt-16">
-            <div class="bg-gray-900 p-8 rounded-lg shadow-lg w-96">
-                <h2 class="text-2xl font-bold text-center text-gray-300 mb-6">Register</h2>
 
-                <form action="" onsubmit="handleRegistration(event)">
-                    <div class="mb-4">
-                        <label for="username" class="block text-gray-300 font-medium">Username</label>
-                        <input type="text" id="username"
-                            class="w-full px-4 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter your username" required>
+    <main class="min-h-screen bg-white flex items-center justify-center px-4 pt-20">
+        <div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-xl">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Create Account</h2>
+
+            <form onsubmit="handleRegistration(event)" class="space-y-6">
+                <div>
+                    <label for="username" class="block text-sm font-semibold text-gray-700">Username</label>
+                    <input type="text" id="username" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        placeholder="Enter your username" />
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="w-1/2">
+                        <label for="firstname" class="block text-sm font-semibold text-gray-700">First Name</label>
+                        <input type="text" id="firstname" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                            placeholder="First name" />
                     </div>
 
-                    <div class="mb-4">
-                        <label for="firstname" class="block text-gray-300 font-medium">First Name</label>
-                        <input type="text" id="firstname"
-                            class="w-full px-4 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter your first name" required>
+                    <div class="w-1/2">
+                        <label for="lastname" class="block text-sm font-semibold text-gray-700">Last Name</label>
+                        <input type="text" id="lastname" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                            placeholder="Last name" />
                     </div>
+                </div>
 
-                    <div class="mb-4">
-                        <label for="lastname" class="block text-gray-300 font-medium">Last Name</label>
-                        <input type="text" id="lastname"
-                            class="w-full px-4 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter your last name" required>
-                    </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700">Email</label>
+                    <input type="email" id="email" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        placeholder="example@email.com" />
+                </div>
 
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-300 font-medium">Email</label>
-                        <input type="email" id="email"
-                            class="w-full px-4 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter your email" required>
-                    </div>
+                <div>
+                    <label for="password" class="block text-sm font-semibold text-gray-700">Password</label>
+                    <input type="password" id="password" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        placeholder="Create a password" />
+                </div>
 
-                    <div class="mb-4">
-                        <label for="password" class="block text-gray-300 font-medium">Password</label>
-                        <input type="password" id="password"
-                            class="w-full px-4 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter your password" required>
-                    </div>
+                <div>
+                    <label for="confirm_password" class="block text-sm font-semibold text-gray-700">Confirm
+                        Password</label>
+                    <input type="password" id="confirm_password" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        placeholder="Repeat your password" />
+                </div>
 
-                    <div class="mb-4">
-                        <label for="confirm_password" class="block text-gray-300 font-medium">Confirm Password</label>
-                        <input type="password" id="confirm_password"
-                            class="w-full px-4 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Confirm your password" required>
-                    </div>
+                <div id="error" class="text-red-500 text-sm"></div>
 
-                    <div class="text-red-400 mb-4" id="error"></div>
+                <button type="submit"
+                    class="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300 focus:ring-2 focus:ring-gray-500">
+                    Register
+                </button>
 
-                    <div class="text-center">
-                        <input type="submit"
-                            class="w-full text-black font-bold py-2 rounded-lg bg-amber-700 hover:bg-amber-700  transition cursor-pointer focus:ring-2 focus:ring-amber-500 focus:outline-none"
-                            value="Register" />
-                    </div>
-                </form>
-
-                <p class="text-center text-gray-400 text-sm mt-4">
-                    Already have an account? <a href="login.html" class=" hover:underline text-amber-700 font-bold">Login</a>
+                <p class="text-center text-gray-600 text-sm pt-4">
+                    Already have an account?
+                    <a href="login.html" class="text-blue-500 font-medium hover:underline">Login here</a>
                 </p>
-            </div>
+            </form>
         </div>
+    </main>
 
-
-
-    </div>
- -->
-
-
-
- <main class="min-h-screen bg-white flex items-center justify-center px-4">
-    <div class="bg-white backdrop-blur-lg border border-gray-300 shadow-2xl rounded-2xl p-8 w-full max-w-md">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Create Account</h2>
-
-        <form onsubmit="handleRegistration(event)" class="space-y-4">
-            <div>
-                <label for="username" class="block text-sm font-semibold text-gray-700">Username</label>
-                <input type="text" id="username" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    placeholder="Enter your username" />
-            </div>
-
-            <div>
-                <label for="firstname" class="block text-sm font-semibold text-gray-700">First Name</label>
-                <input type="text" id="firstname" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    placeholder="Your first name" />
-            </div>
-
-            <div>
-                <label for="lastname" class="block text-sm font-semibold text-gray-700">Last Name</label>
-                <input type="text" id="lastname" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    placeholder="Your last name" />
-            </div>
-
-            <div>
-                <label for="email" class="block text-sm font-semibold text-gray-700">Email</label>
-                <input type="email" id="email" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    placeholder="example@email.com" />
-            </div>
-
-            <div>
-                <label for="password" class="block text-sm font-semibold text-gray-700">Password</label>
-                <input type="password" id="password" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    placeholder="Create a password" />
-            </div>
-
-            <div>
-                <label for="confirm_password" class="block text-sm font-semibold text-gray-700">Confirm Password</label>
-                <input type="password" id="confirm_password" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                    placeholder="Repeat your password" />
-            </div>
-
-            <div id="error" class="text-red-500 text-sm"></div>
-
-            <button type="submit"
-                class="w-full bg-gray-300 hover:bg-gray-400 text-black rounded-lg p-2 hover:to-gray-700 transition duration-300 focus:ring-2 focus:ring-gray-500">
-                Register
-            </button>
-
-            <p class="text-center text-gray-600 text-sm pt-4">
-                Already have an account?
-                <a href="login.html" class="text-blue-500 font-medium hover:underline">Login here</a>
-            </p>
-        </form>
-    </div>
-</main>
 
 </body>
 
 
-<footer class="bg-gray-900 text-white px-6 py-10 pt-10">
+<footer class="bg-gray-800 text-white px-6 py-10 pt-10">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
 
@@ -245,7 +179,7 @@
                 products.</p>
             <form class="flex flex-col space-y-3">
                 <input type="email" placeholder="Your email address" required
-                    class="px-4 py-2 bg-gray-800 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-600">
+                    class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
                 <button type="submit"
                     class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
             </form>
@@ -263,6 +197,4 @@
 <script src="./js/product_details.js"></script>
 <script src="./js/login.js"></script>
 <script src="./js/register.js"></script>
-
-
 </html>

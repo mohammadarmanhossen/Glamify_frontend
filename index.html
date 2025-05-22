@@ -17,30 +17,66 @@
 
 <body class="bg-white">
 
-    <nav class="bg-gray-900 p-5  fixed top-0 left-0 w-full shadow-md z-50">
-        <div class="container mx-auto px-10  flex justify-between items-center">
-            <a href="index.html" class="text-white text-xl md:text-4xl font-bold ">Glamify</a>
-            <button id="menu-btn" class="block md:hidden text-white focus:outline-none text-2xl md:text-3xl">
+
+    <nav class="bg-gray-100 p-5 fixed top-0 left-0 w-full  z-50">
+        <div class="container mx-auto px-4 md:px-10 flex justify-between items-center">
+
+            <a href="index.html" class="text-gray-800 text-3xl md:text-4xl font-bold">PORT</a>
+
+            <button id="menu-btn" class="block md:hidden text-gray-700 text-3xl focus:outline-none">
                 ☰
             </button>
-            <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-xl">
-                <li><a href="index.html" class="text-white hover:text-gray-400">Home</a></li>
-                <li><a href="about.html" class="text-white hover:text-gray-400">About</a></li>
-                <li><a href="shop.html" class="text-white hover:text-gray-400">Shop</a></li>
-                <li><a href="contact.html" class="text-white hover:text-gray-400">Contact</a></li>
+
+       
+            <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-lg font-medium">
+                <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-green-600">About</a></li>
+                <li><a href="shop.html" class="hover:text-green-600">Shop</a></li>
+                <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
             </ul>
 
             <ul class="text-center hidden sm:block" id="navbarElement"></ul>
+        </div>
 
+    
+
+
+        <div class="container mx-auto mt-4 py-4 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center md:items-stretch justify-between gap-4">
+
+         
+                <div class="w-full md:w-auto">
+                    <select id="brand-filter"
+                        class="w-full md:w-48 border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                        <option value="">All Brands</option>
+                    </select>
+                </div>
+
+          
+                <div class="w-full md:w-auto flex-1">
+                    <input type="search" id="search"
+                        class="w-full bg-gray-100 px-6 py-2 rounded-full border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
+                        placeholder="Search products...">
+                </div>
+
+    
+                <div class="w-full md:w-auto text-center md:text-right">
+                    <h1 class="text-black font-semibold text-sm md:text-base">
+                        📞 <span class="text-gray-700">Call Us Now </span> +01765034196
+                    </h1>
+                </div>
+
+            </div>
         </div>
 
 
+      
         <div id="mobile-menu"
-            class="hidden md:hidden bg-gray-900  space-y-2 p-5 transition-all duration-300 text-center">
-            <a href="index.html" class="block text-white font-bold">Home</a>
-            <a href="about.html" class="block text-white font-bold">About</a>
-            <a href="shop.html" class="block text-white font-bold">Shop</a>
-            <a href="contact.html" class="block text-white font-bold">Contact</a>
+            class="hidden md:hidden bg-gray-100  space-y-2 p-5 transition-all duration-300 text-center">
+            <a href="index.html" class="block text-gray-700 font-bold">Home</a>
+            <a href="about.html" class="block text-gray-700 font-bold">About</a>
+            <a href="shop.html" class="block text-gray-700 font-bold">Shop</a>
+            <a href="contact.html" class="block text-gray-700 font-bold">Contact</a>
 
             <div id="mobileNavbarElement"></div>
 
@@ -51,212 +87,302 @@
 
     <main>
 
-        <div class="hero-section h-80 sm:h-96 md:h-[32rem] lg:h-[40rem] mt-30">
-            <img src="image/R-bannar.png" alt="Banner Image" class="object-cover w-full h-full">
+        <div class="hero-section relative h-[75vh]">
+            <div>
+                <img src="image/Banna-7.png" alt="Banner Image" class="object-cover w-full h-full">
+            </div>
+
+
+            <div class="bg-gray-150 h-32 flex items-center justify-center gap-10 px-4">
+    
+                <div class="flex items-center bg-grat-5000 p-20 px-4 py-2 rounded-md gap-3">
+                    <p class="text-2xl">📞</p>
+                    <div class="">
+                        <h1 class="text-black font-semibold text-sm md:text-base">MONEY BACK GUARANTEE</h1>
+                        <p class="text-black font-medium text-xs md:text-sm">+01765034196</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center px-4 py-2 rounded-md gap-3">
+                    <p class="text-2xl">📞</p>
+                    <div>
+                        <h1 class="text-black font-semibold text-sm md:text-base">MONEY BACK GUARANTEE</h1>
+                        <p class="text-black font-medium text-xs md:text-sm">100% Money Back Guarantee</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center px-4 py-2 rounded-md gap-3 ">
+                    <p class="text-2xl">📞</p>
+                    <div>
+                        <h1 class="text-black font-semibold text-sm md:text-base">MONEY BACK GUARANTEE </h1>
+                        <p class="text-black font-medium text-xs md:text-sm">+01987654321</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-
 
 
         <div class="main-container container mx-auto px-4 sm:px-6 lg:px-8 pt-10">
 
-
-            <div class="product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-10 gap-6">
-
-
-                <div class="sidebar p-4 rounded-md h-96 col-span-1 ">
-                    <div>
-                        <h1 class="text-xl md:text-xl font-bold  rounded-md text-black ">Search By Product</h1>
-                        <input type="search" id="search" placeholder="Search for products..."
-                            class="w-full border border-gray-300 rounded-md p-2 text-gray-800">
-                    </div>
-
-                    <h1 class="text-xl md:text-xl font-bold p-1 rounded-md text-black">Filter By Category</h1>
-                    <ul id="brand-list" class=" flex flex-col space-y-2 text-start">
-                        <li>
-                            <button class="bg-white text-black rounded p-2 w-full"
-                                onclick="filterProducts('all')">All</button>
-                        </li>
-
-                    </ul>
-                </div>
-
-
-                <div class="product-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 col-span-4 pb-20"
-                    id="product-cart">
-
-                </div>
-            </div>
-
-
-            <section class="bg-white py-16 px-5 rounded-2xl pt-20 shadow-lg">
-                <div class="max-w-7xl mx-auto text-center">
-                    <h2 class="text-4xl font-semibold text-black mb-4">Our Products</h2>
-                    <p class="text-gray-600 text-lg mb-12">
-                        Cutting-edge financial technology solutions designed to optimize your business operations
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
-                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-700">OMS (Order Management System)</h3>
-                            <p class="text-gray-400 text-sm">
-                                Streamline trade processing and order executions with real-time analytics and reporting.
-                            </p>
-                        </div>
+            <section class="product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-20 gap-6">
 
 
 
-                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-700">Risk Management</h3>
-                            <p class="text-gray-500 text-sm">
-                                Advanced tools to monitor, manage and mitigate financial risks across platforms.
-                            </p>
-                        </div>
 
-
-                        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
-                            <h3 class="text-xl font-semibold mb-2 text-gray-700">Market Analytics</h3>
-                            <p class="text-gray-500 text-sm">
-                                Get deep market insights and customized analytics to support informed decisions.
-                            </p>
-                        </div>
-
-
+                <div class="bg-white  shadow-md hover:shadow-xl transition-shadow overflow-hidden pt-10">
+                    <img class="w-full h-56 object-cover" src="image/Watch.png" alt="Product 1">
+                    <div class="p-2 text-center bg-black">
+                        <h2 class="font-semibold mb-1 text-xl text-green-500">Save Up To</h2>
+                        <h1 class="text-5xl font-extrabold mb-2 text-white">$100</h1>
+                        <p class="mb-2 text-white font-bold"">On Port Watch Series 4</p>
                     </div>
                 </div>
+                   <div class=" bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden pt-10">
+                            <img class="w-full h-56 object-cover" src="image/Headphone_1.jpg" alt="Product 1">
+                        <div class="p-2 text-center bg-black">
+                            <h2 class="font-semibold mb-1 text-xl text-green-500">Save Up To</h2>
+                            <h1 class="text-5xl font-extrabold mb-2 text-white">$90</h1>
+                            <p class="mb-2 text-white font-bold"">On Port Headphone Series 6</p>
+                    </div>
+                </div>
+                   <div class=" bg-white shadow-md hover:shadow-xl transition-shadow overflow-hidden pt-10">
+                                <img class="w-full h-56 object-cover" src="image/Keybord.jpg" alt="Product 1">
+                            <div class="p-2 text-center bg-black">
+                                <h2 class="font-semibold mb-1 text-xl text-green-500">Save Up To</h2>
+                                <h1 class="text-5xl font-extrabold mb-2 text-white">$80</h1>
+                                <p class="mb-2 text-white font-bold">On Port Keybord Series 8</p>
+                            </div>
+                        </div>
+                        <div class="bg-white  shadow-md hover:shadow-xl transition-shadow overflow-hidden pt-10">
+                            <img class="w-full h-56 object-cover" src="image/car.jpeg" alt="Product 1">
+                            <div class="p-2 text-center bg-black">
+                                <h2 class="font-semibold mb-1 text-xl text-green-500">Save Up To</h2>
+                                <h1 class="text-5xl font-extrabold mb-2 text-white">$70</h1>
+                                <p class="mb-2 text-white font-bold"">On Port Car Series 2</p>
+                    </div>
+                </div>
+               
             </section>
 
+                            <div class=" product-carts grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+                                    pt-10 gap-5 ">
+                                <h1 class=" font-bold transition-colors duration-300 cursor-pointer">
+                                    LATEST PRODUCT
+                                    </h1>
+
+                                <div class="product-cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 col-span-4 pb-20"
+                                    id="product-cart">
+                                </div>
+                            </div>
 
 
 
 
-            <section class="selection 2">
-                <div class="text-center py-5 pt-20 ">
 
-                    <h2 class="text-4xl font-semibold text-gray-700 ">Customer Review</h2>
-                    <p class="text-gray-700  ">
-                        Hear what our happy customers have to say!
-                    </p>
-                </div>
-                <div class="service-container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 md:py-10  pt-10">
+                            <section class="bg-white py-16 px-5 pt-10">
+                                <div class="max-w-7xl mx-auto text-center">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
 
-                    <div
-                        class="bg-white border border-gray-200 rounded-3xl shadow-lg p-6 transition-transform transform hover:scale-105 duration-300">
-                        <img class="h-28 w-28 mx-auto rounded-full object-cover ring-4 ring-blue-100"
-                            src="./image/arman.jpg" alt="Mohammad Arman">
-                        <h2 class="mt-4 text-xl md:text-2xl font-bold text-white text-center">Mohammad Arman</h2>
-                        <p class="mt-2 text-center text-gray-700">Shop anytime, anywhere with an intuitive interface.
-                        </p>
-                        <div class="mt-4 flex justify-center space-x-1 text-yellow-400 text-xl">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+
+                                        <div
+                                            class="bg-white rounded-xl p-6 transition duration-300 text-center flex flex-col items-center">
+
+                                            <div class="border-2 border-gray-300 rounded-full p-3 mb-4">
+                                                <img src="image/messege.svg" alt="" class="h-16 w-16 object-contain">
+                                            </div>
+
+                                            <h3 class="text-xl font-semibold mb-2 text-gray-700">Customer Support</h3>
+                                            <p class="text-gray-600 mb-1">Need Assistance?</p>
+                                            <p class="text-gray-400 text-sm">
+                                                Streamline trade processing and order executions with real-time
+                                                analytics and reporting.
+                                            </p>
+                                        </div>
+
+
+                                        <div
+                                            class="bg-white rounded-xl p-6 transition duration-300 text-center flex flex-col items-center">
+
+                                            <div class="border-2 border-gray-300 rounded-full p-3 mb-4">
+                                                <img src="image/messege.svg" alt="" class="h-16 w-16 object-contain">
+                                            </div>
+
+                                            <h3 class="text-xl font-semibold mb-2 text-gray-700">Customer Support</h3>
+                                            <p class="text-gray-600 mb-1">Need Assistance?</p>
+                                            <p class="text-gray-400 text-sm">
+                                                Streamline trade processing and order executions with real-time
+                                                analytics and reporting.
+                                            </p>
+                                        </div>
+
+
+                                        <div
+                                            class="bg-white rounded-xl p-6 transition duration-300 text-center flex flex-col items-center">
+
+                                            <div class="border-2 border-gray-300 rounded-full p-3 mb-4">
+                                                <img src="image/messege.svg" alt="" class="h-16 w-16 object-contain">
+                                            </div>
+
+                                            <h3 class="text-xl font-semibold mb-2 text-gray-700">Customer Support</h3>
+                                            <p class="text-gray-600 mb-1">Need Assistance?</p>
+                                            <p class="text-gray-400 text-sm">
+                                                Streamline trade processing and order executions with real-time
+                                                analytics and reporting.
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section>
+
+
+                                <div class="partners py-5 bg-white ext-center">
+                                    <div class="text-center py-5 pt-10 pb-10">
+
+
+                                        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Company Partners
+                                        </h2>
+
+                                    </div>
+
+
+
+                                    <div class="flex flex-wrap justify-center gap-10 px-20">
+                                        <div
+                                            class="bg-gray-100 overflow-hidden w-full h-64 hover:scale-105 transition-transform duration-300">
+                                            <img class="w-full h-full object-cover object-center"
+                                                src="./image/amazon.avif" alt="Partner 1">
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+
+
+                            </section>
+
+                            <section class=" py-16">
+                                <div class="container mx-auto px-6 md:px-12">
+                                    <div class="text-center py-5 pt-10 ">
+                                        <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Coustomer Review
+                                        </h2>
+
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                                        <div
+                                            class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-2xl transition max-w-sm">
+
+                                            <div class="flex items-center gap-4 mb-4">
+                                                <img src="image/young-bearded-man-with-striped-shirt_273609-5677.jpg"
+                                                    alt="Sarah M."
+                                                    class="w-14 h-14 rounded-full object-cover border-2 border-gray-300" />
+                                                <div>
+                                                    <h4 class="text-lg font-semibold text-gray-800">Sarah M.</h4>
+                                                    <p class="text-sm text-gray-500">CEO, DesignCo</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-4 flex justify-start space-x-1 text-yellow-400 text-xl">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-base italic">"Outstanding service with amazing
+                                                attention to detail.
+                                                Highly recommended for professional design needs."</p>
+                                        </div>
+
+                                        <!-- Card 2 -->
+                                        <div class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-2xl transition">
+
+                                            <div class="flex items-center gap-4 mt-4">
+                                                <img src="image/arman.jpg" alt="Sarah M."
+                                                    class="w-14 h-14 rounded-full object-cover border-2 border-gray-300" />
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-800">John D.</h4>
+                                                    <p class="text-sm text-gray-500">Marketing Head, TechPro</p>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 flex justify-start space-x-1 text-yellow-400 text-xl">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-base mb-4 italic">"They transformed our vision
+                                                into a beautiful,
+                                                functional site."</p>
+                                        </div>
+
+
+                                        <div class="bg-white shadow-xl rounded-2xl p-6 hover:shadow-2xl transition">
+                                            <div class="flex items-center gap-4 mt-4">
+                                                <img src="image/stylish-handsome-indian-man-tshirt-pastel-wall_496169-1571.jpg"
+                                                    alt="Sarah M."
+                                                    class="w-14 h-14 rounded-full object-cover border-2 border-gray-300" />
+                                                <div>
+                                                    <h4 class="font-semibold text-gray-800">Maria R.</h4>
+                                                    <p class="text-sm text-gray-500">Founder, BeautyNest</p>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 flex justify-start space-x-1 text-yellow-400 text-xl">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <p class="text-gray-600 text-base mb-4 italic">"Creative team with a
+                                                strategic mindset. Highly
+                                                recommended!"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <div class="text-center pt-15 ">
+                                <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Social Media</h2>
+
+                            </div>
+                            <div
+                                class="service-container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 md:py-20 pb-30 pt-10">
+
+                                <div
+                                    class="container-1 flex flex-col text-center border bg-white border-gray-200 shadow-lg hover:scale-105 transition-transform p-6">
+                                    <img class="h-10 mx-auto" src="./image/linkdin.svg" alt="Mobile Shopping">
+                                    <a href="https://www.linkedin.com/feed/">
+                                        <h1 class="text-2xl font-semibold mt-3 text-gray-700">Linkedin</h1>
+                                    </a>
+                                    <p class="mt-2 text-lg text-gray-700">Shop anytime,This is my linkedln account</p>
+                                </div>
+                                <div
+                                    class="container-1 flex flex-col text-center border bg-white border-gray-200  shadow-xl hover:scale-105 transition-transform p-6">
+                                    <img class="h-10 mx-auto" src="./image/images.png" alt="Mobile Shopping">
+                                    <a href="https://www.facebook.com/mbarmanhossen123">
+                                        <h1 class="text-2xl font-semibold mt-3 text-gray-700"> Facebook</h1>
+                                    </a>
+                                    <p class="mt-2 text-lg text-gray-700">Shop anytime, This is my facebook account</p>
+                                </div>
+                                <div
+                                    class="container-1 flex flex-col text-center border bg-white border-gray-200  shadow-xl hover:scale-105 transition-transform p-6">
+                                    <img class="h-10 mx-auto"
+                                        src="./image/instagram-vector-logo-icon-social-media-logotype-black-white_901408-391.avif"
+                                        alt="Mobile Shopping">
+                                    <a href="https://www.instagram.com/">
+                                        <h1 class="text-2xl font-semibold mt-3 text-gray-700">Instagram</h1>
+                                    </a>
+                                    <p class="mt-2 text-lg text-gray-700">Shop anytime, This is my instagram account</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div
-                        class="bg-white border border-gray-200 rounded-3xl shadow-lg p-6 transition-transform transform hover:scale-105 duration-300">
-                        <img class="h-28 w-28 mx-auto rounded-full object-cover ring-4 ring-blue-100"
-                            src="./image/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="Lemon Hossen">
-                        <h2 class="mt-4 text-xl md:text-2xl  font-bold text-white text-center">Lemon Hossen</h2>
-                        <p class="mt-2 text-center text-gray-700">This product is good and delivery was fast.</p>
-                        <div class="mt-4 flex justify-center space-x-1 text-yellow-400 text-xl">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white border border-gray-200 rounded-3xl shadow-lg p-6 transition-transform transform hover:scale-105 duration-300">
-                        <img class="h-28 w-28 mx-auto rounded-full object-cover ring-4 ring-blue-100"
-                            src="./image/arman.jpg" alt="Sazib Hossain">
-                        <h2 class="mt-4 text-xl md:text-2xl font-bold text-white text-center">Sazib Hossain</h2>
-                        <p class="mt-2 text-center text-gray-700">Low cost and good product service.</p>
-                        <div class="mt-4 flex justify-center space-x-1 text-yellow-400 text-xl">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <div class="partners py-5 bg-white ext-center">
-                <div class="text-center py-5 pt-10 pb-20">
-
-                    <h2 class="text-4xl font-semibold text-gray-700 ">Company Partners</h2>
-                    <p class="text-gary-700 text-lg">
-                        Proudly partnered with innovative and global brands.
-                    </p>
-                </div>
-
-
-
-                <div class="flex flex-wrap justify-center gap-10 px-20">
-                    <div
-                        class="bg-gray-100 rounded-lg shadow-md overflow-hidden w-full h-64 hover:scale-105 transition-transform duration-300">
-                        <img class="w-full h-full object-cover object-center" src="./image/amazon.avif" alt="Partner 1">
-                    </div>
-                    <div
-                        class="bg-gray-100 rounded-lg shadow-md overflow-hidden w-full h-64 hover:scale-105 transition-transform duration-300">
-                        <img class="w-full h-full object-cover object-center" src="./image/luxury-brands-p8698tbknynsue1w.jpg"
-                            alt="Partner 2">
-                    </div>
-                    <div
-                        class="bg-gray-100 rounded-lg shadow-md overflow-hidden w-full h-64 hover:scale-105 transition-transform duration-300">
-                        <img class="w-full h-full object-cover object-center" src="./image/armani.jpg" alt="Partner 3">
-                    </div>
-                </div>
-
-                
-
-            </div>
-
-
-
-
-
-            <div class="text-center pt-15 ">
-
-                <h2 class="text-4xl font-semibold text-gray-700 ">Social Media</h2>
-                <p class="text-gray-700 text-lg">
-                    Discover how our innovative financial tech solutions are streamlining operations and driving real
-                    results for businesses worldwide.
-                </p>
-            </div>
-
-            <div class="service-container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 md:py-20 pb-30 pt-10">
-
-                <div
-                    class="container-1 flex flex-col text-center border bg-white border-gray-200 rounded-2xl shadow-lg hover:scale-105 transition-transform p-6">
-                    <img class="h-10 mx-auto" src="./image/linkdin.svg" alt="Mobile Shopping">
-                    <a href="https://www.linkedin.com/feed/">
-                        <h1 class="text-2xl font-semibold mt-3 text-gray-700">Linkedin</h1>
-                    </a>
-                    <p class="mt-2 text-lg text-gray-700">Shop anytime,This is my linkedln account</p>
-                </div>
-                <div
-                    class="container-1 flex flex-col text-center border bg-white border-gray-200 rounded-2xl shadow-xl hover:scale-105 transition-transform p-6">
-                    <img class="h-10 mx-auto" src="./image/images.png" alt="Mobile Shopping">
-                    <a href="https://www.facebook.com/mbarmanhossen123">
-                        <h1 class="text-2xl font-semibold mt-3 text-gray-700"> Facebook</h1>
-                    </a>
-                    <p class="mt-2 text-lg text-gray-700">Shop anytime, This is my facebook account</p>
-                </div>
-                <div
-                    class="container-1 flex flex-col text-center border bg-white border-gray-200 rounded-2xl shadow-xl hover:scale-105 transition-transform p-6">
-                    <img class="h-10 mx-auto"
-                        src="./image/instagram-vector-logo-icon-social-media-logotype-black-white_901408-391.avif"
-                        alt="Mobile Shopping">
-                    <a href="https://www.instagram.com/">
-                        <h1 class="text-2xl font-semibold mt-3 text-gray-700">Instagram</h1>
-                    </a>
-                    <p class="mt-2 text-lg text-gray-700">Shop anytime, This is my instagram account</p>
-                </div>
-            </div>
-
-        </div>
     </main>
 
-    <footer class="bg-gray-900 text-white px-6 py-10 pt-10">
+    <footer class="bg-gray-800 text-white px-6 py-10 pt-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
 
@@ -319,7 +445,7 @@
                     products.</p>
                 <form class="flex flex-col space-y-3">
                     <input type="email" placeholder="Your email address" required
-                        class="px-4 py-2 bg-gray-800 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-600">
+                        class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
                     <button type="submit"
                         class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
                 </form>
@@ -331,17 +457,11 @@
         </div>
     </footer>
 
-
-
     <script src="./js/navbar.js"></script>
     <script src="./js/home.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/shop.js"></script>
-
-
-
 </body>
-
 
 </html>

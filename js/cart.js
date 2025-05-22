@@ -1,5 +1,6 @@
+
 const loadCart = () => {
-  const cartContainer = document.getElementById("cart");
+  const cartContainer = document.getElementById("cart-items");
   const totalAmountContainer = document.getElementById("total-amount");
   const ProductContainer = document.getElementById("total-product");
 
@@ -8,76 +9,73 @@ const loadCart = () => {
   fetch("https://glamify-backend-code.onrender.com/cart/")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       cartContainer.innerHTML = "";
       let totalAmount = 0;
       let totalProduct = 0;
 
       data.forEach((item) => {
-        totalAmount += item.product_price * item.quantity;
-        totalProduct += item.quantity;
+        const { id, product_image, product_name, product_price, quantity } = item;
+
+        totalAmount += product_price * quantity;
+        totalProduct += quantity;
 
         const productCard = `
 
+        <hr class="border-gray-200">
+          <div class="flex flex-col md:flex-row items-center bg-white  gap-6  mb-4">
+            <!-- Product Image -->
+            <div class="w-24 h-24 md:w-32 md:h-32  overflow-hidden flex-shrink-0">
+              <img src="${product_image}" alt="${product_name}" class="w-full h-full object-cover">
+            </div>
 
-    <div class="bg-gray shadow-lg rounded-lg overflow-hidden p-4  flex flex-col md:flex-row items-center w-full gap-6 bg-white">
-   
-    <div class="w-32 h-32 md:w-64 md:h-64 flex-shrink-0">
-        <img class="w-full h-full object-cover rounded-md" src="${
-          item.product_image
-        }" alt="${item.product_name}">
-    </div>
+            <!-- Product Info and Actions -->
+            <div class="flex flex-col md:flex-row justify-between items-center w-full gap-6">
+              <!-- Name and Price -->
+              <div class="flex flex-col gap-1 text-center md:text-left md:w-1/4">
+                <h3 class="text-lg font-semibold text-gray-800">${product_name}</h3>
+                <p class="text-sm text-gray-500">৳${product_price} per item</p>
+              </div>
 
-    <!-- Product Details -->
-    <div class="flex flex-col md:flex-row flex-grow items-center justify-between w-full gap-5">
-        <!-- Product Name -->
-        <h5 class="text-lg md:text-xl font-semibold text-gray-700 text-center md:text-left">${
-          item.product_name
-        }</h5>
+              <!-- Quantity Selector -->
+              <div class="flex items-center gap-3 md:w-1/4 justify-center">
+                <button onclick="updateQuantity(${id}, ${quantity - 1})"
+                  class="w-8 h-8 bg-gray-100 rounded flex items-center justify-center text-lg font-bold hover:bg-gray-200 transition">−</button>
+                <span class="text-gray-800 font-semibold">${quantity}</span>
+                <button onclick="updateQuantity(${id}, ${quantity + 1})"
+                  class="w-8 h-8 bg-gray-100 rounded flex items-center justify-center text-lg font-bold hover:bg-gray-200 transition">+</button>
+              </div>
 
-        <!-- Quantity Update -->
-        <div class="flex items-center gap-3">
-            <button onclick="updateQuantity(${item.id}, ${
-          item.quantity - 1
-        })" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400 transition">
-                −
-            </button>
-            <p class="text-gray-700 text-lg font-semibold">${item.quantity}</p>
-            <button onclick="updateQuantity(${item.id}, ${
-          item.quantity + 1
-        })" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400 transition">
-                +
-            </button>
-        </div>
+              <!-- Quantity x Price -->
+              <div class="md:w-1/4 text-center">
+                <p class="text-black text-base font-medium">${quantity} × ৳${product_price}</p>
+              </div>
 
-        <!-- Total Price -->
-        <p class="text-white text-lg font-bold px-4">${item.quantity} x ৳${
-          item.product_price
-        }</p>
+                <div class="md:w-1/4 text-center">
+                 <p class="text-lg font-bold text-gray-900">৳${(quantity * product_price).toLocaleString()}</p>
+              </div>
+              
 
-        <!-- Remove Button -->
-        <button onclick="removeFromCart(${
-          item.id
-        })" class="bg-red-500 text-black font-bold px-4 py-2 rounded hover:bg-red-600 transition">
-            Remove
-        </button>
-    </div>
-</div>
-
-
-                `;
+              <!-- Total & Remove -->
+              <div class="flex flex-col items-center md:items-end gap-2 md:w-1/4">
+              
+                <button onclick="removeFromCart(${id})"
+                  class="text-red-600 text-sm font-medium border p-2 border-red-600">Remove</button>
+              </div>
+            </div>
+          </div>
+        `;
 
         cartContainer.innerHTML += productCard;
       });
 
-      totalAmountContainer.innerText = `Total Price : ${totalAmount}৳`;
+      totalAmountContainer.innerText = `Total Price : ৳${totalAmount.toLocaleString()}`;
+      ProductContainer.innerText = `Total Product : ${totalProduct}`;
       localStorage.setItem("checkoutTotal", totalAmount);
-
-      ProductContainer.innerHTML = `Total Product : ${totalProduct}`;
       localStorage.setItem("Total", totalProduct);
     })
     .catch((error) => {
       console.error("Error fetching cart data:", error);
+      cartContainer.innerHTML = `<p class="text-red-600">Failed to load cart items.</p>`;
     });
 };
 
@@ -97,6 +95,7 @@ const updateQuantity = (cartItemId, newQuantity) => {
     })
     .catch((error) => {
       console.error("Error updating quantity:", error);
+      alert("Failed to update quantity.");
     });
 };
 
@@ -108,16 +107,13 @@ const removeFromCart = (cartItemId) => {
       if (response.ok) {
         loadCart();
       } else {
-        alert("Failed to remove item");
+        alert("Failed to remove item from cart.");
       }
     })
     .catch((error) => {
-      console.error("Error removing item from cart:", error);
-      alert("Error removing item");
+      console.error("Error removing item:", error);
+      alert("Error removing item from cart.");
     });
 };
 
 loadCart();
-
-
-

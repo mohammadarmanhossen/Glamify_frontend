@@ -1,5 +1,7 @@
 
 
+
+
 const userProfile = () => {
   const user_id = localStorage.getItem("user_id");
   console.log("Logged-in User ID:", user_id);
@@ -14,32 +16,42 @@ const userProfile = () => {
       const div = document.createElement("div");
 
       div.innerHTML = `
-       <div class="min-h-screen flex items-center justify-center p-6">
-     <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl p-8">
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-      
-      <!-- Profile Image -->
-      <img src="/image/arman.jpg" alt="Profile Picture" class="w-36 h-36 rounded-full border-4 border-white shadow-md object-cover">
+        <section class="min-h-screen flex items-center justify-center bg-gradient-to-br py-10 px-4">
+          <div class=" shadow-2xl w-full max-w-4xl overflow-hidden">
 
-      <!-- Profile Info -->
-      <div class="text-center md:text-left flex-1">
-        <h2 class="text-2xl font-bold text-gray-700 mb-4">User Profile</h2>
-        
-        <p class="text-lg font-medium text-gray-700">👤 Username: <span class="font-semibold text-gray-700">${currentUser.username}</span></p>
-        <p class="text-lg font-medium text-gray-700">🧑 First Name: <span class="font-semibold text-gray-700">${currentUser.first_name}</span></p>
-        <p class="text-lg font-medium text-gray-700">👨‍🦱 Last Name: <span class="font-semibold text-gray-700">${currentUser.last_name}</span></p>
-        <p class="text-lg font-medium text-gray-700">📧 Email: <span class="font-semibold text-gray-700">${currentUser.email}</span></p>
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-gray-500 to-gray-700 p-8 text-white text-center">
+              <h1 class="text-4xl font-extrabold">My Profile</h1>
+              <p class="text-sm mt-2">Manage your personal information here</p>
+            </div>
 
-        <!-- Button -->
-        <div class="mt-6">
-          <a href="./change_password.html" class="inline-block bg-gray-300 hover:bg-gray-400 text-black  font-bold px-6 py-3 rounded-lg  transition">Edit Profile</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- Content -->
+            <div class="p-10 grid md:grid-cols-2 gap-8">
+              
+              <!-- Profile Picture -->
+              <div class="flex flex-col items-center justify-center">
+                <img src="/image/arman.jpg" alt="Profile Picture" class="w-44 h-44 rounded-full border-4 border-gray-300 shadow-lg object-cover hover:scale-105 transition duration-300">
+                <p class="mt-4 text-gray-600 font-medium">User ID: ${currentUser.id}</p>
+              </div>
 
-        `;
+              <!-- Profile Info -->
+              <div class="text-gray-700 space-y-4">
+                <p><span class="font-semibold">👤 Username:</span> ${currentUser.username}</p>
+                <p><span class="font-semibold">🧑 First Name:</span> ${currentUser.first_name}</p>
+                <p><span class="font-semibold">👨‍🦱 Last Name:</span> ${currentUser.last_name}</p>
+                <p><span class="font-semibold">📧 Email:</span> ${currentUser.email}</p>
+              </div>
+            </div>
+
+            <!-- Footer / Button -->
+            <div class="px-10 pb-10">
+              <a href="./change_password.html" class="block text-center w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3  transition duration-300">
+               Edit Profile
+              </a>
+            </div>
+          </div>
+        </section>
+      `;
 
       parent.appendChild(div);
     })

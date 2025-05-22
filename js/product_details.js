@@ -1,6 +1,3 @@
-
-
-
 const productDetails = () => {
   const productDetailsContainer = document.getElementById("product-details");
   if (!productDetailsContainer) return;
@@ -19,52 +16,54 @@ const productDetails = () => {
     .then((product) => {
       console.log(product);
 
+      
       const productHTML = `
 
+<div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full  border-1 border-gray-500 p-6 gap-8">
 
+  <!-- Product Image -->
+  <div class="flex items-center justify-center  p-6">
+    <img src="${product.image_url}" alt="${product.name}" class="w-full md:w-[400px] h-auto object-contain  transition-transform duration-300 hover:scale-105">
+  </div>
 
+  <!-- Product Details -->
+  <div class="p-8 flex flex-col justify-between text-center md:text-left">
 
-<div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full bg-white border border-white rounded-2xl shadow-lg p-6 gap-8">
+    <!-- Product Name -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">${product.name}</h1>
 
- 
-     <div class="product-img flex justify-center">
-        <img class="w-full md:w-96 h-auto object-cover"
-            src="${product.image_url}" alt="${product.name}">
+    <!-- Ratings -->
+    <div class="flex items-center justify-center md:justify-start gap-1 mb-3 text-yellow-500">
+      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      <span class="text-sm text-gray-500 ml-2">(6 Reviews)</span>
     </div>
 
+    <!-- Description -->
+    <p class="text-gray-600 mb-4 leading-relaxed">${product.description}</p>
 
-    <div class="w-full h-full p-4 md:p-6 text-center md:text-left">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-4">${product.name}</h2>
+    <!-- SKU -->
+    <p class="text-sm text-gray-500 mb-3">SKU: 654613612</p>
 
-        <p class="text-gray-700 text-base md:text-lg mb-4">
-            ${product.description}
-        </p>
+    <!-- Price -->
+        <p class="text-gray-700 font-medium mb-3">Price: ৳${product.price}</p>
+   
+    <!-- Stock -->
+    <p class="text-gray-700 font-medium mb-6">Stock: ${product.stock}</p>
 
-        <p class="text-gray-700 text-xl md:text-2xl font-bold mb-4">
-            ৳${product.price}
-        </p>
-
-        <p class="text-gray-700 font-medium mb-6">
-            Stock: ${product.stock}
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-            <button id="add-to-cart"
-                class="bg-gray-300 hover:bg-gray-400 text-black font-bold px-6 py-2 rounded-lg  shadow-md hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
-                Add to Cart
-            </button>
-            <button id="go-to-cart"
-                class="bg-gray-300 hover:bg-gray-400 text-black font-bold px-6 py-2 rounded-lg  shadow-md hover:scale-105 transition-transform duration-300 w-full sm:w-auto">
-                Go to Cart
-            </button>
-        </div>
-
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4">
+      <button id="add-to-cart"
+        class="w-full sm:w-auto bg-gray-800 text-gray-300 border border-gray-800 px-6 py-3 font-bold hover:bg-gray-700  transition duration-300">
+        🛒 Add to Cart
+      </button>
+      <button id="go-to-cart"
+        class="w-full sm:w-auto bg-gray-800 text-gray-300 border border-gray-800 px-6 py-3 font-bold hover:bg-gray-700  transition duration-300">
+        🛍️ Go to Cart
+      </button>
     </div>
 
   </div>
-
-
+</div>
          `;
 
       productDetailsContainer.innerHTML = productHTML;
@@ -76,12 +75,15 @@ const productDetails = () => {
       document.getElementById("go-to-cart").addEventListener("click", () => {
         window.location.href = "./cart.html";
       });
+        fetchRelatedProductsByBrand(product.id);
     })
     .catch((error) => {
       console.error("Error fetching product details:", error);
       productDetailsContainer.innerHTML =
         "<p class='text-red-500'>Failed to load product details.</p>";
-    });
+    }); 
+
+    
 };
 
 const addToCart = (productId) => {
@@ -102,12 +104,11 @@ const addToCart = (productId) => {
     .then((data) => {
       console.log("Product added to cart:", data);
       Swal.fire({
-        title: 'Success!',
-        text: 'Product added successfully .',
-        icon: 'success',
-        confirmButtonText: 'OK'
-      })
-      
+        title: "Success!",
+        text: "Product added successfully .",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     })
     .catch((error) => {
       console.error("Error adding product to cart:", error);
@@ -116,8 +117,6 @@ const addToCart = (productId) => {
 };
 
 productDetails();
-
-
 
 const productReview = (event) => {
   event.preventDefault();
@@ -147,11 +146,11 @@ const productReview = (event) => {
     .then((data) => {
       console.log("Server Response:", data);
       Swal.fire({
-        title: 'Success!',
-        text: 'Your review successfully send.',
-        icon: 'success',
-        confirmButtonText: 'OK'
-      })
+        title: "Success!",
+        text: "Your review successfully send.",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -166,3 +165,40 @@ form.addEventListener("submit", productReview);
 
 
 
+
+const fetchRelatedProductsByBrand = (productId) => {
+  fetch(`https://glamify-backend-code.onrender.com/product/${productId}/`)
+    .then((res) => res.json())
+    .then((currentProduct) => {
+      const brandId = currentProduct.brand;
+
+      fetch("https://glamify-backend-code.onrender.com/product/")
+        .then((res) => res.json())
+        .then((allProducts) => {
+          const related = allProducts.filter(
+            (p) => p.brand === brandId && p.id !== currentProduct.id
+          );
+
+          const container = document.getElementById("related-products-container");
+          container.innerHTML = "";
+
+          if (related.length === 0) {
+            container.innerHTML = "<p>No related products found.</p>";
+            return;
+          }
+
+          related.forEach((product) => {
+            const card = document.createElement("div");
+            card.className = "bg-white border p-4  text-center";
+            card.innerHTML = `
+              <a href="./product_details.html?id=${product.id}">
+                <img src="${product.image_url}" class="h-40 w-full object-cover mb-2 rounded">
+                <h3 class="text-lg font-bold">${product.name}</h3>
+                <p class="text-gray-500">৳${product.price}</p>
+              </a>
+            `;
+            container.appendChild(card);
+          });
+        });
+    });
+};
