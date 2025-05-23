@@ -32,7 +32,7 @@ const orderAndPayment = async (event) => {
 
   try {
     const orderResponse = await fetch(
-      "https://glamify-backend-code.onrender.com/orderitem/",
+      "https://glamify-backend-ten.vercel.app/orderitem/",
       {
         method: "POST",
         headers: {
@@ -58,7 +58,7 @@ const orderAndPayment = async (event) => {
 
     console.log(Data);
     const paymentResponse = await fetch(
-      "https://glamify-backend-code.onrender.com/payment/create_payment/",
+      "https://glamify-backend-ten.vercel.app/payment/create_payment/",
       {
         method: "POST",
         headers: {

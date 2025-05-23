@@ -31,7 +31,7 @@ const checkoutporduct = (event) => {
 
     console.log(checkout);
  
-    fetch("https://glamify-backend-code.onrender.com/order/", {
+    fetch("https://glamify-backend-ten.vercel.app/order/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

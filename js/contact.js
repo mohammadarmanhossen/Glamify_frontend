@@ -43,7 +43,7 @@ const contact = () => {
 
       console.log(userData);
 
-      fetch("https://glamify-backend-code.onrender.com/account/contact/", {
+      fetch("https://glamify-backend-ten.vercel.app/account/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

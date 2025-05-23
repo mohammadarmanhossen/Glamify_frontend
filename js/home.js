@@ -1,7 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const baseURL = "https://glamify-backend-code.onrender.com/product/";
+  const baseURL = "https://glamify-backend-ten.vercel.app/product/";
   const user_id = localStorage.getItem("user_id");
 
   const products = (brandId = "all", searchQuery = "") => {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const brandList = document.getElementById("brand-list");
     const brandSelect = document.getElementById("brand-filter");
 
-    fetch("https://glamify-backend-code.onrender.com/Brand/")
+    fetch("https://glamify-backend-ten.vercel.app/Brand/")
       .then(response => response.json())
       .then(data => {
         if (brandList) brandList.appendChild(createBrandButton("All", "all"));

@@ -6,7 +6,7 @@ const userProfile = () => {
   const user_id = localStorage.getItem("user_id");
   console.log("Logged-in User ID:", user_id);
 
-  fetch("https://glamify-backend-code.onrender.com/account/user/")
+  fetch("https://glamify-backend-ten.vercel.app/account/user/")
     .then((res) => res.json())
     .then((data) => {
       const currentUser = data.find((item) => item.id === parseInt(user_id));

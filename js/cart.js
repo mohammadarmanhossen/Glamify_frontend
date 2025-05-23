@@ -6,7 +6,7 @@ const loadCart = () => {
 
   if (!cartContainer) return;
 
-  fetch("https://glamify-backend-code.onrender.com/cart/")
+  fetch("https://glamify-backend-ten.vercel.app/cart/")
     .then((response) => response.json())
     .then((data) => {
       cartContainer.innerHTML = "";
@@ -82,7 +82,7 @@ const loadCart = () => {
 const updateQuantity = (cartItemId, newQuantity) => {
   if (newQuantity < 1) return;
 
-  fetch(`https://glamify-backend-code.onrender.com/cart/${cartItemId}/`, {
+  fetch(`https://glamify-backend-ten.vercel.app/cart/${cartItemId}/`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const updateQuantity = (cartItemId, newQuantity) => {
 };
 
 const removeFromCart = (cartItemId) => {
-  fetch(`https://glamify-backend-code.onrender.com/cart/${cartItemId}/`, {
+  fetch(`https://glamify-backend-ten.vercel.app/cart/${cartItemId}/`, {
     method: "DELETE",
   })
     .then((response) => {

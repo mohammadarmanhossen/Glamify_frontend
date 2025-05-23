@@ -1,4 +1,4 @@
-const baseURL = "https://glamify-backend-code.onrender.com/product/";
+const baseURL = "https://glamify-backend-ten.vercel.app/product/";
 const user_id = localStorage.getItem("user_id");
 console.log("User_id:", user_id);
 
@@ -87,7 +87,7 @@ const brand = () => {
 
   brandList.innerHTML = "";
 
-  fetch("https://glamify-backend-code.onrender.com/Brand/")
+  fetch("https://glamify-backend-ten.vercel.app/Brand/")
     .then((response) => response.json())
     .then((data) => {
       const allButton = createBrandButton("All", "all");

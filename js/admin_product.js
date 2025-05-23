@@ -1,7 +1,7 @@
 
 
 const adminProduct = () => {
-    fetch('https://glamify-backend-code.onrender.com/product/', {
+    fetch('https://glamify-backend-ten.vercel.app/product/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

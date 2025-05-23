@@ -11,7 +11,7 @@ const productDetails = () => {
     return;
   }
 
-  fetch(`https://glamify-backend-code.onrender.com/product/${productId}/`)
+  fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`)
     .then((response) => response.json())
     .then((product) => {
       console.log(product);
@@ -89,7 +89,7 @@ const productDetails = () => {
 const addToCart = (productId) => {
   const quantity = 1;
 
-  fetch("https://glamify-backend-code.onrender.com/cart/", {
+  fetch("https://glamify-backend-ten.vercel.app/cart/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -135,7 +135,7 @@ const productReview = (event) => {
 
   console.log(reviewData);
 
-  fetch("https://glamify-backend-code.onrender.com/review/", {
+  fetch("https://glamify-backend-ten.vercel.app/review/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -167,12 +167,12 @@ form.addEventListener("submit", productReview);
 
 
 const fetchRelatedProductsByBrand = (productId) => {
-  fetch(`https://glamify-backend-code.onrender.com/product/${productId}/`)
+  fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`)
     .then((res) => res.json())
     .then((currentProduct) => {
       const brandId = currentProduct.brand;
 
-      fetch("https://glamify-backend-code.onrender.com/product/")
+      fetch("https://glamify-backend-ten.vercel.app/product/")
         .then((res) => res.json())
         .then((allProducts) => {
           const related = allProducts.filter(

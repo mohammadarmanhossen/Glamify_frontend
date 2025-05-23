@@ -1,5 +1,5 @@
 const adminContact = () => {
-  fetch("https://glamify-backend-code.onrender.com/account/contact/", {
+  fetch("https://glamify-backend-ten.vercel.app/account/contact/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

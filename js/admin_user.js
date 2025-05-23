@@ -1,7 +1,7 @@
 
 
 const adminUser = () => {
-    fetch('https://glamify-backend-code.onrender.com/account/user/', {
+    fetch('https://glamify-backend-ten.vercel.app/account/user/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const adminUser = () => {
 };
 
 const deleteUser = (userId) => {
-    fetch(`https://glamify-backend-code.onrender.com/account/user/${userId}/`, {
+    fetch(`https://glamify-backend-ten.vercel.app/account/user/${userId}/`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

@@ -29,7 +29,7 @@ const handlePasswordChange = (event) => {
   }
 
   
-fetch(`https://glamify-backend-code.onrender.com/account/change_password/${user_id}/`, {
+fetch(`https://glamify-backend-ten.vercel.app/account/change_password/${user_id}/`, {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
