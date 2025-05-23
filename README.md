@@ -8,7 +8,7 @@
 ## 🌐 Live Demo
 
 - 🔗 **Frontend Live Site:** [Glamify Frontend](https://glamify-frontend-site.netlify.app/)
-- 🔗 **Backend Live Site:** [Glamify Backend](https://glamify-backend-tp2c.onrender.com/)
+- 🔗 **Backend Live Site:** [Glamify Backend](https://glamify-backend-ten.vercel.app/)
 
 ---
 
