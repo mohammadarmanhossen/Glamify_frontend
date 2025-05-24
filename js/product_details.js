@@ -16,40 +16,43 @@ const productDetails = () => {
     .then((product) => {
       console.log(product);
 
-      
       const productHTML = `
 
 <div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full  border-1 border-gray-500 p-6 gap-8">
 
   <!-- Product Image -->
   <div class="flex items-center justify-center  p-6">
-    <img src="${product.image_url}" alt="${product.name}" class="w-full md:w-[400px] h-auto object-contain  transition-transform duration-300 hover:scale-105">
+    <img src="${product.image_url}" alt="${product.name}" class="w-full md:w-[400px] h-full object-contain  transition-transform duration-300 hover:scale-105">
   </div>
 
   <!-- Product Details -->
   <div class="p-8 flex flex-col justify-between text-center md:text-left">
 
     <!-- Product Name -->
-    <h1 class="text-3xl font-bold text-gray-800 mb-4">${product.name}</h1>
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-4">${product.name}</h1>
 
     <!-- Ratings -->
-    <div class="flex items-center justify-center md:justify-start gap-1 mb-3 text-yellow-500">
+    <div class="flex items-center font-extrabold justify-center md:justify-start gap-1 mb-3 text-yellow-500">
       <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       <span class="text-sm text-gray-500 ml-2">(6 Reviews)</span>
     </div>
 
     <!-- Description -->
-    <p class="text-gray-600 mb-4 leading-relaxed">${product.description}</p>
+    <p class="text-gray-600 mb-4 leading-relaxed font-bold">${product.description}</p>
 
     <!-- SKU -->
-    <p class="text-sm text-gray-500 mb-3">SKU: 654613612</p>
+    <p class="text-sm text-gray-500 mb-3 font-bold">SKU: 654613612</p>
 
     <!-- Price -->
-        <p class="text-gray-700 font-medium mb-3">Price: ৳${product.price}</p>
+        <p class="text-gray-500 font-bold mb-3">Price: ৳${product.price}</p>
    
     <!-- Stock -->
-    <p class="text-gray-700 font-medium mb-6">Stock: ${product.stock}</p>
+    <p class="text-gray-500 font-bold mb-6">Stock: ${product.stock}</p>
 
+      <div class="pb-5 text-gray-300">
+         <hr>
+    </div>
+  
     <!-- Buttons -->
     <div class="flex flex-col sm:flex-row gap-4">
       <button id="add-to-cart"
@@ -61,6 +64,27 @@ const productDetails = () => {
         🛍️ Go to Cart
       </button>
     </div>
+    <div class="pt-5 text-gray-300">
+         <hr>
+    </div>
+    <div class="flex space-x-4 mt-4">
+                
+                <a href="#" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-gray-500 hover:text-white text-lg"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter text-gray-500 hover:text-white text-lg"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in text-gray-500 hover:text-white text-lg"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram text-gray-500 hover:text-white text-lg"></i>
+                </a>
+                <p class="font-bold"> ❤️Add to Wishlist</p>
+     </div>
+  
+
 
   </div>
 </div>
@@ -75,15 +99,13 @@ const productDetails = () => {
       document.getElementById("go-to-cart").addEventListener("click", () => {
         window.location.href = "./cart.html";
       });
-        fetchRelatedProductsByBrand(product.id);
+      fetchRelatedProductsByBrand(product.id);
     })
     .catch((error) => {
       console.error("Error fetching product details:", error);
       productDetailsContainer.innerHTML =
         "<p class='text-red-500'>Failed to load product details.</p>";
-    }); 
-
-    
+    });
 };
 
 const addToCart = (productId) => {
@@ -161,11 +183,6 @@ const productReview = (event) => {
 const form = document.getElementById("reviewForm");
 form.addEventListener("submit", productReview);
 
-
-
-
-
-
 const fetchRelatedProductsByBrand = (productId) => {
   fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`)
     .then((res) => res.json())
@@ -179,7 +196,9 @@ const fetchRelatedProductsByBrand = (productId) => {
             (p) => p.brand === brandId && p.id !== currentProduct.id
           );
 
-          const container = document.getElementById("related-products-container");
+          const container = document.getElementById(
+            "related-products-container"
+          );
           container.innerHTML = "";
 
           if (related.length === 0) {

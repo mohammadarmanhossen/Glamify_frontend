@@ -14,11 +14,11 @@ const adminContact = () => {
 
       data.forEach((contact) => {
         const row = document.createElement("tr");
-        row.classList.add("border");
+        row.classList.add('border-b');
 
         row.innerHTML = `
          
-        <td class="p-2 ">${contact.id}</td>
+        <td class="p-2">${contact.id}</td>
         <td class="p-2 ">${contact.user}</td>
         <td class="p-2">${contact.name}</td>
         <td class="p-2 r">${contact.email}</td>
