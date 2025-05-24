@@ -52,11 +52,11 @@ Password: arman
 | Layer       | Technology                              |
 |-------------|------------------------------------------|
 | Backend     | Django, Django REST Framework            |
-| Frontend    | Html/Tailwind/JavaScript (Deployed on Netlify)    |
+| Frontend    | Html/Tailwind/JavaScript (Deployed on Vercel)    |
 | Database    | PostgreSQL                               |
 | Authentication | Gmail OAuth2                          |
 | Payment     | SSLCommerz                               |
-| Deployment  | Netlify (Frontend), Vercel (Backend)     |
+| Deployment  | Vercel (Frontend), Vercel (Backend)     |
 
 ---
 
