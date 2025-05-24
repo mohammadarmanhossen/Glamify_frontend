@@ -7,7 +7,7 @@
 
 ## 🌐 Live Demo
 
-- 🔗 **Frontend Live Site:** [Glamify Frontend](https://glamify-frontend-site.netlify.app/)
+- 🔗 **Frontend Live Site:** [Glamify Frontend](https://glamify-frontend.vercel.app/)
 - 🔗 **Backend Live Site:** [Glamify Backend](https://glamify-backend-ten.vercel.app/)
 
 ---
