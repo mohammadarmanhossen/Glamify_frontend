@@ -87,10 +87,6 @@ document.addEventListener('click', function (e) {
   }
 });
 
-
-
-  
-
 // Mobile menu toggle
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');

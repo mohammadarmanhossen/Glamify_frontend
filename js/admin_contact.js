@@ -40,7 +40,7 @@ const adminContact = () => {
           const contactId = event.target.getAttribute("data-id");
 
           fetch(
-            `https://glamify-backend-code.onrender.com/account/contact/${contactId}/`,
+            `https://glamify-backend-ten.vercel.app/account/contact/${contactId}/`,
             {
               method: "DELETE",
               headers: {

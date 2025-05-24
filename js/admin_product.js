@@ -47,7 +47,7 @@ const adminProduct = () => {
 };
 
 function deleteProduct(productId) {
-  fetch(`https://glamify-backend-code.onrender.com/product/${productId}/`, {
+  fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -83,7 +83,7 @@ document
     };
     console.log(productData);
 
-    fetch("https://glamify-backend-code.onrender.com/product/", {
+    fetch("https://glamify-backend-ten.vercel.app/product/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

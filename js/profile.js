@@ -1,7 +1,4 @@
 
-
-
-
 const userProfile = () => {
   const user_id = localStorage.getItem("user_id");
   console.log("Logged-in User ID:", user_id);

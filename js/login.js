@@ -33,7 +33,7 @@ const handleLogin = (event) => {
           icon: 'success',
           confirmButtonText: 'OK'
         }).then(() => {
-          window.location.href = "https://glamify-frontend-site.netlify.app/admin_dashbord.html"; 
+          window.location.href = "https://glamify-frontend.vercel.app/admin_dashbord.html"; 
         });
       } 
 
@@ -65,7 +65,7 @@ const handleLogin = (event) => {
               icon: 'success',
               confirmButtonText: 'OK'
             }).then(() => {
-              window.location.href = "https://glamify-frontend-site.netlify.app/index.html";
+              window.location.href = "https://glamify-frontend.vercel.app/index.html";
             });
           } else {
   

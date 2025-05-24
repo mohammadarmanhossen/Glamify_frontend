@@ -1,8 +1,4 @@
 
-
-
-
-
 const loadOrderItems = () => {
     fetch('https://glamify-backend-ten.vercel.app/orderitem/')
         .then(response => response.json())
