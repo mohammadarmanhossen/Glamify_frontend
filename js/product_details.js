@@ -1,5 +1,12 @@
 const productDetails = () => {
   const productDetailsContainer = document.getElementById("product-details");
+  productDetailsContainer.innerHTML = `
+  <div class="relative min-h-[300px]">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-12 h-12 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  </div>
+`;
   if (!productDetailsContainer) return;
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -56,11 +63,11 @@ const productDetails = () => {
     <!-- Buttons -->
     <div class="flex flex-col sm:flex-row gap-4">
       <button id="add-to-cart"
-        class="w-full sm:w-auto bg-gray-800 text-gray-300 border border-gray-800 px-6 py-3 font-bold hover:bg-gray-700  transition duration-300">
+        class="w-full sm:w-auto bg-gray-700 hover:bg-gray-800 text-white border border-gray-800 px-6 py-3 font-semibold  transition duration-300">
         🛒 Add to Cart
       </button>
       <button id="go-to-cart"
-        class="w-full sm:w-auto bg-gray-800 text-gray-300 border border-gray-800 px-6 py-3 font-bold hover:bg-gray-700  transition duration-300">
+        class="w-full sm:w-auto bg-gray-700  hover:bg-gray-800 text-white border border-gray-800 px-6 py-3 font-semibold  transition duration-300">
         🛍️ Go to Cart
       </button>
     </div>
@@ -94,6 +101,8 @@ const productDetails = () => {
 
       document
         .getElementById("add-to-cart")
+        
+
         .addEventListener("click", () => addToCart(product.id));
 
       document.getElementById("go-to-cart").addEventListener("click", () => {
@@ -180,10 +189,21 @@ const productReview = (event) => {
     });
 };
 
-const form = document.getElementById("reviewForm");
-form.addEventListener("submit", productReview);
+
+
+
+
 
 const fetchRelatedProductsByBrand = (productId) => {
+  const container = document.getElementById("related-products-container");
+
+
+  container.innerHTML = `
+    <div class="flex justify-center items-center h-[200px]">
+      <div class="w-12 h-12 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  `;
+
   fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`)
     .then((res) => res.json())
     .then((currentProduct) => {
@@ -196,19 +216,17 @@ const fetchRelatedProductsByBrand = (productId) => {
             (p) => p.brand === brandId && p.id !== currentProduct.id
           );
 
-          const container = document.getElementById(
-            "related-products-container"
-          );
+  
           container.innerHTML = "";
 
           if (related.length === 0) {
-            container.innerHTML = "<p>No related products found.</p>";
+            container.innerHTML = "<p class='text-center text-gray-500'>No related products found.</p>";
             return;
           }
 
           related.forEach((product) => {
             const card = document.createElement("div");
-            card.className = "bg-white border p-4  text-center";
+            card.className = "bg-white border p-4 text-center rounded shadow";
             card.innerHTML = `
               <a href="./product_details.html?id=${product.id}">
                 <img src="${product.image_url}" class="h-40 w-full object-cover mb-2 rounded">

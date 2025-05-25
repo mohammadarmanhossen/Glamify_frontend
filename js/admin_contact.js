@@ -1,4 +1,12 @@
 const adminContact = () => {
+  const contactBody = document.getElementById("contact-body");
+  contactBody.innerHTML = `
+      <div class="relative min-h-[100px]">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      </div>
+    `;
   fetch("https://glamify-backend-ten.vercel.app/account/contact/", {
     method: "GET",
     headers: {
@@ -9,7 +17,6 @@ const adminContact = () => {
     .then((data) => {
       console.log("Contact Data:", data);
 
-      const contactBody = document.getElementById("contact-body");
       contactBody.innerHTML = "";
 
       data.forEach((contact) => {
@@ -24,7 +31,7 @@ const adminContact = () => {
         <td class="p-2 r">${contact.email}</td>
         <td class="p-2 ">${contact.message}</td>
         <td class="p-2 ">
-            <button class="bg-red-500 p-1 font-semibold rounded-md text-gray-800 delete-button" data-id="${contact.id}">
+            <button class="bg-red-500 p-2 rounded-md text-gray-100 delete-button" data-id="${contact.id}">
                 Delete
             </button>
         </td>

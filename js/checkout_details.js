@@ -7,11 +7,13 @@
   document.getElementById('invoice-date').textContent = formattedDate;
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
+    
+
     const checkoutId = params.get('checkout');
     if (checkoutId) {
+ 
       fetch(`https://glamify-backend-ten.vercel.app/checkout/${checkoutId}/`)
         .then(res => res.json())
         .then(checkout => {

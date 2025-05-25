@@ -17,103 +17,105 @@
 
 <body class="bg-white h-[120vh]">
 
-    <nav class="bg-white p-5 fixed top-0 left-0 w-full  z-50">
-        <div class="container mx-auto px-5 flex justify-between items-center">
-            <a href="index.html" class="text-black text-xl md:text-4xl font-bold ">GLAMIFY</a>
-            <button id="menu-btn" class="block md:hidden text-gray-700 focus:outline-none text-2xl md:text-3xl">
-                ☰
-            </button>
-            <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-lg font-medium">
-                <li><a href="index.html" class="hover:text-green-600">Home</a></li>
-                <li><a href="about.html" class="hover:text-green-600">About</a></li>
-                <li><a href="shop.html" class="hover:text-green-600">Shop</a></li>
-                <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
-            </ul>
+  <nav class="bg-white p-5 fixed top-0 left-0 w-full  z-50">
+    <div class="container mx-auto px-5 flex justify-between items-center">
+      <a href="index.html" class="text-black text-xl md:text-4xl font-bold ">GLAMIFY</a>
+      <button id="menu-btn" class="block md:hidden text-gray-700 focus:outline-none text-2xl md:text-3xl">
+        ☰
+      </button>
+      <ul id="menu" class="hidden md:flex space-x-6 text-gray-800 text-lg font-medium">
+        <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+        <li><a href="about.html" class="hover:text-green-600">About</a></li>
+        <li><a href="shop.html" class="hover:text-green-600">Shop</a></li>
+        <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+      </ul>
 
-            <ul class="text-center hidden sm:block" id="navbarElement"></ul>
+      <ul class="text-center hidden sm:block" id="navbarElement"></ul>
 
-        </div>
-
-
-        <div id="mobile-menu"
-            class="hidden md:hidden bg-gray-100  space-y-2 p-5 transition-all duration-300 text-center">
-            <a href="index.html" class="block text-gray-700 font-bold">Home</a>
-            <a href="about.html" class="block text-gray-700 font-bold">About</a>
-            <a href="shop.html" class="block text-gray-700 font-bold">Shop</a>
-            <a href="contact.html" class="block text-gray-700 font-bold">Contact</a>
-
-            <div id="mobileNavbarElement"></div>
+    </div>
 
 
-        </div>
-    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-100  space-y-2 p-5 transition-all duration-300 text-center">
+      <a href="index.html" class="block text-gray-700 font-bold">Home</a>
+      <a href="about.html" class="block text-gray-700 font-bold">About</a>
+      <a href="shop.html" class="block text-gray-700 font-bold">Shop</a>
+      <a href="contact.html" class="block text-gray-700 font-bold">Contact</a>
+
+      <div id="mobileNavbarElement"></div>
+
+
+    </div>
+  </nav>
 
 
 
   <div class="flex justify-center  bg-gray-50 pt-40 pb-20">
-  <div id="pdf-content" class="w-full max-w-3xl  bg-white shadow-lg p-10 border border-gray-200 text-gray-800">
+    <div id="pdf-content" class="w-full max-w-3xl  bg-white shadow-lg p-10 border border-gray-200 text-gray-800">
 
-  
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-extrabold text-gray-900 tracking-wide">GLAMIFY</h1>
-      <p class="text-sm text-gray-500">Invoice · Order Confirmation</p>
-    </div>
 
-    <div class="flex justify-between items-start mb-6">
-      <div>
-        <p class="font-bold text-lg text-gray-700 mb-2">Invoice Details </p>
-       <div class="text-sm">
-         <p><strong>Invoice No : </strong>INV2025</p>
-        <p><strong>Invoice Date : </strong> <span id="invoice-date"></span></p>
-       </div>
+
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-gray-900 tracking-wide">GLAMIFY</h1>
+        <p class="text-sm text-gray-500">Invoice · Order Confirmation</p>
       </div>
 
-      <div class="text-right">
-        <button onclick="generatePDF()" class="bg-gray-800 text-white font-semibold px-5 py-2 p-5 rounded-lg shadow hover:bg-gray-900 transition">
-          ⬇️ Download Invoice
-        </button>
+      
+      <div class="flex justify-between items-start mb-6">
+        <div>
+          <p class="font-bold text-lg text-gray-700 mb-2">Invoice Details </p>
+          <div class="text-sm">
+            <p><strong>Invoice No : </strong>INV2025</p>
+            <p><strong>Invoice Date : </strong> <span id="invoice-date"></span></p>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button onclick="generatePDF()"
+            class="bg-gray-800 text-white font-semibold px-5 py-2 p-5 rounded-lg shadow hover:bg-gray-900 transition">
+            ⬇️ Download Invoice
+          </button>
+        </div>
       </div>
-    </div>
 
 
-    <div class="mb-8 border-t pt-6">
-      <h2 class="font-bold text-lg text-gray-700 mb-2">Customer Information</h2>
-      <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
-        <p><strong>Name:</strong> <span id="name">Loading...</span></p>
-        <p><strong>Email:</strong> <span id="email">Loading...</span></p>
-        <p><strong>Address:</strong> <span id="address">Loading...</span></p>
-        <p><strong>Zip Code:</strong> <span id="zip_code">Loading...</span></p>
+      <div class="mb-8 border-t pt-6">
+        <h2 class="font-bold text-lg text-gray-700 mb-2">Customer Information</h2>
+        <div class="grid grid-cols-2 gap-4 text-sm text-gray-600">
+          <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+          <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+          <p><strong>Address:</strong> <span id="address">Loading...</span></p>
+          <p><strong>Zip Code:</strong> <span id="zip_code">Loading...</span></p>
+        </div>
       </div>
-    </div>
 
-    <div class="mb-8 border-t pt-6">
-      <h2 class="font-bold text-lg text-gray-700 mb-2">Shipping Details</h2>
-      <div class="space-y-2 text-sm text-gray-600">
-        <p><strong>Payment Method:</strong> SSLCOMMERZ</p>
-        <p><strong>Courier:</strong> Pathao Courier</p>
-        <p><strong>Estimated Delivery:</strong> 3–7 Business Days</p>
+      <div class="mb-8 border-t pt-6">
+        <h2 class="font-bold text-lg text-gray-700 mb-2">Shipping Details</h2>
+        <div class="space-y-2 text-sm text-gray-600">
+          <p><strong>Payment Method:</strong> SSLCOMMERZ</p>
+          <p><strong>Courier:</strong> Pathao Courier</p>
+          <p><strong>Estimated Delivery:</strong> 3–7 Business Days</p>
+        </div>
       </div>
-    </div>
 
-    <div class="mb-10 border-t pt-6">
-      <h2 class="font-bold text-lg text-gray-700 mb-4">Order Summary</h2>
-      <div class="grid grid-cols-2 gap-4 text-gray-700 bg-white rounded-lg p-4 border border-gray-300">
-        <div class="font-medium"> Product Quantity:</div>
-        <div id="quantity" class="text-right">Loading...</div>
+      <div class="mb-10 border-t pt-6">
+        <h2 class="font-bold text-lg text-gray-700 mb-4">Order Summary</h2>
+        <div class="grid grid-cols-2 gap-4 text-gray-700 bg-white rounded-lg p-4 border border-gray-300">
+          <div class="font-medium"> Product Quantity:</div>
+          <div id="quantity" class="text-right">Loading...</div>
 
-        <div class="font-medium"> Total Amount:</div>
-        <div id="total_amount" class="text-right font-bold">Loading...</div>
+          <div class="font-medium"> Total Amount:</div>
+          <div id="total_amount" class="text-right font-bold">Loading...</div>
+        </div>
       </div>
+
+
+      <div class="text-sm text-gray-500 border-t pt-4 text-center">
+        <p>Thank you for shopping with Glamify!</p>
+        <p>If you have questions, contact us at <strong>support@glamify.com</strong></p>
+      </div>
+
     </div>
-
-
-    <div class="text-sm text-gray-500 border-t pt-4 text-center">
-      <p>Thank you for shopping with Glamify!</p>
-      <p>If you have questions, contact us at <strong>support@glamify.com</strong></p>
-    </div>
-
   </div>
-</div>
 
 
 </body>
@@ -121,78 +123,78 @@
 
 
 <footer class="bg-gray-800 text-white px-6 py-10 pt-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
 
-        <div>
-            <h3 class="text-xl font-semibold mb-4">Glamify Ecommerce Site</h3>
-            <p class="text-sm text-gray-400">
-                Quick service <br>
-                Delivery 1-5 day <br>
-                Office Dhaka 55 Dilkusha C/A, Motijheel,
-            </p>
-            <div class="flex space-x-4 mt-4">
-                <a href="#" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f text-gray-400 hover:text-white text-lg"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter text-gray-400 hover:text-white text-lg"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in text-gray-400 hover:text-white text-lg"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram text-gray-400 hover:text-white text-lg"></i>
-                </a>
-            </div>
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Glamify Ecommerce Site</h3>
+      <p class="text-sm text-gray-400">
+        Quick service <br>
+        Delivery 1-5 day <br>
+        Office Dhaka 55 Dilkusha C/A, Motijheel,
+      </p>
+      <div class="flex space-x-4 mt-4">
+        <a href="#" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f text-gray-400 hover:text-white text-lg"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter text-gray-400 hover:text-white text-lg"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in text-gray-400 hover:text-white text-lg"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram text-gray-400 hover:text-white text-lg"></i>
+        </a>
+      </div>
 
-        </div>
-
-        <div>
-            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2 text-gray-300">
-                <li><a href="#" class="hover:text-white">› Home</a></li>
-                <li><a href="#" class="hover:text-white">› About</a></li>
-                <li><a href="#" class="hover:text-white">› Services</a></li>
-                <li><a href="#" class="hover:text-white">› Products</a></li>
-                <li><a href="#" class="hover:text-white">› Media & News</a></li>
-                <li><a href="#" class="hover:text-white">› Contact</a></li>
-                <li><a href="#" class="hover:text-white">› Terms & Conditions</a></li>
-                <li><a href="#" class="hover:text-white">› Privacy Policy</a></li>
-                <li><a href="#" class="hover:text-white">› FAQ</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h3 class="text-xl font-semibold mb-4">Office</h3>
-            <p class="text-sm text-gray-400">
-                Level -5, NIK Tower, <br>
-                55 Dilkusha C/A, Motijheel, <br>
-                Dhaka-1000, Bangladesh
-            </p>
-            <p class="mt-2 text-sm text-gray-400">📧 <a href="mailto:support@glamifyecommerce.ai"
-                    class="hover:underline">support@glamifyecommerce.ai</a></p>
-            <p class="text-sm text-gray-400">📞 <a href="tel:+8801765034196" class="hover:underline">(+88)
-                    01765034196</a></p>
-        </div>
-
-
-        <div>
-            <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-            <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter to receive updates and insights on
-                products.</p>
-          <form class="flex flex-col space-y-3">
-                    <input type="email" placeholder="Your email address" required
-                        class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
-                    <button type="submit"
-                        class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
-                </form>
-        </div>
     </div>
 
-    <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-        © 2025 Glamify Ecommerce Company. All rights reserved.
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li><a href="#" class="hover:text-white">› Home</a></li>
+        <li><a href="#" class="hover:text-white">› About</a></li>
+        <li><a href="#" class="hover:text-white">› Services</a></li>
+        <li><a href="#" class="hover:text-white">› Products</a></li>
+        <li><a href="#" class="hover:text-white">› Media & News</a></li>
+        <li><a href="#" class="hover:text-white">› Contact</a></li>
+        <li><a href="#" class="hover:text-white">› Terms & Conditions</a></li>
+        <li><a href="#" class="hover:text-white">› Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-white">› FAQ</a></li>
+      </ul>
     </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Office</h3>
+      <p class="text-sm text-gray-400">
+        Level -5, NIK Tower, <br>
+        55 Dilkusha C/A, Motijheel, <br>
+        Dhaka-1000, Bangladesh
+      </p>
+      <p class="mt-2 text-sm text-gray-400">📧 <a href="mailto:support@glamifyecommerce.ai"
+          class="hover:underline">support@glamifyecommerce.ai</a></p>
+      <p class="text-sm text-gray-400">📞 <a href="tel:+8801765034196" class="hover:underline">(+88)
+          01765034196</a></p>
+    </div>
+
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+      <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter to receive updates and insights on
+        products.</p>
+      <form class="flex flex-col space-y-3">
+        <input type="email" placeholder="Your email address" required
+          class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
+        <button type="submit"
+          class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+    © 2025 Glamify Ecommerce Company. All rights reserved.
+  </div>
 </footer>
 
 

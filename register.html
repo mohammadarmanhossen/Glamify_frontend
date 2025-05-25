@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-white">
- <nav class="bg-white p-5 fixed top-0 left-0 w-full  z-50">
+    <nav class="bg-white p-5 fixed top-0 left-0 w-full  z-50">
         <div class="container mx-auto px-5 flex justify-between items-center">
             <a href="index.html" class="text-black text-xl md:text-4xl font-bold ">GLAMIFY</a>
             <button id="menu-btn" class="block md:hidden text-gray-700 focus:outline-none text-2xl md:text-3xl">
@@ -50,6 +50,11 @@
     <main class="min-h-screen bg-white flex items-center justify-center px-4 pt-20">
         <div class="bg-white shadow-2xl p-10 w-full max-w-xl">
             <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Create Account</h2>
+
+            <!-- Spinner -->
+            <div id="registration-spinner" class="hidden w-full flex justify-center items-center mb-4">
+                <div class="w-10 h-10 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+            </div>
 
             <form onsubmit="handleRegistration(event)" class="space-y-6">
                 <div>
@@ -100,7 +105,7 @@
                 <div id="error" class="text-red-500 text-sm"></div>
 
                 <button type="submit"
-                    class="w-full bg-gray-800 text-white py-3  hover:bg-gray-900 transition duration-300 focus:ring-2 focus:ring-gray-500">
+                    class="w-full bg-gray-700 hover:bg-gray-800 text-white py-3 font-semibold  transition duration-300 focus:ring-2 focus:ring-gray-500">
                     Register
                 </button>
 
@@ -197,4 +202,5 @@
 <script src="./js/product_details.js"></script>
 <script src="./js/login.js"></script>
 <script src="./js/register.js"></script>
+
 </html>

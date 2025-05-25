@@ -1,4 +1,12 @@
 const adminProduct = () => {
+  const productBody = document.getElementById("product-body");
+   productBody.innerHTML = `
+      <div class="relative min-h-[100px]">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      </div>
+    `;
   fetch("https://glamify-backend-ten.vercel.app/product/", {
     method: "GET",
     headers: {
@@ -8,7 +16,7 @@ const adminProduct = () => {
     .then((response) => response.json())
     .then((data) => {
       data.sort((a, b) => b.id - a.id);
-      const productBody = document.getElementById("product-body");
+      
       productBody.innerHTML = "";
 
       data.forEach((product) => {
@@ -24,7 +32,7 @@ const adminProduct = () => {
                 <td class="p-2"><img src="${product.image_url}" alt="${product.name}" class="w-16 h-16 object-cover"></td>
                 <td class="p-2">${product.brand_name}</td>
                 <td class="p-2">
-                    <button class="bg-red-500 p-1 font-semibold rounded-md text-gray-800 delete-button" data-id="${product.id}">Delete</button>
+                    <button class="bg-red-500 p-2 rounded-md text-gray-100 delete-button" data-id="${product.id}">Delete</button>
                 </td>
            
                

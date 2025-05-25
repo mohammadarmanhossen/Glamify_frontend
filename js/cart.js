@@ -1,8 +1,16 @@
-
 const loadCart = () => {
   const cartContainer = document.getElementById("cart-items");
   const totalAmountContainer = document.getElementById("total-amount");
   const ProductContainer = document.getElementById("total-product");
+
+cartContainer.innerHTML = `
+  <div class="relative min-h-[300px] bg-white rounded-md shadow-inner">
+    <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+      <div class="w-12 h-12 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  </div>
+`;
+
 
   if (!cartContainer) return;
 
@@ -14,7 +22,8 @@ const loadCart = () => {
       let totalProduct = 0;
 
       data.forEach((item) => {
-        const { id, product_image, product_name, product_price, quantity } = item;
+        const { id, product_image, product_name, product_price, quantity } =
+          item;
 
         totalAmount += product_price * quantity;
         totalProduct += quantity;
@@ -51,7 +60,9 @@ const loadCart = () => {
               </div>
 
                 <div class="md:w-1/4 text-center">
-                 <p class="text-lg font-bold text-gray-900">৳${(quantity * product_price).toLocaleString()}</p>
+                 <p class="text-lg font-bold text-gray-900">৳${(
+                   quantity * product_price
+                 ).toLocaleString()}</p>
               </div>
               
 
@@ -59,7 +70,7 @@ const loadCart = () => {
               <div class="flex flex-col items-center md:items-end gap-2 md:w-1/4">
               
                 <button onclick="removeFromCart(${id})"
-                  class="text-red-600 text-sm font-medium border p-2 border-red-600">Remove</button>
+                  class="text-white bg-red-700 hover:bg-red-800 font-semibold p-2">Remove</button>
               </div>
             </div>
           </div>
