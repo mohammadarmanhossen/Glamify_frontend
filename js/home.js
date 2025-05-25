@@ -5,13 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const products = (brandId = "all", searchQuery = "") => {
     const productCart = document.getElementById("product-cart");
 
-    productCart.innerHTML = `
-  <div class="relative min-h-[300px]">
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="w-12 h-12 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
-    </div>
+productCart.innerHTML = `
+  <div class="col-span-full flex items-center justify-center min-h-[300px]">
+    <div class="w-12 h-12 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
   </div>
 `;
+
     if (!productCart) return;
     let fetchURL = baseURL;
     const params = [];

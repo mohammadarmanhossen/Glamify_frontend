@@ -27,40 +27,38 @@ const productDetails = () => {
 
 <div class="grid grid-cols-1 md:grid-cols-2 items-center w-full h-full  border-1 border-gray-500 p-6 gap-8">
 
-  <!-- Product Image -->
   <div class="flex items-center justify-center  p-6">
     <img src="${product.image_url}" alt="${product.name}" class="w-full md:w-[400px] h-full object-contain  transition-transform duration-300 hover:scale-105">
   </div>
 
-  <!-- Product Details -->
   <div class="p-8 flex flex-col justify-between text-center md:text-left">
 
     <!-- Product Name -->
     <h1 class="text-4xl font-extrabold text-gray-800 mb-4">${product.name}</h1>
 
-    <!-- Ratings -->
+
     <div class="flex items-center font-extrabold justify-center md:justify-start gap-1 mb-3 text-yellow-500">
       <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
       <span class="text-sm text-gray-500 ml-2">(6 Reviews)</span>
     </div>
 
-    <!-- Description -->
+
     <p class="text-gray-600 mb-4 leading-relaxed font-bold">${product.description}</p>
 
-    <!-- SKU -->
+
     <p class="text-sm text-gray-500 mb-3 font-bold">SKU: 654613612</p>
 
     <!-- Price -->
         <p class="text-gray-500 font-bold mb-3">Price: ৳${product.price}</p>
    
-    <!-- Stock -->
+
     <p class="text-gray-500 font-bold mb-6">Stock: ${product.stock}</p>
 
       <div class="pb-5 text-gray-300">
          <hr>
     </div>
   
-    <!-- Buttons -->
+
     <div class="flex flex-col sm:flex-row gap-4">
       <button id="add-to-cart"
         class="w-full sm:w-auto bg-gray-700 hover:bg-gray-800 text-white border border-gray-800 px-6 py-3 font-semibold  transition duration-300">
@@ -226,7 +224,7 @@ const fetchRelatedProductsByBrand = (productId) => {
 
           related.forEach((product) => {
             const card = document.createElement("div");
-            card.className = "bg-white border p-4 text-center rounded shadow";
+            card.className = "bg-white p-4 text-center rounded shadow-lg";
             card.innerHTML = `
               <a href="./product_details.html?id=${product.id}">
                 <img src="${product.image_url}" class="h-40 w-full object-cover mb-2 rounded">

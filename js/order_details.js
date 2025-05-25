@@ -43,11 +43,10 @@ const loadOrderItems = () => {
                 : '<span class="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-700">Pending</span>'
             }
           </td>
-          <td class="px-6 py-4">
-            <a href="checkout_details.html?checkout=${
-              item.id
-            }" class="bg-amber-300 p-1 border-1 font-semibold rounded-md text-gray-800">Details</a>
-          </td>
+         <td class="px-6 py-4">
+           <a href="checkout_details.html?checkout=${item.id}" class="bg-gray-200 p-2 border border-gray-300  text-gray-800 transition duration-200" title="View Details">👁️</a>
+         </td>
+
         `;
         tableBody.appendChild(row);
       });

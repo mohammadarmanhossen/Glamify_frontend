@@ -1,12 +1,14 @@
 const adminContact = () => {
   const contactBody = document.getElementById("contact-body");
-  contactBody.innerHTML = `
-      <div class="relative min-h-[100px]">
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
-        </div>
+contactBody.innerHTML = `
+  <tr>
+    <td colspan="7">
+      <div class="flex justify-center items-center h-[100px] w-full">
+        <div class="w-8 h-8 border-4 border-gray-700 border-t-transparent rounded-full animate-spin"></div>
       </div>
-    `;
+    </td>
+  </tr>
+`;
   fetch("https://glamify-backend-ten.vercel.app/account/contact/", {
     method: "GET",
     headers: {

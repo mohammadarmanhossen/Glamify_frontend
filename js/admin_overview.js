@@ -6,7 +6,7 @@ new Chart(areaCtx, {
     datasets: [
       {
         label: "Revenue (৳)",
-        data: [1200, 1900, 3000, 2500, 3200, 2700], // ✅ শুধুই সংখ্যা
+        data: [1200, 1900, 3000, 2500, 3200, 2700],
         backgroundColor: "rgba(59, 130, 246, 0.1)",
         borderColor: "rgba(59, 130, 246, 1)",
         borderWidth: 2,

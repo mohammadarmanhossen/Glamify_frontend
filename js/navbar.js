@@ -3,34 +3,50 @@ const navbar = () => {
   const navbar = document.getElementById("navbarElement");
   if (user_id) {
     navbar.innerHTML = `
-          <a href="/cart.html" class="inline-flex items-center gap-2  bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-3 rounded  shadow">
-              <img src="image/cart.svg" alt="Cart Icon" class="w-6 h-6">
-              <span>Cart</span>
-          </a>
+        <a href="/cart.html" class="inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition duration-200">
+           <img src="image/cart.svg" alt="Cart Icon" class="w-5 h-5">
+            <span>Cart</span>
+         </a>
+
           <div class="relative inline-block text-left px-3">
-              <button class="dropdownButton flex items-center gap-2   bg-gray-300 hover:bg-gray-400 text-black font-semibold  rounded  px-6 py-3  shadow">
-                  <img src="image/account.svg" alt="Account Icon" class="w-6 h-6">
+              <button class="dropdownButton inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition duration-200 ">
+                  <img src="image/account.svg" alt="Account Icon" class="w-5 h-5">
                   <span>Account</span>
               </button>
-              <div class="dropdownMenu hidden absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg z-50">
-                  <a href="/profile.html" class=" text-center block px-4 py-2 text-gray-900  font-bold hover:text-green-700 transition">Profile</a>
-                  <a href="/order.html" class=" text-center block px-4 py-2 text-gray-900  font-bold  hover:text-green-700 transition">Order</a>
-                  <form onsubmit="handleLogout(event)">
-                      <button type="submit" class="w-full text-center px-4 py-2 text-gray-900 font-bold hover:text-green-700  transition">Logout</button>
-                  </form>
-              </div>
-          </div>
+            
+         <div class="dropdownMenu hidden absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded text-center shadow-lg z-50 divide-y divide-gray-100">
+
+            <a href="/profile.html" class="flex items-center justify-center gap-2 w-full px-6 py-2 text-black font-semibold hover:bg-gray-100 transition duration-200">
+             👤 Profile
+            </a>
+
+             <a href="/order.html" class="flex items-center justify-center gap-2 w-full px-6 py-2 text-black font-semibold hover:bg-gray-100 transition duration-200">
+              <img src="image/cart.svg" alt="Cart Icon" class="w-5 h-5"> Order
+             </a>
+
+          <form onsubmit="handleLogout(event)">
+             <button type="submit" class="flex items-center justify-center gap-2 w-full px-6 py-2 text-black font-semibold hover:bg-gray-100 transition duration-200">
+              <img src="image/logout.svg" alt="Signup Icon" class="w-4 h-4">Logout
+            </button>
+           </form>
+  
+        </div>
+
       `;
   } else {
     navbar.innerHTML = `
-        <div class="flex items-center gap-4">
-       <a href="login.html" class="inline-flex items-center bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-2 rounded shadow">
-         <span>Login</span>
-       </a>
-       <a href="register.html" class="inline-flex items-center bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-2 rounded shadow">
-        <span>Sign up</span>
-       </a>
-        </div>
+      <div class="flex items-center gap-4">
+        <a href="login.html" class="inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition duration-200">
+         <img src="image/logout.svg" alt="Login Icon" class="w-5 h-5">
+          <span>Login</span>
+        </a>
+  
+       <a href="register.html" class="inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition duration-200">
+         <img src="image/logout.svg" alt="Signup Icon" class="w-5 h-5">
+          <span>Sign up</span>
+         </a>
+      </div>
+
 
       `;
   }
@@ -40,34 +56,47 @@ const mobilenavbar = () => {
   const mobilenav = document.getElementById("mobileNavbarElement");
   if (user_id) {
     mobilenav.innerHTML = `
-            <a href="/cart.html" class="inline-flex items-center gap-2  bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-2 shadow">
-              <img src="image/cart.svg" alt="Cart Icon" class="w-6 h-6">
+            <a href="/cart.html" class="inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100">
+              <img src="image/cart.svg" alt="Cart Icon" class="w-5 h-5">
               <span>Cart</span>
           </a>
           <div class="relative inline-block text-left">
-              <button class="dropdownButton flex items-center gap-2   bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-2  shadow">
-                  <img src="image/account.svg" alt="Account Icon" class="w-6 h-6">
+              <button class="dropdownButton flex items-center gap-2  border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 ">
+                  <img src="image/account.svg" alt="Account Icon" class="w-5 h-5">
                   <span>Account</span>
               </button>
-              <div class="dropdownMenu hidden absolute right-0 mt-2 w-40 bg-gray-300 border border-gray-200  shadow-lg z-50">
-                  <a href="/profile.html" class=" text-center block px-4 py-2 text-gray-900  font-bold hover:text-green-700 transition">Profile</a>
-                  <a href="/order.html" class=" text-center block px-4 py-2 text-gray-900  font-bold  hover:text-green-700 transition">Order</a>
-                  <form onsubmit="handleLogout(event)">
-                      <button type="submit" class="w-full text-center px-4 py-2 text-gray-900 font-bold hover:text-green-700  transition">Logout</button>
-                  </form>
-              </div>
+          <div class="dropdownMenu hidden absolute right-0 mt-2 w-40  border border-gray-200  rounded z-50">
+                  
+            <a href="/profile.html" class="flex items-center justify-center gap-2 w-full px-6 py-2 text-black font-semibold hover:bg-gray-100 transition duration-200">
+             👤 Profile
+            </a>
+
+           <a href="/order.html" class="flex items-center justify-center gap-2 w-full px-6 py-2 text-black font-semibold hover:bg-gray-100 transition duration-200">
+             <img src="image/cart.svg" alt="Cart Icon" class="w-5 h-5"> Order
+           </a>
+
+        <form onsubmit="handleLogout(event)">
+         <button type="submit" class="flex items-center justify-center gap-2 w-full px-6 py-2 text-black font-semibold hover:bg-gray-100 transition duration-200">
+            <img src="image/logout.svg" alt="Signup Icon" class="w-4 h-4">Logout
+          </button>
+        </form>
+          </div>
           </div>
       `;
   } else {
     mobilenav.innerHTML = `
-             <a href="login.html" class="inline-flex items-center gap-2  bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-2 rounded-3xl shadow">
-            
-              <span>Login</span>
+          
+    <div class="flex sm:flex-row items-center justify-center text-center gap-4 h-20">
+          <a href="login.html" class="inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition duration-200">
+            <img src="image/logout.svg" alt="Login Icon" class="w-5 h-5">
+           <span>Login</span>
           </a>
-          <a href="register.html" class="inline-flex items-center gap-2   bg-gray-300 hover:bg-gray-400  text-black font-semibold  px-6 py-2 rounded-3xl shadow">
-             
-              <span>Sing up</span>
-          </a>
+        <a href="register.html" class="inline-flex items-center gap-2 border border-gray-300 text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition duration-200">
+          <img src="image/logout.svg" alt="Signup Icon" class="w-5 h-5">
+          <span>Sign up</span>
+        </a>
+    </div>
+
       `;
   }
 };
