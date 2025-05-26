@@ -37,8 +37,7 @@ const handleLogin = (event) => {
             icon: "success",
             confirmButtonText: "OK",
           }).then(() => {
-            window.location.href =
-              "https://glamify-frontend.vercel.app/admin_dashbord.html";
+            window.location.href ="admin_dashbord.html";
           });
         } else {
           const userdata = { username, password };
@@ -70,8 +69,7 @@ const handleLogin = (event) => {
                   icon: "success",
                   confirmButtonText: "OK",
                 }).then(() => {
-                  window.location.href =
-                    "https://glamify-frontend.vercel.app/index.html";
+                  window.location.href ="index.html";
                 });
               } else {
                 Swal.fire({
