@@ -22,14 +22,10 @@ const loadOrderItems = () => {
         const row = document.createElement("tr");
         row.classList.add("hover:bg-gray-50");
 
-        const today = new Date();
-
-        const options = { year: "numeric", month: "long", day: "numeric" };
-        const formattedDate = today.toLocaleDateString("en-US", options);
 
         row.innerHTML = `
           <td class="px-6 py-4">${item.id}</td>
-          <td class="px-6 py-4">${formattedDate}</td>
+          <td class="px-6 py-4">${item.created_at.split("T")[0]}</td>
           <td class="px-6 py-4">${item.quantity}</td>
           <td class="px-6 py-4">
             <span class="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-green-700">
