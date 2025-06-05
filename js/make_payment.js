@@ -1,5 +1,4 @@
 
-
 const totalAmountContainer = document.getElementById("total-amount");
 const checkoutTotal = localStorage.getItem("checkoutTotal");
 totalAmountContainer.innerText = `Total Price : ${checkoutTotal}৳`;

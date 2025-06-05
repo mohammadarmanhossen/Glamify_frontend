@@ -40,8 +40,9 @@ const loadOrderItems = () => {
             }
           </td>
          <td class="px-6 py-4">
-           <a href="checkout_details.html?checkout=${item.id}" class="bg-gray-200 p-2 border border-gray-300  text-gray-800 transition duration-200" title="View Details">👁️</a>
+           <a href="checkout_details.html?checkout=${item.id}" class="text-2xl p-2  text-gray-800 transition duration-200" title="View Details">👁️</a>
          </td>
+         
 
         `;
         tableBody.appendChild(row);

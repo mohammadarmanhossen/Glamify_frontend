@@ -87,19 +87,25 @@
                         placeholder="example@email.com" />
                 </div>
 
-                <div>
+                <!-- Password -->
+                <div class="relative mb-4">
                     <label for="password" class="block text-sm font-semibold text-gray-700">Password</label>
                     <input type="password" id="password" required
-                        class="w-full px-4 py-3 border border-gray-300  focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                        class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         placeholder="Create a password" />
+                    <span class="absolute top-9 right-4 cursor-pointer text-gray-600"
+                        onclick="togglePassword('password', this)">👁️</span>
                 </div>
 
-                <div>
+                <!-- Confirm Password -->
+                <div class="relative mb-4">
                     <label for="confirm_password" class="block text-sm font-semibold text-gray-700">Confirm
                         Password</label>
                     <input type="password" id="confirm_password" required
                         class="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         placeholder="Repeat your password" />
+                    <span class="absolute top-9 right-4 cursor-pointer text-gray-600"
+                        onclick="togglePassword('confirm_password', this)">👁️</span>
                 </div>
 
                 <div id="error" class="text-red-500 text-sm"></div>
@@ -196,6 +202,16 @@
     </div>
 </footer>
 
+<!-- password show and hide function -->
+
+<script>
+  function togglePassword(id, icon) {
+    const input = document.getElementById(id);
+    const isHidden = input.type === 'password';
+    input.type = isHidden ? 'text' : 'password';
+    icon.textContent = isHidden ? '🙈' : '👁️';
+  }
+</script>
 
 <script src="./js/navbar.js"></script>
 <script src="./js/home.js"></script>
