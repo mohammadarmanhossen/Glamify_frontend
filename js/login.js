@@ -1,4 +1,3 @@
-
 const handleLogin = (event) => {
   event.preventDefault();
 
@@ -7,7 +6,8 @@ const handleLogin = (event) => {
   const spinner = document.getElementById("login-spinner");
 
   if (username && password) {
-
+    
+    const admindata = { username, password };
     spinner.innerHTML = `
     <div class="relative min-h-[100px]">
          <div class="absolute inset-0 flex items-center justify-center">
@@ -15,8 +15,6 @@ const handleLogin = (event) => {
         </div>
     </div>
     `;
-
-    const admindata = { username, password };
 
     fetch("https://glamify-backend-ten.vercel.app/account/admin/login/", {
       method: "POST",
@@ -37,7 +35,7 @@ const handleLogin = (event) => {
             icon: "success",
             confirmButtonText: "OK",
           }).then(() => {
-            window.location.href ="admin_dashbord.html";
+            window.location.href = "admin_dashbord.html";
           });
         } else {
           const userdata = { username, password };
@@ -55,6 +53,7 @@ const handleLogin = (event) => {
             headers: {
               "Content-Type": "application/json",
             },
+
             body: JSON.stringify(userdata),
           })
             .then((res) => res.json())
@@ -69,7 +68,7 @@ const handleLogin = (event) => {
                   icon: "success",
                   confirmButtonText: "OK",
                 }).then(() => {
-                  window.location.href ="index.html";
+                  window.location.href = "index.html";
                 });
               } else {
                 Swal.fire({
@@ -100,8 +99,8 @@ const handleLogin = (event) => {
           confirmButtonText: "OK",
         });
       })
+
       .finally(() => {
- 
         spinner.innerHTML = "";
       });
   } else {
@@ -113,9 +112,6 @@ const handleLogin = (event) => {
     });
   }
 };
-
-
-
 
 const showSpinner = () => {
   const spinner = document.getElementById("logout-spinner");
@@ -218,7 +214,6 @@ const adminLogout = (event) => {
       hideSpinner();
     });
 };
-
 
 const getValue = (id) => {
   const value = document.getElementById(id);
