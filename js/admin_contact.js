@@ -23,16 +23,16 @@ contactBody.innerHTML = `
 
       data.forEach((contact) => {
         const row = document.createElement("tr");
-        row.classList.add('border-b');
+        row.classList.add("border-b-2", "border-gray-700", "hover:bg-gray-800");
 
         row.innerHTML = `
          
-        <td class="p-2">${contact.id}</td>
-        <td class="p-2 ">${contact.user}</td>
-        <td class="p-2">${contact.name}</td>
-        <td class="p-2 r">${contact.email}</td>
-        <td class="p-2 ">${contact.message}</td>
-        <td class="p-2 ">
+        <td class="p-2 text-gray-200">${contact.id}</td>
+        <td class="p-2 text-gray-200">${contact.user}</td>
+        <td class="p-2 text-gray-200">${contact.name}</td>
+        <td class="p-2 text-gray-200">${contact.email}</td>
+        <td class="p-2 text-gray-200">${contact.message}</td>
+        <td class="p-2 text-gray-200">
             <button class="bg-red-500 p-2 rounded-md text-gray-100 delete-button" data-id="${contact.id}">
                 Delete
             </button>

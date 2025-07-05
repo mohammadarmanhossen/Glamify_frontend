@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard Page</title>
+    <title>Admin Dashboard</title>
     <link href="./output.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
@@ -19,47 +19,30 @@
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
 
-
-    <nav class="bg-gray-800 p-4 fixed top-0 left-0 w-full shadow-md z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-gray-100 text-3xl font-bold">GLAMIFY</a>
-
-            <button id="menu-btn" class="block md:hidden text-white text-3xl focus:outline-none">
-                ☰
-            </button>
-
-            <form id="logout" onsubmit="adminLogout(event)" class="hidden sm:block">
-                <button class="flex items-center gap-2 bg-gray-300 hover:bg-gray-400 text-black rounded font-bold  px-4 py-2  shadow">
-                    <img src="image/logout.svg" alt="Logout Icon" class="w-5 h-5">
-                    <span>Logout</span>
-                </button>
-            </form>
-        </div>
+    <div class="flex flex-col md:flex-row flex-grow">
 
 
-        <div id="mobile-menu" class="hidden md:hidden p-5 transition-all duration-300">
-            <ul class="text-center space-y-3">
-                <li>
-                    <form id="mobile-logout" onsubmit="adminLogout(event)">
-                        <button class="flex gap-2 bg-gray-300 hover:bg-gray-400 text-black px-4 py-2 rounded shadow font-bold w-full justify-center">
-                            <img src="image/logout.svg" alt="Logout Icon" class="w-5 h-5">
-                            <span>Logout</span>
-                        </button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <aside class="w-full md:w-1/8 lg:w-1/8 bg-gray-900 text-white p-4">
+            <div class="flex flex-col items-center space-y-3 p-4 bg-gray-900 rounded-lg">
+                <img src="image/Arman-1.jpg" alt="Admin Avatar"
+                    class="w-24 h-24 rounded-full border-2 border-gray-500 shadow-lg object-cover">
+                <h3 class="text-lg font-semibold">Arman</h3>
+                <p class="text-sm text-gray-400">Mohammad Arman</p>
+                <div class="flex justify-center space-x-15 mt-4 text-gray-300">
+                    <a href="#" class="hover:text-white transition">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition">
+                        <i class="fas fa-cog fa-lg"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition">
+                        <i class="fas fa-users fa-lg"></i>
+                    </a>
+                </div>
+            </div>
 
-
-
-
-    <div class="flex flex-col md:flex-row flex-grow pt-15">
-
-
-        <aside class="w-full md:w-1/8 lg:w-1/8 bg-gray-600 text-white p-4">
-            <div class=" px-3 py-2 rounded">
-                <h2 class="text-2xl font-bold text-gray-300 text-start md:text-start">Dashboard</h2>
+            <div class=" px-3 pt-10 rounded">
+                <h2 class="text-2xl font-bold text-gray-200 text-start md:text-start">Dashboard</h2>
             </div>
             <ul class="mt-4 space-y-2 text-center md:text-left">
                 <li>
@@ -114,12 +97,21 @@
                         Review
                     </a>
                 </li>
+                <li>
+                    <form id="mobile-logout" onsubmit="adminLogout(event)">
+                        <button
+                            class="flex items-center gap-3 p-3 rounded-lg bg-amber-900 hover:bg-gray-700 transition duration-200 w-full text-left">
+                            <i class="fas fa-sign-out-alt fa-lg"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
+                </li>
             </ul>
         </aside>
 
 
-        <main class="flex-grow bg-gray-200 p-6">
-            <h1 class="text-2xl font-extrabold">Dashboard Overview</h1>
+        <main class="flex-grow bg-gray-900 p-6 shadow-white  border border-gray-800">
+            <h1 class="text-2xl text-gray-200 font-extrabold">Dashboard Overview</h1>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
                 <div
@@ -127,7 +119,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm uppercase font-semibold text-indigo-100">Total Users</p>
-                            <h3 class="text-3xl font-bold mt-1">500</h3>
+                            <h3 class="text-3xl font-bold text-gray-200 mt-1">500</h3>
                         </div>
                         <div class="text-4xl">👥</div>
                     </div>
@@ -139,7 +131,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm uppercase font-semibold text-green-100">Revenue</p>
-                            <h3 class="text-3xl font-bold mt-1">৳5000</h3>
+                            <h3 class="text-3xl font-bold text-gray-200 mt-1">৳5000</h3>
                         </div>
                         <div class="text-4xl">💰</div>
                     </div>
@@ -151,7 +143,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm uppercase font-semibold text-pink-100">Orders</p>
-                            <h3 class="text-3xl font-bold mt-1">150</h3>
+                            <h3 class="text-3xl font-bold text-gray-200 mt-1">150</h3>
                         </div>
                         <div class="text-4xl">📦</div>
                     </div>
@@ -161,25 +153,19 @@
 
 
             <div class="pt-5 pb-5">
-                <h1 class="font-bold">AREA AND BAR CHART</h1>
+                <h1 class="font-bold text-gray-300">AREA AND BAR CHART</h1>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6  pb-0">
-                <div class="bg-white shadow rounded p-4">
-                    <canvas id="areaChart" class="w-full "></canvas>    
+                <div class="bg-gray-900 shadow rounded p-4">
+                    <canvas id="areaChart" class="w-full "></canvas>
                 </div>
-                <div class="bg-white shadow rounded p-4">
+                <div class="bg-gray-900 shadow rounded p-4">
                     <canvas id="salesChart" class="w-full"></canvas>
                 </div>
             </div>
         </main>
     </div>
 
-
-    <footer class="bg-gray-800 text-white px-6 py-10 ">
-        <div class="border-gray-700 pt-6 text-center text-sm text-gray-300">
-            © 2025 Glamify Ecommerce Website. All rights reserved.
-        </div>
-    </footer>
 
 
     <script src="./js/home.js"></script>

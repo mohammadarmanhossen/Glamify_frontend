@@ -23,17 +23,17 @@ productBody.innerHTML = `
 
       data.forEach((product) => {
         const row = document.createElement("tr");
-        row.classList.add("border-b");
+        row.classList.add("border-b-2", "border-gray-700", "hover:bg-gray-800");
 
         row.innerHTML = `
-                <td class="p-2">${product.id}</td>
-                <td class="p-2">${product.name}</td>
-                <td class="p-2">${product.description}</td>
-                <td class="p-2">${product.price}</td>
-                <td class="p-2">${product.stock}</td>
-                <td class="p-2"><img src="${product.image_url}" alt="${product.name}" class="w-16 h-16 object-cover"></td>
-                <td class="p-2">${product.brand_name}</td>
-                <td class="p-2">
+                <td class="p-2 text-gray-200">${product.id}</td>
+                <td class="p-2 text-gray-200">${product.name}</td>
+                <td class="p-2 text-gray-200">${product.description}</td>
+                <td class="p-2 text-gray-200">${product.price}</td>
+                <td class="p-2 text-gray-200">${product.stock}</td>
+                <td class="p-2 text-gray-200"><img src="${product.image_url}" alt="${product.name}" class="w-16 h-16 object-cover"></td>
+                <td class="p-2 text-gray-200">${product.brand_name}</td>
+                <td class="p-2 text-gray-200">
                     <button class="bg-red-500 p-2 rounded-md text-gray-100 delete-button" data-id="${product.id}">Delete</button>
                 </td>
            
@@ -56,25 +56,25 @@ productBody.innerHTML = `
     });
 };
 
-function deleteProduct(productId) {
-  fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        adminProduct();
-      } else {
-        alert("Failed to delete product.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred while deleting the product.");
-    });
-}
+// function deleteProduct(productId) {
+//   fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`, {
+//     method: "DELETE",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => {
+//       if (response.ok) {
+//         adminProduct();
+//       } else {
+//         alert("Failed to delete product.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//       alert("An error occurred while deleting the product.");
+//     });
+// }
 
 adminProduct();
 

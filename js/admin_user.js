@@ -23,15 +23,15 @@ userBody.innerHTML = `
 
       data.forEach((user) => {
         const row = document.createElement("tr");
-        row.classList.add("border-b");
+        row.classList.add("border-b-2", "border-gray-700", "hover:bg-gray-800");
 
         row.innerHTML = `
-                <td class="p-2">${user.id}</td>
-                <td class="p-2">${user.username}</td>
-                <td class="p-2">${user.email}</td>
-                <td class="p-2">${user.first_name}</td>
-                <td class="p-2">${user.last_name}</td>
-                <td class="p-2">
+                <td class="p-2 text-gray-200"">${user.id}</td>
+                <td class="p-2 text-gray-200"">${user.username}</td>
+                <td class="p-2 text-gray-200"">${user.email}</td>
+                <td class="p-2 text-gray-200"">${user.first_name}</td>
+                <td class="p-2 text-gray-200"">${user.last_name}</td>
+                <td class="p-2 text-gray-200"">
                     <button class="bg-red-500 p-2 rounded-md text-gray-100 delete-button" data-user-id="${user.id}">Delete</button>
                 </td>
             `;
@@ -52,24 +52,24 @@ userBody.innerHTML = `
     });
 };
 
-const deleteUser = (userId) => {
-  fetch(`https://glamify-backend-ten.vercel.app/account/user/${userId}/`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.status === 204) {
-        adminUser();
-      } else {
-        alert("Failed to delete user.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred while deleting the user.");
-    });
-};
+// const deleteUser = (userId) => {
+//   fetch(`https://glamify-backend-ten.vercel.app/account/user/${userId}/`, {
+//     method: "DELETE",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   })
+//     .then((response) => {
+//       if (response.status === 204) {
+//         adminUser();
+//       } else {
+//         alert("Failed to delete user.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//       alert("An error occurred while deleting the user.");
+//     });
+// };
 
 adminUser();
