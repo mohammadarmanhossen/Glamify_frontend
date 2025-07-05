@@ -16,7 +16,7 @@
 
 <body class="bg-white">
 
-      <nav class="bg-white p-5 fixed top-0 left-0 w-full z-50">
+    <nav class="bg-white p-5 fixed top-0 left-0 w-full z-50">
         <div class="container mx-auto px-5 flex justify-between items-center">
             <a href="index.html" class="text-gray-800 text-3xl md:text-4xl font-bold">GLAMIFY</a>
             <button id="menu-btn" class="block md:hidden text-gray-700 focus:outline-none text-2xl md:text-3xl">
@@ -37,7 +37,8 @@
         </div>
 
 
-        <div id="mobile-menu"class="hidden md:hidden bg-gray-100  space-y-2 p-5 transition-all duration-300 text-center">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-100  space-y-2 p-5 transition-all duration-300 text-center">
             <a href="index.html" class="block text-gray-700 font-bold">Home</a>
             <a href="about.html" class="block text-gray-700 font-bold">About</a>
             <a href="shop.html" class="block text-gray-700 font-bold">Shop</a>
@@ -48,7 +49,7 @@
         </div>
     </nav>
 
-    
+
     <div class="mx-auto px-6 md:px-12 text-center">
 
 
@@ -119,64 +120,66 @@
                 </form>
             </div>
 
-            <div class="max-w-3xl mx-auto mt-15 p-8 bg-white ">
 
+            <div class="max-w-3xl mx-auto mt-16 p-6 sm:p-8 md:p-10 bg-white rounded-lg shadow-lg">
+                <div class="text-center">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-800">
+                        Frequently Asked Questions
+                    </h2>
+                </div>
 
-                    <div class="container mx-auto px-6 md:px-12 text-center">
-                        <h2 class="text-2xl  font-SEMIbold text-center mb-10 text-gray-800">Frequently Asked Questions</h2>
-                  
-
-                        <div class="mt-8 space-y-6">
-
-                            <div class="faq-item">
-                                <button
-                                    class="faq-question w-full text-left bg-white  p-6 rounded-xl shadow-lg transform transition-all hover:scale-105 hover:shadow duration-300 ease-in-out text-xl font-semibold text-gray-800 hover:text-gray-900">
-                                    What is your design process?
-                                </button>
-                                <div
-                                    class="faq-answer hidden p-4 text-lg text-gray-600 bg-gray-50 rounded-b-xl transform transition-all duration-300 ease-in-out opacity-0">
-                                    <p>Our process includes research, wireframes, prototypes, and testing to ensure
-                                        designs
-                                        align with your goals and user needs.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item">
-                                <button
-                                    class="faq-question w-full text-left bg-white  p-6 rounded-xl shadow-lg transform transition-all hover:scale-105 hover:shadow duration-300 ease-in-out text-xl font-semibold text-gray-800 hover:text-gray-900">
-                                    Do you offer responsive design?
-                                </button>
-                                <div
-                                    class="faq-answer hidden p-4 text-lg text-gray-600 bg-gray-50 rounded-b-xl transform transition-all duration-300 ease-in-out opacity-0">
-                                    <p>Yes, we design responsive solutions, ensuring smooth experiences across all
-                                        devices
-                                        and screen sizes.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item">
-                                <button
-                                    class="faq-question w-full text-left bg-white  p-6 rounded-xl shadow-lg transform transition-all hover:scale-105 hover:shadow duration-300 ease-in-out text-xl font-semibold text-gray-800 hover:text-gray-900">
-                                    What industries do you specialize in?
-                                </button>
-                                <div
-                                    class="faq-answer hidden p-4 text-lg text-gray-600 bg-gray-50 rounded-b-xl transform transition-all duration-300 ease-in-out opacity-0">
-                                    <p>Our expertise spans healthcare, e-commerce, finance, and technology, with
-                                        tailored
-                                        solutions for each industry.</p>
-                                </div>
-                            </div>
-
-
-
-                         
+                <div class="space-y-6">
+        
+                    <div class="faq-item border rounded-lg overflow-hidden shadow-sm">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left bg-white px-5 py-4 text-lg sm:text-xl font-semibold text-gray-800 hover:bg-gray-50 transition">
+                            <span>What is your design process?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 bg-gray-50 text-gray-600 text-base sm:text-lg">
+                            <p>Our process includes research, wireframes, prototypes, and testing to ensure designs
+                                align with your goals and user needs.</p>
                         </div>
                     </div>
-         
 
+       
+                    <div class="faq-item border rounded-lg overflow-hidden shadow-sm">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left bg-white px-5 py-4 text-lg sm:text-xl font-semibold text-gray-800 hover:bg-gray-50 transition">
+                            <span>Do you offer responsive design?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 bg-gray-50 text-gray-600 text-base sm:text-lg">
+                            <p>Yes, we design responsive solutions, ensuring smooth experiences across all devices and
+                                screen sizes.</p>
+                        </div>
+                    </div>
 
-
-
+     
+                    <div class="faq-item border rounded-lg overflow-hidden shadow-sm">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left bg-white px-5 py-4 text-lg sm:text-xl font-semibold text-gray-800 hover:bg-gray-50 transition">
+                            <span>What industries do you specialize in?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-5 py-4 bg-gray-50 text-gray-600 text-base sm:text-lg">
+                            <p>Our expertise spans healthcare, e-commerce, finance, and technology, with tailored
+                                solutions for each industry.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -186,76 +189,76 @@
 </body>
 
 
- <footer class="bg-gray-800 text-white px-6 py-10 pt-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<footer class="bg-gray-800 text-white px-6 py-10 pt-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
 
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Glamify Ecommerce Site</h3>
-                <p class="text-sm text-gray-400">
-                    Quick service <br>
-                    Delivery 1-5 day <br>
-                    Office Dhaka 55 Dilkusha C/A, Motijheel,
-                </p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="https://www.facebook.com/mbarmanhossen123" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f text-gray-400 hover:text-white text-lg"></i>
-                    </a>
-                    <a href="https://x.com/ar43856" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter text-gray-400 hover:text-white text-lg"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/armanps1/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in text-gray-400 hover:text-white text-lg"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mdarmanhossen404/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram text-gray-400 hover:text-white text-lg"></i>
-                    </a>
-                </div>
-
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Glamify Ecommerce Site</h3>
+            <p class="text-sm text-gray-400">
+                Quick service <br>
+                Delivery 1-5 day <br>
+                Office Dhaka 55 Dilkusha C/A, Motijheel,
+            </p>
+            <div class="flex space-x-4 mt-4">
+                <a href="https://www.facebook.com/mbarmanhossen123" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-gray-400 hover:text-white text-lg"></i>
+                </a>
+                <a href="https://x.com/ar43856" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter text-gray-400 hover:text-white text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/armanps1/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in text-gray-400 hover:text-white text-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/mdarmanhossen404/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram text-gray-400 hover:text-white text-lg"></i>
+                </a>
             </div>
 
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-2 text-gray-300">
-                    <li><a href="index.html" class="hover:text-white">› Home</a></li>
-                    <li><a href="about.html" class="hover:text-white">› About</a></li>
-                    <li><a href="blog.html" class="hover:text-white">› Blog</a></li>
-                    <li><a href="contact.html" class="hover:text-white">› Contact</a></li>
-             
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Office</h3>
-                <p class="text-sm text-gray-400">
-                    Level -5, NIK Tower, <br>
-                    55 Dilkusha C/A, Motijheel, <br>
-                    Dhaka-1000, Bangladesh
-                </p>
-                <p class="mt-2 text-sm text-gray-400">📧 <a href="mailto:support@glamifyecommerce.ai"
-                        class="hover:underline">support@glamifyecommerce.ai</a></p>
-                <p class="text-sm text-gray-400">📞 <a href="tel:+8801765034196" class="hover:underline">(+88)
-                        01765034196</a></p>
-            </div>
-
-
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-                <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter to receive updates and insights on
-                    products.</p>
-                <form class="flex flex-col space-y-3">
-                    <input type="email" placeholder="Your email address" required
-                        class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
-                    <button type="submit"
-                        class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
-                </form>
-            </div>
         </div>
 
-        <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-            © 2025 Glamify Ecommerce Website. All rights reserved.
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-300">
+                <li><a href="index.html" class="hover:text-white">› Home</a></li>
+                <li><a href="about.html" class="hover:text-white">› About</a></li>
+                <li><a href="blog.html" class="hover:text-white">› Blog</a></li>
+                <li><a href="contact.html" class="hover:text-white">› Contact</a></li>
+
+            </ul>
         </div>
-    </footer>
+
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Office</h3>
+            <p class="text-sm text-gray-400">
+                Level -5, NIK Tower, <br>
+                55 Dilkusha C/A, Motijheel, <br>
+                Dhaka-1000, Bangladesh
+            </p>
+            <p class="mt-2 text-sm text-gray-400">📧 <a href="mailto:support@glamifyecommerce.ai"
+                    class="hover:underline">support@glamifyecommerce.ai</a></p>
+            <p class="text-sm text-gray-400">📞 <a href="tel:+8801765034196" class="hover:underline">(+88)
+                    01765034196</a></p>
+        </div>
+
+
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+            <p class="text-sm text-gray-400 mb-4">Subscribe to our newsletter to receive updates and insights on
+                products.</p>
+            <form class="flex flex-col space-y-3">
+                <input type="email" placeholder="Your email address" required
+                    class="px-4 py-2 bg-gray-700 rounded-md text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600">
+                <button type="submit"
+                    class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 rounded-md">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+        © 2025 Glamify Ecommerce Website. All rights reserved.
+    </div>
+</footer>
 
 
 

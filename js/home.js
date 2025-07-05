@@ -86,7 +86,7 @@ productCart.innerHTML = `
                   ? `./product_details.html?id=${product.id}`
                   : "./login.html"
               }" class="text-sm font-semibold text-green-500  transition">
-                View Details
+                Details
               </a>
             </div>
           </div>
