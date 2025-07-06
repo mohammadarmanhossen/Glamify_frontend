@@ -28,7 +28,7 @@ const userProfile = () => {
 
             <!-- Header -->
             <div class="bg-gradient-to-r from-gray-900 to-gray-900 p-8 text-white text-center">
-              <h1 class="text-4xl font-extrabold">My Profile</h1>
+              <h1 class="text-2xl md:text-4xl font-extrabold">My Profile</h1>
               <p class="text-sm mt-2">Manage your personal information here</p>
             </div>
 

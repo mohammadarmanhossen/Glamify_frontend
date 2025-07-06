@@ -53,25 +53,37 @@
     <div class="min-h-screen flex items-center justify-center bg-white px-4 py-10">
         <div class="w-full max-w-md bg-white rounded-xl p-8 shadow-xl text-center border border-gray-200">
 
-            <h1 class="text-3xl font-bold text-gray-800 mb-6">Make Payment Page</h1>
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Make Payment</h1>
             <!-- Spinner -->
             <div id="checkout-spinner" class="hidden mt-4 flex justify-center items-center">
                 <div class="w-10 h-10 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
             </div>
 
 
-            <div class="space-y-3">
-                <p id="total-amount" class="text-xl font-semibold text-gray-700">Total Amount: ৳0</p>
-                <p id="total-product" class="text-lg font-medium text-gray-600">Total Products: 0</p>
+
+            <div class="max-w-md mx-auto bg-white rounded-2xl  p-6 space-y-6">
+
+
+                <div class="space-y-2">
+                    <div class="flex justify-between text-lg text-gray-700">
+                        <spa class="font-bold">Total Amount:</spa>
+                        <span id="total-amount" class="font-semibold">৳0</span>
+                    </div>
+                    <div class="flex justify-between text-gray-600">
+                        <span class="font-bold">Total Products:</span>
+                        <span id="total-product">0</span>
+                    </div>
+                </div>
 
                 <input type="hidden" id="product" value="1">
                 <input type="hidden" id="order" value="3">
 
                 <button onclick="orderAndPayment(event)"
-                    class="w-full bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 transition duration-200">
+                    class="w-full bg-gray-700  text-white  font-semibold py-3  transition duration-300 shadow-sm hover:shadow-md">
                     Checkout & Pay
                 </button>
             </div>
+
         </div>
     </div>
 
