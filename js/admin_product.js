@@ -56,25 +56,25 @@ productBody.innerHTML = `
     });
 };
 
-// function deleteProduct(productId) {
-//   fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`, {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   })
-//     .then((response) => {
-//       if (response.ok) {
-//         adminProduct();
-//       } else {
-//         alert("Failed to delete product.");
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//       alert("An error occurred while deleting the product.");
-//     });
-// }
+function deleteProduct(productId) {
+  fetch(`https://glamify-backend-ten.vercel.app/product/${productId}/`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        adminProduct();
+      } else {
+        alert("Failed to delete product.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("An error occurred while deleting the product.");
+    });
+}
 
 adminProduct();
 
