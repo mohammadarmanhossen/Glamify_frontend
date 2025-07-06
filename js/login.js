@@ -1,29 +1,69 @@
+
+const getValue = (id) => {
+  return document.getElementById(id);
+};
+
+
+const showLoginSpinner = () => {
+  const spinner = document.getElementById("login-spinner");
+  if (spinner) {
+    spinner.innerHTML = `
+      <div class="relative min-h-[100px]">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      </div>
+    `;
+  }
+};
+
+const hideLoginSpinner = () => {
+  const spinner = document.getElementById("login-spinner");
+  if (spinner) {
+    spinner.innerHTML = "";
+  }
+};
+
+
+const showLogoutSpinner = () => {
+  const spinner = document.getElementById("logout-spinner");
+  if (spinner) {
+    spinner.innerHTML = `
+      <div class="relative min-h-[100px]">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      </div>
+    `;
+  }
+};
+
+const hideLogoutSpinner = () => {
+  const spinner = document.getElementById("logout-spinner");
+  if (spinner) {
+    spinner.innerHTML = "";
+  }
+};
+
+
 const handleLogin = (event) => {
   event.preventDefault();
 
   const username = getValue("username").value;
   const password = getValue("password").value;
-  const spinner = document.getElementById("login-spinner");
 
   if (username && password) {
-    
+    showLoginSpinner();
+
     const admindata = { username, password };
-    spinner.innerHTML = `
-    <div class="relative min-h-[100px]">
-         <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
-        </div>
-    </div>
-    `;
+
 
     fetch("https://glamify-backend-ten.vercel.app/account/admin/login/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(admindata),
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         if (data.token) {
           localStorage.setItem("token", data.token);
@@ -38,24 +78,18 @@ const handleLogin = (event) => {
             window.location.href = "admin_dashbord.html";
           });
         } else {
+   
           const userdata = { username, password };
+          showLoginSpinner();
 
-          spinner.innerHTML = `
-            <div class="relative min-h-[100px]">
-                 <div class="absolute inset-0 flex items-center justify-center">
-                   <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
-                 </div>
-             </div> 
-          `;
-
-          fetch("https://glamify-backend-ten.vercel.app/account/login/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-
-            body: JSON.stringify(userdata),
-          })
+          return fetch(
+            "https://glamify-backend-ten.vercel.app/account/login/",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(userdata),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.token && data.user_id) {
@@ -64,7 +98,7 @@ const handleLogin = (event) => {
 
                 Swal.fire({
                   title: "Success!",
-                  text: "Your Account has been logged in successfully.",
+                  text: "Your account has been logged in successfully.",
                   icon: "success",
                   confirmButtonText: "OK",
                 }).then(() => {
@@ -78,20 +112,11 @@ const handleLogin = (event) => {
                   confirmButtonText: "OK",
                 });
               }
-            })
-            .catch((error) => {
-              Swal.fire({
-                title: "Error!",
-                text: "There was a problem with the login request.",
-                icon: "error",
-                confirmButtonText: "OK",
-              });
-              console.error("Error during user login:", error);
             });
         }
       })
       .catch((error) => {
-        console.error(error);
+        console.error("Error during login:", error);
         Swal.fire({
           title: "Error!",
           text: "There was a problem with the login request.",
@@ -99,9 +124,8 @@ const handleLogin = (event) => {
           confirmButtonText: "OK",
         });
       })
-
       .finally(() => {
-        spinner.innerHTML = "";
+        hideLoginSpinner();
       });
   } else {
     Swal.fire({
@@ -113,29 +137,11 @@ const handleLogin = (event) => {
   }
 };
 
-const showSpinner = () => {
-  const spinner = document.getElementById("logout-spinner");
-  if (spinner) {
-    spinner.innerHTML = `
-      <div class="relative min-h-[100px]">
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-6 h-6 border-4 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
-        </div>
-      </div>
-    `;
-  }
-};
 
-const hideSpinner = () => {
-  const spinner = document.getElementById("logout-spinner");
-  if (spinner) {
-    spinner.innerHTML = "";
-  }
-};
 
 const handleLogout = (event) => {
   event.preventDefault();
-  showSpinner();
+  showLogoutSpinner();
 
   const token = localStorage.getItem("token");
 
@@ -147,13 +153,13 @@ const handleLogout = (event) => {
     },
   })
     .then((res) => res.json())
-    .then((data) => {
+    .then(() => {
       localStorage.removeItem("token");
       localStorage.removeItem("user_id");
 
       Swal.fire({
         title: "Success!",
-        text: "Your account has been successfully logged out.",
+        text: "You have been successfully logged out.",
         icon: "success",
         confirmButtonText: "OK",
       }).then(() => {
@@ -170,13 +176,13 @@ const handleLogout = (event) => {
       });
     })
     .finally(() => {
-      hideSpinner();
+      hideLogoutSpinner();
     });
 };
 
 const adminLogout = (event) => {
   event.preventDefault();
-  showSpinner();
+  showLogoutSpinner();
 
   const token = localStorage.getItem("token");
 
@@ -188,13 +194,13 @@ const adminLogout = (event) => {
     },
   })
     .then((res) => res.json())
-    .then((data) => {
+    .then(() => {
       localStorage.removeItem("token");
-      localStorage.removeItem("user_id");
+      localStorage.removeItem("admin_id");
 
       Swal.fire({
         title: "Success!",
-        text: "Your account has been successfully logged out.",
+        text: "Admin has been successfully logged out.",
         icon: "success",
         confirmButtonText: "OK",
       }).then(() => {
@@ -202,7 +208,7 @@ const adminLogout = (event) => {
       });
     })
     .catch((error) => {
-      console.error("Logout error:", error);
+      console.error("Admin logout error:", error);
       Swal.fire({
         title: "Error!",
         text: "Something went wrong during logout.",
@@ -211,11 +217,6 @@ const adminLogout = (event) => {
       });
     })
     .finally(() => {
-      hideSpinner();
+      hideLogoutSpinner();
     });
-};
-
-const getValue = (id) => {
-  const value = document.getElementById(id);
-  return value;
 };

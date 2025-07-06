@@ -21,9 +21,9 @@
 
         <aside class="w-full md:w-1/8 lg:w-1/8 bg-gray-900 text-white p-4">
             <div class="flex flex-col items-center space-y-3 p-4 bg-gray-900 rounded-lg">
-                <img src="image/Arman-1.jpg" alt="Admin Avatar"
+                <img src="image/arman.jpg" alt="Admin Avatar"
                     class="w-24 h-24 rounded-full border-2 border-gray-500 shadow-lg object-cover">
-                <h3 class="text-lg font-semibold">Arman</h3>
+                <h3 class="text-lg font-semibold">Admin</h3>
                 <p class="text-sm text-gray-400">Mohammad Arman</p>
                 <div class="flex justify-center space-x-15 mt-4 text-gray-300">
                     <a href="#" class="hover:text-white transition">
@@ -37,9 +37,8 @@
                     </a>
                 </div>
             </div>
-
             <div class=" px-3 pt-10 rounded">
-                <h2 class="text-2xl font-bold text-gray-200 text-start md:text-start">Dashboard</h2>
+                <h2 class="font-bold text-gray-500 text-start md:text-start">Dashboard Overview</h2>
             </div>
             <ul class="mt-4 space-y-2 text-center md:text-left">
                 <li>
@@ -49,7 +48,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 10h4v4H3v-4zm7 0h4v4h-4v-4zm7 0h4v4h-4v-4z" />
                         </svg>
-                        Overview
+                        Admin Overview
                     </a>
                 </li>
                 <li>
@@ -59,7 +58,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7M5 20h14a2 2 0 002-2v-5H3v5a2 2 0 002 2z" />
                         </svg>
-                        Product
+                        Product Overview
                     </a>
                 </li>
                 <li>
@@ -71,7 +70,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14.5 10.5l-4.5 4.5" />
                         </svg>
-                        Contact
+                        Contact Overview
                     </a>
                 </li>
                 <li>
@@ -81,7 +80,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m6-4a4 4 0 100-8 4 4 0 000 8zM7 10a4 4 0 100-8 4 4 0 000 8z" />
                         </svg>
-                        Users
+                        Users Overview
                     </a>
                 </li>
                 <li>
@@ -91,13 +90,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M11 11l-4-4m0 0l4-4m-4 4h12M21 15l-4 4m0 0l-4-4m4 4V3" />
                         </svg>
-                        Review
+                        Review Overview
                     </a>
                 </li>
                 <li>
                     <form id="mobile-logout" onsubmit="adminLogout(event)">
                         <button
-                            class="flex items-center gap-3 p-3 rounded-lg bg-amber-900 hover:bg-gray-700 transition duration-200 w-full text-left">
+                            class="flex items-center justify-center gap-3 p-3 rounded-lg bg-amber-900 hover:bg-gray-700 transition duration-200 w-full">
                             <i class="fas fa-sign-out-alt fa-lg"></i>
                             <span>Logout</span>
                         </button>
@@ -116,7 +115,8 @@
 
             <div class="mt-6 bg-gray-900 shadow rounded p-4 overflow-x-auto">
 
-                <form id="product-form" class="space-y-4 w-full mx-auto p-6 bg-gray-900  text-start shadow-md border border-gray-700 rounded-lg">
+                <form id="product-form"
+                    class="space-y-4 w-full mx-auto p-6 bg-gray-900  text-start shadow-md border border-gray-700 rounded-lg">
                     <h2 class="text-xl font-bold text-left text-gray-200">Add new product</h2>
 
                     <input type="text" id="name" placeholder="Product Name" required
@@ -135,7 +135,8 @@
                         placeholder="Image URL" required
                         class="border border-gray-300 text-gray-200      rounded-md p-3 w-full focus:outline-none focus:ring-2 " />
 
-                    <select id="brand" required class="border border-gray-300 rounded-md p-3 text-gray-300 w-full focus:outline-none focus:ring-2">
+                    <select id="brand" required
+                        class="border border-gray-300 rounded-md p-3 text-gray-300 w-full focus:outline-none focus:ring-2">
                         <option value="">Select Brand</option>
                         <option value="1">Headphone</option>
                         <option value="2">Keyboard</option>
@@ -154,7 +155,7 @@
                 <table class="w-full mt-2 min-w-max">
                     <h2 class="text-lg font-extrabold py-5 text-gray-200 ">Recent Product : </h2>
                     <thead>
-                        <tr class="bg-gray-400">
+                        <tr class="bg-gray-700">
                             <th class="p-2 text-gray-200">Product ID</th>
                             <th class="p-2 text-gray-200">Name</th>
                             <th class="p-2 text-gray-200">Description</th>

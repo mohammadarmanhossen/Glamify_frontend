@@ -66,8 +66,6 @@ new Chart(areaCtx, {
 });
 
 
-// bar chart
-
 const ctx = document.getElementById("salesChart").getContext("2d");
 new Chart(ctx, {
   type: "bar",
@@ -138,3 +136,65 @@ new Chart(ctx, {
     },
   },
 });
+
+
+
+
+
+const animateCount = (element, target, duration = 1000) => {
+  let start = 0;
+  const stepTime = Math.max(Math.floor(duration / target), 20);
+  const step = () => {
+    start += 1;
+    element.textContent = start;
+    if (start < target) {
+      setTimeout(step, stepTime);
+    } else {
+      element.textContent = target;
+    }
+  };
+  step();
+};
+
+const countUser = () => {
+  fetch('https://glamify-backend-ten.vercel.app/account/user/')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      const count = Array.isArray(data) ? data.length : 0;
+      animateCount(document.getElementById('total-users'), count);
+    })
+    .catch(() => {
+      document.getElementById('total-users').textContent = 'Error';
+    });
+};
+
+const countProduct = () => {
+  fetch('https://glamify-backend-ten.vercel.app/product/')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      const count = Array.isArray(data) ? data.length : 0;
+      animateCount(document.getElementById('total-products'), count);
+    })
+    .catch(() => {
+      document.getElementById('total-products').textContent = 'Error';
+    });
+};
+
+const countOrder = () => {
+  fetch('https://glamify-backend-ten.vercel.app/orderitem/')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      const count = Array.isArray(data) ? data.length : 0;
+      animateCount(document.getElementById('total-orders'), count);
+    })
+    .catch(() => {
+      document.getElementById('total-orders').textContent = 'Error';
+    });
+};
+
+countUser();
+countProduct();
+countOrder();
