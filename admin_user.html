@@ -18,7 +18,7 @@
 
     <div class="flex flex-col md:flex-row flex-grow ">
 
-          <aside class="w-full md:w-1/8 lg:w-1/8 bg-gray-900 text-white p-4">
+        <aside class="w-full md:w-1/8 lg:w-1/8 bg-gray-900 text-white p-4">
             <div class="flex flex-col items-center space-y-3 p-4 bg-gray-900 rounded-lg">
                 <img src="image/arman.jpg" alt="Admin Avatar"
                     class="w-24 h-24 rounded-full border-2 border-gray-500 shadow-lg object-cover">
@@ -48,7 +48,17 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 10h4v4H3v-4zm7 0h4v4h-4v-4zm7 0h4v4h-4v-4z" />
                         </svg>
-                       Admin Overview
+                        Admin Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_product_add.html" class="flex items-center gap-2 p-3 hover:bg-gray-700 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7M5 20h14a2 2 0 002-2v-5H3v5a2 2 0 002 2z" />
+                        </svg>
+                        Add Product
                     </a>
                 </li>
                 <li>
@@ -116,15 +126,15 @@
                         <tr class="bg-gray-700">
                             <th class="p-2 text-gray-200">User ID</th>
                             <th class="p-2 text-gray-200"">Username</th>
-                            <th class="p-2 text-gray-200"">Email</th>
+                            <th class=" p-2 text-gray-200"">Email</th>
                             <th class="p-2 text-gray-200"">First Name</th>
-                            <th class="p-2 text-gray-200"">Last Name</th>
+                            <th class=" p-2 text-gray-200"">Last Name</th>
                             <th class="p-2 text-gray-200"">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="user-body" class="text-center">
+                    <tbody id=" user-body" class="text-center">
 
-                    </tbody>
+                                </tbody>
 
                 </table>
             </div>
@@ -137,6 +147,7 @@
     <script src="./js/cart.js"></script>
     <script src="./js/admin_review.js"></script>
     <script src="./js/admin_user.js"></script>
+    <script src="./js/admin_product_add.js"></script>
 
 </body>
 
